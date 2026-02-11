@@ -85,3 +85,22 @@ footer {
     background-color:#f5c293;
     margin-top:5%;
 }
+.ig-follow-btn {
+    display: inline-flex;
+    align-items: center;
+    background: black;
+    color: white;
+    padding: 8px 14px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+
+}
+.ig-follow-btn:hover {
+   color: #E1306C;
+}
+.ig-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+}
