@@ -1,21 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Select Page</title>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', 'G-G800GHY9CD');
-    </script>
-    <link rel="stylesheet" href="ApplicationStyling.css">
-</head>
-<body>
+            gtag('config', 'G-G800GHY9CD');
+        </script>
+        <link rel="stylesheet" href="ApplicationStyling.css">
+        <script src="ApplicationScript.js"></script>
+    </head>
 
-</body>
+    <body onload="getChallenges()">
+
+        <header>
+        </header>
+
+        <main>
+
+            <form name="userSelection" onsubmit="">
+                <p><label for="username">Enter username:</label><input type="text" name="username" id="username"></p>
+
+                <ul id="Hunts">
+                </ul>
+
+                <p><label for="start"><input type="button" name="start" id="start" value="Start"></p>
+            </form>
+
+        </main>
+
+        <footer>
+            <div class="links">
+                <h3>Socials:</h3>
+                <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @T_phoenix0</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <br>
+                <a href="https://www.instagram.com/teamphoenix.uclan/" target="_blank" rel="noopener noreferrer" class="ig-follow-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="ig-icon">Follow @teamphoenix.uclan</a>
+            </div>
+            <div class="links">
+                <h3>Contact:</h3>
+                <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+            </div>
+            <div class="links">
+                <h3>Location:</h3>
+                <p>Larnaca, Cyprus</p>
+            </div>
+        </footer>
+
+    </body>
 </html>
