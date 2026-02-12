@@ -55,3 +55,11 @@ async function getChallenges() {
 
 
 }
+
+//QR READER SECTION
+/*function QRReader() {
+
+
+    scanner.addListener('scan', function (content) {}
+
+    Instascan.Camera.getCameras()*/
