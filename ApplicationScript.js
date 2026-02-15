@@ -3,17 +3,19 @@ var app="TeamPhoenixApp"
 
 //a function sets them every time the client enters the site
 function setCookie(cookieName, cookieValue, expireDays) {
+
     let date = new Date();
     date.setTime(date.getTime() + (expireDays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + date.toUTCString();
     document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+
 }
+
 var date = new Date();
 setCookie("date", date.toUTCString());
 var expires = "expires=" + date.toUTCString();
 
 setCookie("firstname", expires);
-
 
 console.log(getCookie("Firstname"));
 console.log(getCookie("Lastname"));
@@ -52,7 +54,7 @@ async function getChallenges() {
                 let listItem=document.createElement("li");
                 let huntID=huntsArray[i].uuid;
                 console.log(huntID);
-                 let element="<button onclick='storeHuntID(\""+huntID+"\")' id='Username'>"+huntID+"</button>";
+                 let element="<button onclick='storeHuntID(\""+huntID+"\")' class='huntOption'>"+huntID+"</button>";
                 listItem.innerHTML =element;
                 list.appendChild(listItem);
             }
@@ -70,5 +72,27 @@ function storeHuntID(id){
  */
 async function startHunt(){
 
-    let username=document.getElementById("Username").value;
+    let username=document.getElementById("username").value;
+
+    /*
+
+    let status=response.status;
+
+    if(status==="OK"){
+
+        let sessionID=response.session;
+        let cookieName=username+"_sessionID";
+        setCookie(cookieName,sessionID,100);
+
+        window.location.href("app.html");
+
+    }
+    else if(status==="ERROR"){
+
+        let errorMessage=response.errorMessages;
+        alert(errorMessage);
+        window.location.reload;
+
+    }
+     */
 }
