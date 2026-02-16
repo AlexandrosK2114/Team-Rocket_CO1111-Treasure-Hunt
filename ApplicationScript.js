@@ -1,16 +1,21 @@
+var HuntID;
+var app="TeamPhoenixApp"
+
 //a function sets them every time the client enters the site
 function setCookie(cookieName, cookieValue, expireDays) {
+
     let date = new Date();
     date.setTime(date.getTime() + (expireDays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + date.toUTCString();
     document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+
 }
+
 var date = new Date();
 setCookie("date", date.toUTCString());
 var expires = "expires=" + date.toUTCString();
 
 setCookie("firstname", expires);
-
 
 console.log(getCookie("Firstname"));
 console.log(getCookie("Lastname"));
@@ -23,15 +28,16 @@ function  getCookie(cname) {
     var ca = decodedCookie.split(';');
     for(var i = 0; i <ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0) == ' ') {
+        while (c.charAt(0) === ' ') {
             c = c.substring(1);
         }
-        if (c.indexOf(name) == 0) {
+        if (c.indexOf(name) === 0) {
             return c.substring(name.length, c.length);
         }
     }
     return "";
 }
+
 async function getChallenges() {
 
     let huntsArray = [];
@@ -48,18 +54,45 @@ async function getChallenges() {
                 let listItem=document.createElement("li");
                 let huntID=huntsArray[i].uuid;
                 console.log(huntID);
-                listItem.innerHTML =  huntID;
+                 let element="<button onclick='storeHuntID(\""+huntID+"\")' class='huntOption'>"+huntID+"</button>";
+                listItem.innerHTML =element;
                 list.appendChild(listItem);
             }
         });
-
-
 }
 
-//QR READER SECTION
-/*function QRReader() {
+/*Function which stores the ID of the treasure hunt when the user clicks one of the options from the hunts list*/
+function storeHuntID(id){
+    HuntID=id;
+    console.log("Select Hunt ID: " + id);
+}
 
+/*TIM. Function should create a query string with variables "app", "HuntID" and "username"
+ and send it to /api/start. In return, an object should be created with the response.
+ */
+async function startHunt(){
 
-    scanner.addListener('scan', function (content) {}
+    let username=document.getElementById("username").value;
 
-    Instascan.Camera.getCameras()*/
+    /*
+
+    let status=response.status;
+
+    if(status==="OK"){
+
+        let sessionID=response.session;
+        let cookieName=username+"_sessionID";
+        setCookie(cookieName,sessionID,100);
+
+        window.location.href("app.html");
+
+    }
+    else if(status==="ERROR"){
+
+        let errorMessage=response.errorMessages;
+        alert(errorMessage);
+        window.location.reload;
+
+    }
+     */
+}
