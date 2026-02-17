@@ -67,32 +67,40 @@ function storeHuntID(id){
     console.log("Select Hunt ID: " + id);
 }
 
-/*TIM. Function should create a query string with variables "app", "HuntID" and "username"
- and send it to /api/start. In return, an object should be created with the response.
- */
-async function startHunt(){
-
-    let username=document.getElementById("username").value;
-
-    /*
-
-    let status=response.status;
-
-    if(status==="OK"){
-
-        let sessionID=response.session;
-        let cookieName=username+"_sessionID";
-        setCookie(cookieName,sessionID,100);
-
-        window.location.href("app.html");
-
+/* TIM. Function creates a query string with variables "app", "HuntID" and "username"
+   and sends it to /api/start. In return, an object is created from the response. */
+function startHunt() {
+    const username = document.getElementById("username").value;
+    if (!username || !username.trim()) {
+        alert("Username");
+        return;
     }
-    else if(status==="ERROR"){
-
-        let errorMessage=response.errorMessages;
-        alert(errorMessage);
-        window.location.reload;
-
+    if (!HuntID) { //If there is no hunt selected
+        alert("Select a treasure hunt first");
+        return;
     }
-     */
+
+    var URL = "https://codecyprus.org/th/api/start?player=" + encodeURIComponent(username.trim()) + "&app=" + app + "&treasure-hunt-id=" + encodeURIComponent(HuntID);
+    fetch(URL)
+        .then(response => response.json()) // Parse JSON text to JavaScript object
+        .then(jsonObject => {
+            //An object is created from the response (shown in console)
+            var responseObject = jsonObject;
+            console.log(responseObject);
+            var status = responseObject.status;
+            if (status === "OK") {
+                var sessionID = responseObject.session;
+
+                setCookie("sessionID", sessionID, 365);
+                setCookie("playerName", username.trim(), 365);
+                window.location.href = "app.html";
+            } else if (status === "ERROR") {
+                var errorMessages = responseObject.errorMessages;
+                var errorText = Array.isArray(errorMessages) ? errorMessages.join(", ") : String(errorMessages || "Unknown error");
+                throw new Error(errorText);
+            }
+        })
+        .catch(function (err) {
+            alert("Request failed: " + err.message);
+        });
 }
