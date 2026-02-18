@@ -1,5 +1,32 @@
+const recall=30000;
+
 var HuntID;
-var app="TeamPhoenixApp"
+var app="TeamPhoenixApp";
+var longitude;
+var latitude;
+
+//Function which stores the user's location
+function storePosition(position){
+    longitude=position.coords.longitude;
+    latitude=position.coords.longitude;
+    console.log("Longitude: "+longitude);
+    console.log("Latitude: "+latitude);
+}
+
+//Function which retrieves the location of the user
+function getLocation() {
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(storePosition);
+    }
+    else {
+        alert("Retrieval of Geolocation not permitted");
+    }
+}
+
+getLocation();
+//Updating the user's location every 30 seconds using a constant variable
+setInterval(getLocation,recall);
 
 //a function sets them every time the client enters the site
 function setCookie(cookieName, cookieValue, expireDays) {
@@ -22,12 +49,12 @@ console.log(getCookie("Lastname"));
 
 //A Function gets the cookie documents
 function  getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie =
-        decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
         while (c.charAt(0) === ' ') {
             c = c.substring(1);
         }
@@ -67,10 +94,12 @@ function storeHuntID(id){
     console.log("Select Hunt ID: " + id);
 }
 
-/* TIM. Function creates a query string with variables "app", "HuntID" and "username"
+/*Function creates a query string with variables "app", "HuntID" and "username"
    and sends it to /api/start. In return, an object is created from the response. */
 function startHunt() {
+
     const username = document.getElementById("username").value;
+
     if (!username || !username.trim()) {
         alert("Username");
         return;
@@ -80,25 +109,38 @@ function startHunt() {
         return;
     }
 
-    var URL = "https://codecyprus.org/th/api/start?player=" + encodeURIComponent(username.trim()) + "&app=" + app + "&treasure-hunt-id=" + encodeURIComponent(HuntID);
+    let URL = "https://codecyprus.org/th/api/start?player=" + encodeURIComponent(username.trim()) + "&app=" + app + "&treasure-hunt-id=" + encodeURIComponent(HuntID);
     fetch(URL)
         .then(response => response.json()) // Parse JSON text to JavaScript object
         .then(jsonObject => {
+
             //An object is created from the response (shown in console)
-            var responseObject = jsonObject;
+            let responseObject = jsonObject;
             console.log(responseObject);
-            var status = responseObject.status;
+            let status = responseObject.status;
+
             if (status === "OK") {
-                var sessionID = responseObject.session;
+                let sessionID = responseObject.session;
 
                 setCookie("sessionID", sessionID, 365);
                 setCookie("playerName", username.trim(), 365);
                 window.location.href = "app.html";
+
             } else if (status === "ERROR") {
-                var errorMessages = responseObject.errorMessages;
-                var errorText = Array.isArray(errorMessages) ? errorMessages.join(", ") : String(errorMessages || "Unknown error");
+                let errorMessages = responseObject.errorMessages;
+                let errorText = Array.isArray(errorMessages) ? errorMessages.join(", ") : String(errorMessages || "Unknown error");
                 throw new Error(errorText);
             }
+
+            /*
+            else if(status==="ERROR"){
+
+                let errorMessage=response.errorMessages;
+                alert(errorMessage);
+                window.location.reload;
+
+            }
+             */
         })
         .catch(function (err) {
             alert("Request failed: " + err.message);
