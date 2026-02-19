@@ -141,8 +141,40 @@ function startHunt() {
 
             }
              */
+
         })
         .catch(function (err) {
             alert("Request failed: " + err.message);
         });
 }
+
+/*
+
+
+function styleButtons(id){
+
+    console.log(id);
+    let b=document.getElementById(id);
+    console.log(b);
+    b.style.backgroundColor="blue";
+
+}
+
+/*#registrationDiv{
+    margin:auto;
+    margin-top:2%;
+    margin-bottom:2%;
+    background-color:rgb(214,205,195);
+    border:rgb(122,43,43) dashed  2px;
+    border-radius: 1%;
+    width:60%;
+    color:rgb(122,43,43);
+    box-shadow:10px 10px rgb(59,58,58);
+}*/
+
+/*.huntOption:active{
+    color:red;
+    box-shadow:10px 10px rgb(59,58,58);
+
+let buttonID="Button"+i;
+ */
