@@ -23,6 +23,12 @@ header {
     background-image:url("indexBackground.png");
 
 }*/
+#teamlogo-header {
+    height: 130px;
+    width: auto;
+    margin: 10px;
+}
+
 main{
     display:flex;
     justify-content: center;
