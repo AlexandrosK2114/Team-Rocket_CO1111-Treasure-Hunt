@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <head>
+        <meta charset="UTF-8">
+        <title>Treasure Hunt</title>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-      gtag('config', 'G-G800GHY9CD');
-    </script>
-</head>
-<body>
-<main>
-    <div id="question">
-        <div id="playerScore"></div>
+          gtag('config', 'G-G800GHY9CD');
+        </script>
+        <script src="JSFiles/AppJS.js"></script>
+        <script src="JSFiles/Cookies.js"></script>
+    </head>
+    <body onload="loadQuestion()">
+    <main>
+        <div id="question">
+            <div id="playerScore"></div>
 
-        <div id="questionTextBox"></div>
+            <div id="questionTextBox"></div>
 
-        <div id="questionOptionsBox">
-            <div id="questionAnswers"></div>
-            <div id="skipButton"></div>
-            <div id="hintIcon"></div>
+            <div id="questionOptionsBox">
+                <div id="questionAnswers"></div>
+                <div id="skipButton"></div>
+                <div id="hintIcon"></div>
+            </div>
         </div>
-    </div>
 
-</main>
+    </main>
 </body>
 </html>

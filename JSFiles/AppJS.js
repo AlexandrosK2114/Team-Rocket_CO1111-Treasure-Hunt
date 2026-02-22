@@ -1,4 +1,4 @@
-async function loadQuestion() {
+function loadQuestion() {
     var userSession = getCookie("sessionID");
     console.log("SessionID: "+ userSession);
 
@@ -14,9 +14,13 @@ async function loadQuestion() {
                 if(!jsonObject.completed){
 
                     let question=jsonObject.questionText;
+                    console.log(question);
                     let type=jsonObject.questionType;
                     let questionScore=jsonObject.currentScore;
                     let questionDiv=document.getElementById("questionDivision");
+
+                    let questionTexBox=document.getElementById("questionTextBox");
+                    questionTexBox.innerHTML+="<p>"+question+"</p>";
 
                     if(type==="BOOLEAN"){
 
