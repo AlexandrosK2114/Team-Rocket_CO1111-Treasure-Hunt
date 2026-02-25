@@ -45,27 +45,31 @@ function startHunt() {
         return;
     }
 
-    let URL = "https://codecyprus.org/th/api/start?player=" + username.trim() + "&app=" + app + "&treasure-hunt-id=" + HuntID;
-    console.log(URL);
-    fetch(URL)
-        .then(response => response.json()) // Parse JSON text to JavaScript object
-        .then(jsonObject => {
+    if(getCookie("sessionID")){
+        window.location.href="app.html";
+    }
+    else {
+        let URL = "https://codecyprus.org/th/api/start?player=" + username.trim() + "&app=" + app + "&treasure-hunt-id=" + HuntID;
+        console.log(URL);
+        fetch(URL)
+            .then(response => response.json()) // Parse JSON text to JavaScript object
+            .then(jsonObject => {
 
-            //An object is created from the response (shown in console)
-            let responseObject = jsonObject;
-            console.log(responseObject);
-            let status = responseObject.status;
+                //An object is created from the response (shown in console)
+                let responseObject = jsonObject;
+                console.log(responseObject);
+                let status = responseObject.status;
 
-            if (status === "OK") {
-                let sessionID = responseObject.session;
+                if (status === "OK") {
+                    let sessionID = responseObject.session;
 
-                setCookie("sessionID", sessionID, 365);
-                setCookie("playerName", username.trim(), 365);
-                window.location.href = "app.html";
+                    setCookie("sessionID", sessionID, 365);
+                    setCookie("playerName", username.trim(), 365);
+                    window.location.href = "app.html";
 
-            }
-            else if(status==="ERROR"){
-                alert(jsonObject.errorMessages);
-            }
-        })
+                } else if (status === "ERROR") {
+                    alert(jsonObject.errorMessages);
+                }
+            })
+    }
 }
