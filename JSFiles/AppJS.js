@@ -49,13 +49,21 @@ function loadQuestion() {
                         let newElement2 = "<button class='answerButton' onclick='validateAnswer(false,\""+qType+"\")'>False</button>";
                         answerOptions.innerHTML += newElement2;
                     } else if (qType === "INTEGER") {
-
+                        let inputBox="<p><input type='number' id='answerBox' value='Your Answer'><button type='button' onclick='validateAnswer()'>Sumbit<button></p>"
+                        answerOptions.innerHTML += inputBox;
                     } else if (qType === "NUMERIC") {
 
                     }
                     else if (qType === "MCQ") {
+                        let buttonA="<button type='button' onclick='validateAnswer(\""+"A"+"\",\""+qType+"\")'class='answerButton'>A</button>";
+                        let buttonB="<button type='button' onclick='validateAnswer(\""+"B"+"\",\""+qType+"\")'class='answerButton'>B</button>";
+                        let buttonC="<button type='button' onclick='validateAnswer(\""+"C"+"\",\""+qType+"\")'class='answerButton'>C</button>";
+                        let buttonD="<button type='button' onclick='validateAnswer(\""+"D"+"\",\""+qType+"\")'class='answerButton'>D</button>";
+                        answerOptions.innerHTML += buttonA+buttonB+buttonC+buttonD;
                     }
                     else if (qType === "TEXT") {
+                        let inputBox="<p><input type='text'id='answerBox'><button type='button' onclick='validateAnswer()'>Submit</button> </p>"
+                        answerOptions.innerHTML += inputBox;
                     }
 
                 } else if (status === "ERROR")
