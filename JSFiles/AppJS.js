@@ -2,13 +2,13 @@ var playerAnswer;
 var userSession;
 
 function loadQuestion() {
+
     userSession = getCookie("sessionID");
     var playerScore;
     console.log("SessionID: " + userSession);
 
     let questionURL = "https://codecyprus.org/th/api/question?session=" + userSession;
     let scoreURL = "https://codecyprus.org/th/api/score?session=" + userSession;
-    let locationURL="https://codecyprus.org/th/api/score?session=" + userSession+"&latitude="+latitude+"&longitude="+longitude;
 
     fetch(scoreURL).then(response => response.json()) // Parse JSON text to JavaScript object
         .then(jsonObject1 => {
@@ -61,6 +61,23 @@ function loadQuestion() {
                 } else if (status === "ERROR")
                     alert(jsonObject.errorMessages);
             }
+        })
+}
+
+function skipQuestion(){
+
+    let skipURL="https://codecyprus.org/th/api/skip?session="+userSession;
+
+    fetch(skipURL)
+        .then(response => response.json()) // Parse JSON text to JavaScript object
+        .then(skipObject => {
+
+            if(skipObject.status==="OK"){
+                alert("Question Skipped");
+                window.location.reload();
+            }
+            else if(skipObject.status==="ERROR")
+                alert(skipObject.errorMessages);
         })
 }
 
