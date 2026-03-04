@@ -17,7 +17,7 @@ async function getChallenges() {
                 let listItem=document.createElement("li");
                 let huntID=huntsArray[i].uuid;
                 console.log(huntID);
-                let element="<button onclick='storeHuntID(\""+huntID+"\")' class='huntOption'>"+huntID+"</button>";
+                let element="<button onclick='storeHuntID(\""+huntID+"\")' class='huntOption'>Hunt "+(i+1)+"</button>";
                 listItem.innerHTML =element;
                 list.appendChild(listItem);
             }
