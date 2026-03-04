@@ -45,9 +45,9 @@ function startHunt() {
         return;
     }
 
-    if(getCookie("sessionID")){
+    /*if(getCookie("sessionID")){
         window.location.href="app.html";
-    }
+    }*/
     else {
         let URL = "https://codecyprus.org/th/api/start?player=" + username.trim() + "&app=" + app + "&treasure-hunt-id=" + HuntID;
         console.log(URL);
