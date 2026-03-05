@@ -15,8 +15,14 @@
         <script src="JSFiles/AppJS.js"></script>
         <script src="JSFiles/Cookies.js" ></script>
         <script src="JSFiles/Geolocation.js" ></script>
+        <link rel="stylesheet" href="ApplicationStyling.css">
     </head>
     <body onload="loadQuestion()">
+    <header>
+        <a href="index.html">
+            <img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamlogo-header">
+        </a>
+    </header>
     <main>
         <div id="question">
             <div id="playerScore"></div>
@@ -31,5 +37,28 @@
         </div>
 
     </main>
+    <footer>
+        <div class="links">
+            <h3>Socials:</h3>
+            <!-- <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" target="_blank" class="twitter-follow-button"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/500px-X_logo_2023.svg.png" alt="Twitter" class="X-icon">Follow @T_phoenix0</a>
+             <br>
+             <a href="https://www.instagram.com/teamphoenix.uclan/" target="_blank" class="ig-follow-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="ig-icon">Follow @teamphoenix.uclan</a>-->
+            <div id="linksLogos">
+                <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage"/> </a>
+                <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" /></a>
+
+            </div>
+
+        </div>
+
+        <div class="links">
+            <h3>Contact:</h3>
+            <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+        </div>
+        <div class="links">
+            <h3>Location:</h3>
+            <p>Larnaca, Cyprus</p>
+        </div>
+    </footer>
 </body>
 </html>
