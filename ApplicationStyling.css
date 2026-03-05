@@ -17,12 +17,26 @@ header {
     );*/
     /*background-color:rgb(242,99,10);*/
     background-color:rgb(122,43,43);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between ;
+
+}
+header >a{
+    color:white;
 }
 
-/*body{
-    background-image:url("indexBackground.png");
+header > h2{
+    color:white;
+}
 
-}*/
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
 #teamlogo-header {
     height: 130px;
     width: auto;
@@ -92,12 +106,19 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 20%;
-    background-color:#f5c293;
+    background-color:rgb(71,55,55);
     margin-top:5%;
 }
+
 .links{
     margin-left: 2%;
+    color:white;
 }
+
+.links > p >a{
+        color: white;
+}
+
 /*.ig-follow-btn {
     display: inline-flex;
     align-items: center;
