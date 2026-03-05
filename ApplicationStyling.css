@@ -118,47 +118,6 @@ footer {
 .links > p >a{
         color: white;
 }
-
-/*.ig-follow-btn {
-    display: inline-flex;
-    align-items: center;
-    background: darkgrey;
-    color: white;
-    padding: 8px 14px;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-    border:black solid 1px;
-}
-.ig-follow-btn:hover {
-   color: #E1306C;
-}
-.ig-icon {
-    width: 15px;
-    height: 15px;
-    margin-right: 4px;
-}
-.twitter-follow-button{
-    display: inline-flex;
-    align-items: center;
-    background: darkgrey;
-    color: white;
-    padding: 8px 14px;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-    border:black solid 1px;
-}
-.twitter-follow-button:hover {
-    color: lightslategrey;
-}
-.X-icon {
-    width: 10px;
-    height: 10px;
-    margin-right: 4px;
-}*/
 #start {
     background-color: rgb(232,228,223);
     padding: 10px 20px;
