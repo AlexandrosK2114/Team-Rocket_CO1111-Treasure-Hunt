@@ -12,11 +12,12 @@
 
           gtag('config', 'G-G800GHY9CD');
         </script>
+        <script src="JSFiles/Cookies.js"></script>
         <script src="JSFiles/AppJS.js"></script>
-        <script src="JSFiles/Cookies.js" ></script>
-        <script src="JSFiles/Geolocation.js" ></script>
+        <script src="JSFiles/Geolocation.js"></script>
+        <script src="JSFiles/leaderboard.js"></script>
     </head>
-    <body onload="loadQuestion()">
+    <body onload="loadQuestion(); showLeaderboard({ sorted: true, limit: 10 })">
     <main>
         <div id="question">
             <div id="playerScore"></div>
@@ -28,6 +29,7 @@
                 <div id="skipButton"><button type="button" onclick="skipQuestion()">SKIP</button></div>
                 <div id="hintIcon"></div>
             </div>
+            <div id="leaderboard"></div>
         </div>
 
     </main>
