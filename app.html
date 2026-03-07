@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Treasure Hunt</title>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
@@ -27,12 +28,11 @@
         <div id="question">
             <div id="playerScore"></div>
 
-            <div id="questionTextBox"></div>
+            <div id="questionTextBox">
+                <div id="questionOptions"></div>
+            </div>
 
-            <div id="questionOptionsBox">
-                <div id="questionAnswers"></div>
-                <div id="skipButton"><button type="button" onclick="skipQuestion()">SKIP</button></div>
-                <div id="hintIcon"></div>
+            <div id="questionAnswers">
             </div>
         </div>
 

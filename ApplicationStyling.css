@@ -10,12 +10,6 @@ header {
     color:white;
     width: 100%;
     height: 160px;
-    /*background: linear-gradient(
-            180deg,
-            rgba(230, 96, 96, 1) 15%,
-            rgba(232, 211, 107, 1) 100%
-    );*/
-    /*background-color:rgb(242,99,10);*/
     background-color:rgb(122,43,43);
     display: flex;
     flex-direction: row;
@@ -49,32 +43,109 @@ main{
     flex-direction: column;
 }
 
-#indexInfo{
-    margin:auto;
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#indexInfo, #question{
+    display:flex;
+    flex-direction: column;
     padding:2.5%;
     margin-top:2%;
     margin-bottom:2%;
-    background-color:rgb(214,205,195);
+    background-color:rgb(230,220,220);
     border:rgb(122,43,43) dashed  2px;
-    border-radius: 1%;
+    border-radius: 20px;
     width:60%;
     color:rgb(122,43,43);
     box-shadow:10px 10px rgb(59,58,58);
 
 }
 
+#question{
+    align-content: center;
+}
+
+#question >*{
+    background-color: rgb(252,252,252);
+    padding:2.5%;
+    border-radius: 20px;
+}
+.answerButton{
+    background-color:rgb(59,58,58);
+    color:white;
+    font-size: 120%;
+    border-radius: 10px;
+}
+
+#skipButton{
+    background-color:rgb(59,58,58);
+    color:white;
+    font-size: 120%;
+    border-radius: 10px;
+}
+
+#skipButton:hover{
+    cursor:pointer;
+}
+
+.answerButton:hover{
+    cursor:pointer;
+}
+
+#playerScore{
+    width:16%;
+    font-size: 140%;
+}
+
+#questionTextBox{
+    width:50%;
+    margin-top:2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2%;
+    font-size: 130%;
+}
+
+#questionAnswers{
+    width:50%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top:2%;
+    gap:20px;
+}
+
+#questionOptions{
+    display: flex;
+    gap:10px;
+}
+
+#qrIcon{
+    width:30px;
+    height:30px;
+    background-color:rgb(59,58,58);
+    border-radius: 5px;
+}
+
+
 #indexInfo > h1,h2{
     color:rgb(59,58,58);
 }
 
 #BEGIN{
-    background-color:rgb(232,228,223);
+    background-color:rgb(232,205,200);
     margin-left:30%;
     padding:5%  10%;
     font-size:250%;
     cursor:pointer;
-    border:solid rgb(232,228,223) 2px;
-    border-radius:5%;
+    border:solid rgb(232,205,200) 2px;
+    border-radius:10px;
     color:rgb(59,58,58);
     box-shadow:10px 10px;
 }
@@ -85,8 +156,9 @@ main{
 
 #BEGIN:hover{
     background-color:rgb(122,43,43);
-    border:rgb(122,43,43);
+    border:black;
     color:cornsilk;
+    box-shadow:10px 10px black;
 }
 
 /*from https://www.w3schools.com/css/css3_buttons.asp*/
@@ -105,6 +177,7 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 20%;
     background-color:rgb(71,55,55);
     margin-top:5%;
@@ -159,5 +232,4 @@ footer {
     width:30px;
     height:30px;
 }
-
 

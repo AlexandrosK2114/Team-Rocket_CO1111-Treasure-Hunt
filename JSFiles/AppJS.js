@@ -32,35 +32,46 @@ function loadQuestion() {
                     let qType = jsonObject2.questionType;
                     console.log(qType);
                     let questionScore = jsonObject2.currentScore;
-                    let questionDiv = document.getElementById("questionDivision");
 
                     let pScore = document.getElementById("playerScore");
-                    pScore.innerHTML += "<p>Your score: " + playerScore + "</p>";
+                    pScore.innerHTML += "<p><b>Score: " + playerScore + "</b></p>";
 
                     let questionTexBox = document.getElementById("questionTextBox");
+                    let questionOptions=document.getElementById("questionOptions");
                     questionTexBox.innerHTML += "<p>" + question + "</p>";
 
-                    let answerOptions = document.getElementById("questionAnswers");
+                    let questionAnswers=document.getElementById("questionAnswers");
+
+                    let skipButton="<button id='skipButton' onclick='skipQuestion()'>SKIP</button>"
+                    questionOptions.innerHTML+=skipButton;
+
+                    let qrScanner="<div><img id='qrIcon' src='/applicationMedia/cameraIcon.png' alt='QR code scanner icon'></div>"
+                    questionOptions.innerHTML+=qrScanner;
+
 
                     if (qType === "BOOLEAN") {
-                        let newElement1 = "<button class='answerButoon' onClick='validateAnswer(true,\"" + qType + "\")'>True</button>";
-                        answerOptions.innerHTML += newElement1;
+                        let newElement1 = "<button class='answerButton' onClick='validateAnswer(true,\"" + qType + "\")'>True</button>";
+                        questionAnswers.innerHTML += newElement1;
                         let newElement2 = "<button class='answerButton' onclick='validateAnswer(false,\"" + qType + "\")'>False</button>";
-                        answerOptions.innerHTML += newElement2;
-                    } else if (qType === "INTEGER") {
-                        let inputBox = "<p><input type='number' id='answerBox' value='Your Answer'><button type='button' onclick='validateAnswer()'>Sumbit<button></p>"
-                        answerOptions.innerHTML += inputBox;
-                    } else if (qType === "NUMERIC") {
+                        questionAnswers.innerHTML += newElement2;
+                    }
+                    else if (qType === "INTEGER") {
+                        let inputBox = "<p><input type='number' id='answerBox' value='Your Answer'><button type='button' onclick='validateAnswer()'>Submit</button></p>"
+                        questionAnswers.innerHTML += inputBox;
+                    }
+                    else if (qType === "NUMERIC") {
 
-                    } else if (qType === "MCQ") {
+                    }
+                    else if (qType === "MCQ") {
                         let buttonA = "<button type='button' onclick='validateAnswer(\"" + "A" + "\",\"" + qType + "\")' class='answerButton'>A</button>";
                         let buttonB = "<button type='button' onclick='validateAnswer(\"" + "B" + "\",\"" + qType + "\")' class='answerButton'>B</button>";
                         let buttonC = "<button type='button' onclick='validateAnswer(\"" + "C" + "\",\"" + qType + "\")' class='answerButton'>C</button>";
                         let buttonD = "<button type='button' onclick='validateAnswer(\"" + "D" + "\",\"" + qType + "\")' class='answerButton'>D</button>";
-                        answerOptions.innerHTML += buttonA + buttonB + buttonC + buttonD;
-                    } else if (qType === "TEXT") {
+                        questionAnswers.innerHTML += buttonA + buttonB + buttonC + buttonD;
+                    }
+                    else if (qType === "TEXT") {
                         let inputBox = "<p><input type='text' id='answerBox'><button type='button' onclick='validateAnswer()'>Submit</button> </p>"
-                        answerOptions.innerHTML += inputBox;
+                        questionAnswers.innerHTML += inputBox;
                     }
                 }
                 else
