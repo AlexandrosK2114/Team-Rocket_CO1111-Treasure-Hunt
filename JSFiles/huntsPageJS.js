@@ -37,7 +37,7 @@ function startHunt() {
     const username = document.getElementById("username").value;
 
     if (!username || !username.trim()) {
-        alert("Username");
+        alert("");
         return;
     }
     if (!HuntID) { //If there is no hunt selected

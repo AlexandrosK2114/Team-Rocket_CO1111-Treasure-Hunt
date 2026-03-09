@@ -277,5 +277,12 @@ input{
     font-size:22px ;
     border-radius: 5px;
 }
+.material-icons{
+    font-size:48px;
+}
+
+.material-icons:hover{
+    cursor: pointer;
+}
 
 
