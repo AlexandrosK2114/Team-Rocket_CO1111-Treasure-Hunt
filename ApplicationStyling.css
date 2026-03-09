@@ -194,7 +194,7 @@ footer {
 #start {
     background-color: rgb(232,228,223);
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 24px;
     cursor: pointer;
     border: solid rgb(232,228,223) 2px;
     border-radius: 6px;
@@ -236,7 +236,7 @@ footer {
     height:30px;
 }
 .huntOption {
-    font-size: 12px;
+    font-size: 20px;
     cursor: pointer;
     border: solid  rgb(122, 43, 43) 2px;
     border-radius: 10%;
@@ -251,6 +251,19 @@ footer {
     background-color: grey;
     border: solid black 2px;
     color: cornsilk;
+}
+
+label{
+    color: #7b1f1f;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 8px;
+}
+input{
+    color:rgb(122, 43, 43);;
+    background-color:white;
+    font-size:22px ;
+    border-radius: 5px;
 }
 
 
