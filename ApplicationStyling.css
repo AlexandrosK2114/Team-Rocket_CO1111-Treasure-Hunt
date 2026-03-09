@@ -14,15 +14,28 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between ;
 
 }
-header >a{
-    color:white;
+
+nav>span{
+    padding:10px;
+    border-radius:2px;
 }
 
-header > h2{
+nav>span>a{
+    text-decoration: none;
+    font-size:120%;
     color:white;
+
+}
+
+header>a {
+    flex-grow: 0.02;
+}
+
+header > h1{
+    color:white;
+    flex-grow: 0.8;
 }
 
 body{
@@ -33,7 +46,6 @@ body{
 }
 #teamlogo-header {
     height: 130px;
-    width: auto;
     margin: 10px;
 }
 
@@ -174,13 +186,13 @@ footer {
     position: relative;
     bottom: 0;
     left: 0;
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 20%;
     background-color:rgb(71,55,55);
     margin-top:5%;
+    padding:3%;
 }
 
 .links{
