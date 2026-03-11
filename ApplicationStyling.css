@@ -152,7 +152,6 @@ main{
 
 #BEGIN{
     background-color:rgb(232,205,200);
-    margin-left:30%;
     padding:5%  10%;
     font-size:250%;
     cursor:pointer;
@@ -285,4 +284,16 @@ input{
     cursor: pointer;
 }
 
+#Hunts{
+    list-style-type: none;
+}
+
+#errorMessage{
+    display:none;
+    background-color: white;
+    font-size: 150%;
+    padding:10px;
+    border-radius: 20px;
+    color:red;
+}
 

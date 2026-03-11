@@ -8,7 +8,6 @@ async function getChallenges() {
     fetch("https://codecyprus.org/th/api/list")
         .then(response => response.json()) //Parse JSON text to JavaScript object
         .then(jsonObject => {
-            console.log(jsonObject);
             huntsArray =jsonObject.treasureHunts;
 
             let list=document.getElementById("Hunts");
@@ -16,9 +15,7 @@ async function getChallenges() {
             for(let i=0; i<huntsArray.length; i++) {
                 let listItem=document.createElement("li");
                 let huntID=huntsArray[i].uuid;
-                console.log(huntID);
-                let element="<button onclick='storeHuntID(\""+huntID+"\")' class='huntOption'>Hunt "+(i+1)+"</button>";
-                listItem.innerHTML =element;
+                listItem.innerHTML ="<button onclick='storeHuntID(\""+huntID+"\")' class='huntOption'>Hunt "+(i+1)+"</button>";
                 list.appendChild(listItem);
             }
         });
@@ -37,17 +34,18 @@ function startHunt() {
     const username = document.getElementById("username").value;
 
     if (!username || !username.trim()) {
-        alert("");
+        displayErrorMessage("Please add a username");
         return;
     }
     if (!HuntID) { //If there is no hunt selected
-        alert("Select a treasure hunt first");
+        displayErrorMessage("Please select a treasure hunt");
         return;
     }
 
-    /*if(getCookie("sessionID")){
+    if(getCookie("sessionID")){
         window.location.href="app.html";
-    }*/
+    }
+
     else {
         let URL = "https://codecyprus.org/th/api/start?player=" + username.trim() + "&app=" + app + "&treasure-hunt-id=" + HuntID;
         console.log(URL);
@@ -68,8 +66,14 @@ function startHunt() {
                     window.location.href = "app.html";
 
                 } else if (status === "ERROR") {
-                    alert(jsonObject.errorMessages);
+                    displayErrorMessage(jsonObject.errorMessages);
                 }
             })
     }
+}
+
+function displayErrorMessage(message){
+    let errorMessBox=document.getElementById("errorMessage");
+    errorMessBox.innerText=message;
+    errorMessBox.style.display="block";
 }
