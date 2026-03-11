@@ -10,22 +10,42 @@ header {
     color:white;
     width: 100%;
     height: 160px;
-    /*background: linear-gradient(
-            180deg,
-            rgba(230, 96, 96, 1) 15%,
-            rgba(232, 211, 107, 1) 100%
-    );*/
-    /*background-color:rgb(242,99,10);*/
     background-color:rgb(122,43,43);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
-/*body{
-    background-image:url("indexBackground.png");
+nav>span{
+    padding:10px;
+    border-radius:2px;
+}
 
-}*/
+nav>span>a{
+    text-decoration: none;
+    font-size:120%;
+    color:white;
+
+}
+
+header>a {
+    flex-grow: 0.02;
+}
+
+header > h1{
+    color:white;
+    flex-grow: 0.8;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
 #teamlogo-header {
     height: 130px;
-    width: auto;
     margin: 10px;
 }
 
@@ -35,32 +55,109 @@ main{
     flex-direction: column;
 }
 
-#indexInfo{
-    margin:auto;
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#indexInfo, #question{
+    display:flex;
+    flex-direction: column;
     padding:2.5%;
     margin-top:2%;
     margin-bottom:2%;
-    background-color:rgb(214,205,195);
+    background-color:rgb(230,220,220);
     border:rgb(122,43,43) dashed  2px;
-    border-radius: 1%;
+    border-radius: 20px;
     width:60%;
     color:rgb(122,43,43);
     box-shadow:10px 10px rgb(59,58,58);
 
 }
 
+#question{
+    align-content: center;
+}
+
+#question >*{
+    background-color: rgb(252,252,252);
+    padding:2.5%;
+    border-radius: 20px;
+}
+.answerButton{
+    background-color:rgb(59,58,58);
+    color:white;
+    font-size: 120%;
+    border-radius: 10px;
+}
+
+#skipButton{
+    background-color:rgb(59,58,58);
+    color:white;
+    font-size: 120%;
+    border-radius: 10px;
+}
+
+#skipButton:hover{
+    cursor:pointer;
+}
+
+.answerButton:hover{
+    cursor:pointer;
+}
+
+#playerScore{
+    width:16%;
+    font-size: 140%;
+}
+
+#questionTextBox{
+    width:50%;
+    margin-top:2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2%;
+    font-size: 130%;
+}
+
+#questionAnswers{
+    width:50%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top:2%;
+    gap:20px;
+}
+
+#questionOptions{
+    display: flex;
+    gap:10px;
+}
+
+#qrIcon{
+    width:30px;
+    height:30px;
+    background-color:rgb(59,58,58);
+    border-radius: 5px;
+}
+
+
 #indexInfo > h1,h2{
     color:rgb(59,58,58);
 }
 
 #BEGIN{
-    background-color:rgb(232,228,223);
+    background-color:rgb(232,205,200);
     margin-left:30%;
     padding:5%  10%;
     font-size:250%;
     cursor:pointer;
-    border:solid rgb(232,228,223) 2px;
-    border-radius:5%;
+    border:solid rgb(232,205,200) 2px;
+    border-radius:10px;
     color:rgb(59,58,58);
     box-shadow:10px 10px;
 }
@@ -71,8 +168,9 @@ main{
 
 #BEGIN:hover{
     background-color:rgb(122,43,43);
-    border:rgb(122,43,43);
+    border:black;
     color:cornsilk;
+    box-shadow:10px 10px black;
 }
 
 /*from https://www.w3schools.com/css/css3_buttons.asp*/
@@ -88,60 +186,27 @@ footer {
     position: relative;
     bottom: 0;
     left: 0;
-    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 20%;
-    background-color:#f5c293;
+    background-color:rgb(71,55,55);
     margin-top:5%;
+    padding:3%;
 }
+
 .links{
     margin-left: 2%;
+    color:white;
 }
-/*.ig-follow-btn {
-    display: inline-flex;
-    align-items: center;
-    background: darkgrey;
-    color: white;
-    padding: 8px 14px;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-    border:black solid 1px;
+
+.links > p >a{
+        color: white;
 }
-.ig-follow-btn:hover {
-   color: #E1306C;
-}
-.ig-icon {
-    width: 15px;
-    height: 15px;
-    margin-right: 4px;
-}
-.twitter-follow-button{
-    display: inline-flex;
-    align-items: center;
-    background: darkgrey;
-    color: white;
-    padding: 8px 14px;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-    border:black solid 1px;
-}
-.twitter-follow-button:hover {
-    color: lightslategrey;
-}
-.X-icon {
-    width: 10px;
-    height: 10px;
-    margin-right: 4px;
-}*/
 #start {
     background-color: rgb(232,228,223);
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 24px;
     cursor: pointer;
     border: solid rgb(232,228,223) 2px;
     border-radius: 6px;
@@ -160,14 +225,17 @@ footer {
     box-shadow: 1px 1px 0 rgb(120,120,120);
 }
 #registrationDiv {
-    margin: 40px auto;
-    padding: 25px;
-    width: 65%;
-    background-color: rgb(214,205,195);
-    color: lightslategrey;
-    border: 4px solid rgb(122,43,43);
-    border-radius: 16px;
-    box-shadow: 4px 6px 0 rgb(59,58,58);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: rgb(230, 220, 220);
+    border: rgb(122, 43, 43) dashed 2px;
+    border-radius: 20px;
+    width: 60%;
+    color: rgb(122, 43, 43);
+    box-shadow: 10px 10px rgb(59, 58, 58);
 }
 #linksLogos {
     display: flex;
@@ -178,6 +246,43 @@ footer {
 .logoImage{
     width:30px;
     height:30px;
+}
+.huntOption {
+    font-size: 20px;
+    cursor: pointer;
+    border: solid  rgb(122, 43, 43) 2px;
+    border-radius: 10%;
+    color:  rgb(122, 43, 43);
+    box-shadow: 2px 2px 0 rgb(122, 43, 43);
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 6px 0;
+    background:  white;
+}
+.huntOption:hover{
+    background-color: grey;
+    border: solid black 2px;
+    color: cornsilk;
+}
+
+label{
+    color: #7b1f1f;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 8px;
+}
+input{
+    color:rgb(122, 43, 43);;
+    background-color:white;
+    font-size:22px ;
+    border-radius: 5px;
+}
+.material-icons{
+    font-size:48px;
+}
+
+.material-icons:hover{
+    cursor: pointer;
 }
 
 

@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Treasure Hunt</title>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
@@ -12,26 +13,49 @@
 
           gtag('config', 'G-G800GHY9CD');
         </script>
-        <script src="JSFiles/Cookies.js"></script>
         <script src="JSFiles/AppJS.js"></script>
-        <script src="JSFiles/Geolocation.js"></script>
-        <script src="JSFiles/leaderboard.js"></script>
+        <script src="JSFiles/Cookies.js" ></script>
+        <script src="JSFiles/Geolocation.js" ></script>
+        <link rel="stylesheet" href="ApplicationStyling.css">
     </head>
-    <body onload="loadQuestion(); showLeaderboard({ sorted: true, limit: 10 })">
+    <body onload="loadQuestion()">
+    <header>
+        <a href="index.html"><img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamlogo-header"/></a>
+        <h2>Team Phoenix </h2>
+        <a href="index.html">Home</a>
+        </header>
     <main>
         <div id="question">
             <div id="playerScore"></div>
 
-            <div id="questionTextBox"></div>
-
-            <div id="questionOptionsBox">
-                <div id="questionAnswers"></div>
-                <div id="skipButton"><button type="button" onclick="skipQuestion()">SKIP</button></div>
-                <div id="hintIcon"></div>
+            <div id="questionTextBox">
+                <div id="questionOptions"></div>
             </div>
-            <div id="leaderboard"></div>
+
+            <div id="questionAnswers">
+            </div>
         </div>
 
     </main>
+    <footer>
+        <div class="links">
+            <h3>Socials:</h3>
+            <div id="linksLogos">
+                <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage"/> </a>
+                <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" /></a>
+
+            </div>
+
+        </div>
+
+        <div class="links">
+            <h3>Contact:</h3>
+            <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+        </div>
+        <div class="links">
+            <h3>Location:</h3>
+            <p>Larnaca, Cyprus</p>
+        </div>
+    </footer>
 </body>
 </html>
