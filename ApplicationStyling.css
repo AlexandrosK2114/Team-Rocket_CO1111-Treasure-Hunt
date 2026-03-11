@@ -283,6 +283,49 @@ input{
 .material-icons:hover{
     cursor: pointer;
 }
+/* Leaderboard */
+#leaderboard {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: rgb(230, 220, 220);
+    border: rgb(122, 43, 43) dashed 2px;
+    border-radius: 20px;
+    width: 60%;
+    color: rgb(122, 43, 43);
+    box-shadow: 10px 10px rgb(59, 58, 58);
+}
+
+#leaderboard h2 {
+    color: rgb(59, 58, 58);
+    margin-top: 0;
+}
+
+#leaderboard ol {
+    font-size: 120%;
+    line-height: 1.8;
+}
+
+#leaderboard li {
+    margin: 8px 0;
+}
+
+#viewLeaderboardBtn {
+    margin-top: 1%;
+    padding: 10px 20px;
+    background-color: rgb(59, 58, 58);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 110%;
+    cursor: pointer;
+}
+
+#viewLeaderboardBtn:hover {
+    background-color: rgb(122, 43, 43);
+}
 
 #Hunts{
     list-style-type: none;
