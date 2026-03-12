@@ -38,15 +38,15 @@ function loadQuestion() {
 
                     let questionTexBox = document.getElementById("questionTextBox");
                     let questionOptions=document.getElementById("questionOptions");
-                    questionTexBox.innerHTML += "<p>" + question + "</p>";
-
                     let questionAnswers=document.getElementById("questionAnswers");
 
-                    let skipButton="<button id='skipButton' onclick='skipQuestion()'>SKIP</button>"
-                    questionOptions.innerHTML+=skipButton;
+                    questionTexBox.innerHTML += "<p>" + question + "</p>";
 
-                    let qrScanner="<div><img id='qrIcon' src='/applicationMedia/cameraIcon.png' alt='QR code scanner icon'></div>"
-                    questionOptions.innerHTML+=qrScanner;
+                    let skipButton="<div id='questionOptions'><button id='skipButton' onclick='skipQuestion()'>SKIP</button><img id='qrIcon' src='/applicationMedia/cameraIcon.png' alt='QR code scanner icon'></div>";
+                    questionTexBox.innerHTML+=skipButton;
+
+                    /*let qrScanner="";
+                    questionTexBox.innerHTML+=qrScanner;*/
 
 
                     if (qType === "BOOLEAN") {
