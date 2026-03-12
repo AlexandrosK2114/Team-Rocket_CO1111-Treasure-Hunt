@@ -260,7 +260,7 @@ footer {
     background:  white;
 }
 .huntOption:hover{
-    background-color: grey;
+    background-color:rgb(122,43,43);
     border: solid black 2px;
     color: cornsilk;
 }
