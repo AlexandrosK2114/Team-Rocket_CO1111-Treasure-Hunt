@@ -21,24 +21,24 @@
     </head>
     <body onload="loadQuestion()">
     <header>
-        <a href="index.html"><img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamlogo-header"/></a>
-        <h2>Team Phoenix </h2>
-        <a href="index.html">Home</a>
-        </header>
+        <a href="index.html"><img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamlogo-header"></a>
+        <h1>Team Phoenix </h1>
+        <nav>
+            <span style="border-right:solid 2px rgb(230,220,220); border-left:solid 2px rgb(230,220,220);"><a href="huntsPage.html">Available Hunts</a></span>
+            <span style="border-right:solid 2px rgb(230,220,220)"><a href="">Testing</a></span>
+        </nav>
+    </header>
     <main>
-        <div id="game-container">
             <div id="question">
                 <div id="playerScore"></div>
 
                 <div id="questionTextBox">
-                    <div id="questionOptions"></div>
                 </div>
 
                 <div id="questionAnswers">
                 </div>
             </div>
             <button type="button" id="viewLeaderboardBtn" onclick="showLeaderboard()">View Leaderboard</button>
-        </div>
 
         <div id="leaderboard" style="display: none;"></div>
     </main>
