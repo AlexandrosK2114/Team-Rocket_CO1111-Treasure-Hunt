@@ -32,3 +32,7 @@ function  getCookie(cname) {
     return "";
 }
 
+function cookieExists(cname) {
+    return getCookie(cname) != null && getCookie(cname) !== "";
+}
+
