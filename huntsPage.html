@@ -72,5 +72,14 @@
 
         </footer>
 
+    <script>
+        if (cookieExists("sessionID")) {
+            let response = confirm("A game is already in progress. Would you like to continue?");
+            if (response) {
+                window.location.href = "app.html";
+            }
+        }
+    </script>
+
     </body>
 </html>
