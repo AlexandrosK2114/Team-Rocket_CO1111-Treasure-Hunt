@@ -29,6 +29,7 @@
         </nav>
     </header>
     <main>
+        <div id="game-container">
             <div id="question">
                 <div id="playerScore"></div>
 
@@ -37,9 +38,12 @@
 
                 <div id="questionAnswers">
                 </div>
-            </div>
-            <button type="button" id="viewLeaderboardBtn" onclick="showLeaderboard()">View Leaderboard</button>
 
+                <span id="answerMessage"></span>
+            </div>
+
+            <button type="button" class="appButton" onclick="showLeaderboard()">View Leaderboard</button>
+        </div>
         <div id="leaderboard" style="display: none;"></div>
     </main>
     <footer>

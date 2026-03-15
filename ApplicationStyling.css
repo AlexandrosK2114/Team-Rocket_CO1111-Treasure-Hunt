@@ -1,3 +1,6 @@
+/*********************************************************
+**********************************************************
+**********************************************************/
 *{
     font-family:"Bahnschrift SemiBold";
 }
@@ -77,7 +80,17 @@ main{
 }
 
 #question{
-    align-content: center;
+    display:flex;
+    flex-direction: column;
+    padding:2.5%;
+    margin-top:2%;
+    margin-bottom:2%;
+    background-color:rgb(230,220,220);
+    border:rgb(122,43,43) dashed  2px;
+    border-radius: 20px;
+    color:rgb(122,43,43);
+    box-shadow:10px 10px rgb(59,58,58);
+    align-items: center;
 }
 
 #question >*{
@@ -85,7 +98,7 @@ main{
     padding:2.5%;
     border-radius: 20px;
 }
-.answerButton{
+.appButton{
     background-color:rgb(59,58,58);
     color:white;
     font-size: 120%;
@@ -103,7 +116,7 @@ main{
     cursor:pointer;
 }
 
-.answerButton:hover{
+.appButton:hover{
     cursor:pointer;
 }
 
@@ -341,3 +354,11 @@ input{
     color:red;
 }
 
+#answerMessage{
+    margin-top:1%;
+    display:none;
+
+    p{
+        font-size:110%;
+    }
+}

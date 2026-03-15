@@ -31,6 +31,15 @@ function storeHuntID(id){
    and sends it to /api/start. In return, an object is created from the response. */
 function startHunt() {
 
+    if (cookieExists("sessionID")) {
+        let response = confirm("A game is already in progress. Would you like to continue?");
+        if (response) {
+            window.location.href = "app.html";
+        }
+        else
+            deleteCookie("sessionID");
+    }
+
     const username = document.getElementById("username").value;
 
     if (!username || !username.trim()) {
@@ -41,7 +50,6 @@ function startHunt() {
         displayErrorMessage("Please select a treasure hunt");
         return;
     }
-
 
     else {
         let URL = "https://codecyprus.org/th/api/start?player=" + username.trim() + "&app=" + app + "&treasure-hunt-id=" + HuntID;
