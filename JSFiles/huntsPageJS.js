@@ -32,9 +32,9 @@ function storeHuntID(id){
 function startHunt() {
 
     if (cookieExists("sessionID")) {
-        let response = confirm("A game is already in progress. Would you like to continue?");
+        let response = confirm("A game is already in progress. Would you like to start a new one?");
         if (response) {
-            window.location.href = "app.html";
+            deleteCookie("sessionId");
         }
         else
             deleteCookie("sessionID");
