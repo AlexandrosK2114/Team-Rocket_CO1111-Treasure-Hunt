@@ -329,7 +329,7 @@ footer {
 /*STYLING FOR THE TESTING PAGE*/
 /*GENERAL STYLING*/
 *{
-    font-family: "Bahnschrift SemiBold", serif;
+    font-family: Arial, sans-serif;
 }
 html, body {
     margin: 0;
@@ -376,7 +376,6 @@ input{
     /*HEADERS*/
     nav > span {
         border-radius: 6px;
-        font-size: 120%;
     }
 
     nav > span > a {
@@ -406,7 +405,7 @@ input{
     }
 
     .indexInfo > p, ul,h1{
-        font-size: 110%;
+        font-size: 100%;
     }
 
     #BEGIN{
