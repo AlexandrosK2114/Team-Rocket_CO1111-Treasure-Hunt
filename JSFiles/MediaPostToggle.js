@@ -9,7 +9,7 @@ function togglePosts(){
         showPosts = false;
     } else {
         document.getElementById("socialMediaPosts").style.display="none";
-        p.innerHTML="<span class='material-icons' onClick='togglePosts()'>adjust</span>"
+        p.innerHTML="<span class='material-icons' onClick='togglePosts()'>touch_app</span>"
         showPosts=true;
     }
 

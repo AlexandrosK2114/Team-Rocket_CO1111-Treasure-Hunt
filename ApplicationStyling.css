@@ -2,7 +2,6 @@
 
 header {
     color:white;
-    width: 100%;
     background-color:rgb(122,43,43);
     display: flex;
     flex-direction: row;
@@ -10,14 +9,15 @@ header {
 }
 
 nav>span{
-    padding:1.5vw;
-    border-radius:2px;
+    padding:1.3vw;
+    background-color:white;
+    margin-right:15px;
+    box-shadow:5px 5px rgb(59,58,58);
 }
 
 nav>span>a{
     text-decoration: none;
-    font-size:2vw;
-    color:white;
+    color:rgb(59,58,58);
 
 }
 
@@ -28,11 +28,6 @@ header>a {
 header > h1{
     color:white;
     flex-grow: 0.8;
-    font-size:3vw;
-}
-
-.material-icons:hover{
-    cursor: pointer;
 }
 
 #teamLogo-header {
@@ -45,12 +40,9 @@ header > h1{
 
 footer {
     position: relative;
-    bottom: 0;
-    left: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20%;
     background-color:rgb(71,55,55);
     margin-top:5%;
     padding:3%;
@@ -71,14 +63,9 @@ footer {
     gap:5%;
 }
 
-.logoImage{
-    width:30px;
-    height:30px;
-}
-
 /*STYLING FOR INDEX MAIN CONTENTS*/
 
-#indexInfo{
+.indexInfo{
     display:flex;
     flex-direction: column;
     padding:2.5%;
@@ -87,23 +74,16 @@ footer {
     background-color:rgb(230,220,220);
     border:rgb(122,43,43) dashed  2px;
     border-radius: 20px;
-    width:60%;
     color:rgb(122,43,43);
     box-shadow:10px 10px rgb(59,58,58);
 
 }
 
-#indexInfo>p,ul{
-    font-size: 2vw;
-}
-
-#indexInfo > h1,h2{
+.indexInfo > h1,h2{
     color:rgb(59,58,58);
-    font-size:3vw
 }
 
 #BEGIN{
-    margin:auto;
     background-color:rgb(232,205,200);
     padding:5%  10%;
     font-size:250%;
@@ -112,10 +92,6 @@ footer {
     border-radius:10px;
     color:rgb(59,58,58);
     box-shadow:10px 10px;
-}
-
-#BEGIN > p{
-    color:rgb(59,58,58);
 }
 
 #BEGIN:hover{
@@ -136,6 +112,14 @@ footer {
 
 .material-icons{
     font-size:48px;
+}
+
+.indexInfo>ul>li{
+    margin:3%;
+}
+
+.material-icons:hover{
+    cursor: pointer;
 }
 
 /*STYLING FOR THE HUNTS PAGE*/
@@ -385,4 +369,56 @@ input{
     background-color:white;
     font-size:22px ;
     border-radius: 5px;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width:450px) {
+    /*HEADERS*/
+    nav > span {
+        border-radius: 6px;
+        font-size: 120%;
+    }
+
+    nav > span > a {
+        font-size: 50%;
+    }
+
+    header > h1 {
+        font-size: 25px;
+    }
+
+    /*FOOTERS*/
+    footer{
+        gap:8%;
+    }
+    footer>a,h3,p{
+        font-size:70%;
+    }
+
+    .logoImage{
+        width:18px;
+        height:18px;
+    }
+
+    /*INDEX MAIN*/
+    .indexInfo {
+        width:85%;
+    }
+
+    .indexInfo > p, ul,h1{
+        font-size: 110%;
+    }
+
+    #BEGIN{
+        margin-left:19%;
+    }
+
+}
+
+@media screen and (max-width:700px){
+
+}
+
+@media screen and (max-width:1200px){
+
 }
