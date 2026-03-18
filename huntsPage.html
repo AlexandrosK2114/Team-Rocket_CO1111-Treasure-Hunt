@@ -22,21 +22,24 @@
 
     </head>
 
-    <body onload="getChallenges()">
+    <body onload="getChallenges(); checkForActiveSession()">
 
         <header>
             <a href="index.html"><img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header"></a>
             <h1>Team Phoenix </h1>
             <nav>
-                <span style="border-right:solid 2px rgb(230,220,220); border-left:solid 2px rgb(230,220,220);"><a href="index.html">Homepage</a></span>
-                <span style="border-right:solid 2px rgb(230,220,220)"><a href="">Testing</a></span>
+                <span><a href="index.html">Homepage</a></span>
+                <span><a href="">Testing</a></span>
             </nav>
         </header>
 
         <main>
 
             <div id="registrationDiv">
-                <p><label for="username">Enter username:</label><input type="text" name="username" id="username"></p>
+
+                <div id="existingSessionDiv"></div>
+
+                <p><label for="username">Enter username</label><input type="text" name="username" id="username"></p>
 
                 <ul id="Hunts">
                 </ul>

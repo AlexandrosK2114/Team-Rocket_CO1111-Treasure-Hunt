@@ -71,7 +71,7 @@ footer {
     padding:2.5%;
     margin-top:2%;
     margin-bottom:2%;
-    background-color:rgb(230,220,220);
+    background-color:#E8E8E8;
     border:rgb(122,43,43) dashed  2px;
     border-radius: 20px;
     color:rgb(122,43,43);
@@ -180,12 +180,9 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 2.5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-color: rgb(230, 220, 220);
+    background-color:#E8E8E8;
     border: rgb(122, 43, 43) dashed 2px;
     border-radius: 20px;
-    width: 60%;
     color: rgb(122, 43, 43);
     box-shadow: 10px 10px rgb(59, 58, 58);
 }
@@ -196,14 +193,11 @@ footer {
     display:flex;
     flex-direction: column;
     padding:2.5%;
-    margin-top:2%;
-    margin-bottom:2%;
     background-color:rgb(230,220,220);
     border:rgb(122,43,43) dashed  2px;
     border-radius: 20px;
     color:rgb(122,43,43);
     box-shadow:10px 10px rgb(59,58,58);
-    align-items: center;
 }
 
 #question >*{
@@ -327,6 +321,7 @@ footer {
 }
 
 /*STYLING FOR THE TESTING PAGE*/
+
 /*GENERAL STYLING*/
 *{
     font-family: Arial, sans-serif;
@@ -336,15 +331,12 @@ html, body {
     padding: 0;
 }
 
-
-
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
 
 }
-
 
 main{
     display:flex;
@@ -365,14 +357,14 @@ label{
     margin-right: 8px;
 }
 input{
-    color:rgb(122, 43, 43);;
+    color:rgb(122, 43, 43);
     background-color:white;
     font-size:22px ;
     border-radius: 5px;
 }
 
 /*MEDIA QUERIES*/
-@media screen and (max-width:450px) {
+@media screen and (min-width:0) {
     /*HEADERS*/
     nav > span {
         border-radius: 6px;
@@ -412,12 +404,117 @@ input{
         margin-left:19%;
     }
 
+    /*HUNTS PAGE*/
+    #registrationDiv{
+        margin-top:10%;
+        margin-bottom:10%;
+        width:85%;
+    }
+
+    /*APP PAGE*/
+    #question{
+        margin-top:12%;
+        margin-bottom:12%;
+        width:90%;
+    }
+    /*GENERAL*/
+    input{
+        font-size:15px;
+    }
+
+}
+@media screen and (min-width:450px){
+    /*HEADERS*/
+    nav > span {
+        border-radius: 6px;
+    }
+
+    nav > span > a {
+        font-size: 60%;
+    }
+
+    header > h1 {
+        font-size: 25px;
+    }
+
+    /*FOOTERS*/
+    footer{
+        gap:15%;
+    }
+    footer>a,h3,p{
+        font-size:90%;
+    }
+
+    .logoImage{
+        width:25px;
+        height:25px;
+    }
+
+    /*INDEX MAIN*/
+    .indexInfo {
+        width:85%;
+    }
+
+    .indexInfo > p, ul,h1{
+        font-size: 100%;
+    }
+
+    #BEGIN{
+        margin-left:19%;
+    }
+
+    /*HUNTS PAGE*/
+    #registrationDiv{
+        margin-top:10%;
+        margin-bottom:10%;
+        width:70%;
+    }
 }
 
-@media screen and (max-width:700px){
+@media screen and (min-width:1200px){
+    /*HEADERS*/
+    nav > span {
+        border-radius: 6px;
+    }
 
-}
+    nav > span > a {
+        font-size: 100%;
+    }
 
-@media screen and (max-width:1200px){
+    header > h1 {
+        font-size: 300%;
+    }
 
+    /*FOOTERS*/
+    footer{
+        gap:20%;
+    }
+    footer>a,h3,p{
+        font-size:140%;
+    }
+
+    .logoImage{
+        width:30px;
+        height:30px;
+    }
+
+    /*INDEX MAIN*/
+    .indexInfo {
+        width:50%;
+    }
+
+    .indexInfo > p, ul,h1{
+        font-size: 150%;
+    }
+
+    #BEGIN{
+        margin-left:28%;
+    }
+
+    /*HUNTS PAGE*/
+    #registrationDiv{
+        margin-top:5%;
+        margin-bottom:5%;
+        width:40%;
+    }
 }
