@@ -1,8 +1,6 @@
 var HuntID;
 var app="TeamPhoenixApp";
 
-
-
 function checkForActiveSession(){
     if(cookieExists("sessionID")){
         let regDiv=document.getElementById("existingSessionDiv");
@@ -26,7 +24,7 @@ async function getChallenges() {
     let huntsArray = [];
 
     fetch("https://codecyprus.org/th/api/list")
-        .then(response => response.json()) //Parse JSON text to JavaScript object
+        .then(response => response.json())
         .then(jsonObject => {
             huntsArray =jsonObject.treasureHunts;
 
@@ -35,7 +33,9 @@ async function getChallenges() {
             for(let i=0; i<huntsArray.length; i++) {
                 let listItem=document.createElement("li");
                 let huntID=huntsArray[i].uuid;
-                listItem.innerHTML ="<button onclick='storeHuntID(\""+huntID+"\")' class='huntOption'>Hunt "+(i+1)+"</button>";
+                let huntName=huntsArray[i].name
+                listItem.innerHTML ="<button onclick='storeHuntID(\""+huntID+"\")' class='huntOption'>"+huntName+"</button>";
+                listItem.innerHTML+="<p>"+huntsArray[i].description+"</p>";
                 list.appendChild(listItem);
             }
         });
@@ -62,37 +62,41 @@ function startHunt() {
         return;
     }
 
+    let response=true;
+
     if(cookieExists("sessionID")) {
 
-        let response = confirm("Your previous session will be overwritten. Would you like to proceed?");
+        response = confirm("Your previous session will be lost. Would you like to proceed?");
 
-        if (response) {
-
-            let URL = "https://codecyprus.org/th/api/start?player=" + username.trim() + "&app=" + app + "&treasure-hunt-id=" + HuntID;
-            console.log(URL);
-            fetch(URL)
-                .then(response => response.json()) // Parse JSON text to JavaScript object
-                .then(jsonObject => {
-
-                    //An object is created from the response (shown in console)
-                    let responseObject = jsonObject;
-                    console.log(responseObject);
-                    let status = responseObject.status;
-
-                    if (status === "OK") {
-                        let sessionID = responseObject.session;
-
-                        setCookie("sessionID", sessionID, 1);
-                        setCookie("playerName", username.trim(), 1);
-                        window.location.href = "app.html";
-
-                    } else if (status === "ERROR") {
-                        displayErrorMessage(jsonObject.errorMessages);
-                    }
-                })
-        }
-        else return;
     }
+
+    if (response) {
+
+        let URL = "https://codecyprus.org/th/api/start?player=" + username.trim() + "&app=" + app + "&treasure-hunt-id=" + HuntID;
+        console.log(URL);
+        fetch(URL)
+            .then(response => response.json()) // Parse JSON text to JavaScript object
+            .then(jsonObject => {
+
+                //An object is created from the response (shown in console)
+                let responseObject = jsonObject;
+                console.log(responseObject);
+                let status = responseObject.status;
+
+                if (status === "OK") {
+                    let sessionID = responseObject.session;
+
+                    setCookie("sessionID", sessionID, 1);
+                    setCookie("playerName", username.trim(), 1);
+                    window.location.href = "app.html";
+
+                } else if (status === "ERROR") {
+                    displayErrorMessage(jsonObject.errorMessages);
+                }
+            })
+    }
+    else return;
+
 
 }
 

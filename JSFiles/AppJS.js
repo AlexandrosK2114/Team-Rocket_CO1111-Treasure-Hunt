@@ -1,11 +1,12 @@
+const reloadTime=4000;
 var playerAnswer;
 var userSession=getCookie("sessionID");
 
 function loadQuestion() {
 
-    let questionURL = "https://codecyprus.org/th/api/question?session=" + userSession;
-
     updateScore(userSession);
+
+    let questionURL = "https://codecyprus.org/th/api/question?session=" + userSession;
 
     fetch(questionURL)
         .then(response => response.json()) // Parse JSON text to JavaScript object
@@ -74,13 +75,12 @@ function skipQuestion(){
         .then(skipObject => {
 
             if(skipObject.status==="OK"){
-                alert("Question Skipped");
-                window.location.reload();
+                let message="</p>Question skipped</p>";
+                message+="<p>You've lost "+(-1* Number(skipObject.scoreAdjustment))+" points!</p>";
+                displayMessage(message,true);
             }
             else if(skipObject.status==="ERROR") {
-                let messageContainer = document.getElementById("answerMessage");
-                messageContainer.style.display="block";
-                messageContainer.innerHTML = "<p>" +skipObject.errorMessages+ + "</p>";
+                displayMessage(skipObject.errorMessages,false);
             }
         })
 }
@@ -93,35 +93,38 @@ function validateAnswer(answer,type){
     else{
         playerAnswer=document.getElementById("answerBox").value;
     }
-    if(!playerAnswer){
+    if(playerAnswer===undefined || playerAnswer===null){
         alert("ERROR");
         return;
     }
 
-    console.log(playerAnswer);
-    console.log(userSession);
     let answerURL="https://codecyprus.org/th/api/answer?session="+userSession+"&answer="+playerAnswer;
 
     fetch(answerURL)
         .then(response => response.json()) // Parse JSON text to JavaScript object
         .then(answerObject => {
 
+            let messageContainer = document.getElementById("answerMessage");
+
             let status=answerObject.status;
 
             if(status==="OK"){
                 if(answerObject.correct===true) {
-                    alert(answerObject.message);
-                    window.location.reload();
+                    messageContainer.innerHTML="<p>"+answerObject.message+"</p>"
+                    setTimeout(reloadPage,5000);
                 }
                 else {
-                    let messageContainer = document.getElementById("answerMessage");
                     messageContainer.style.display="block";
-                    messageContainer.innerHTML = "<p>" + answerObject.message + "</p>";
+                    messageContainer.innerHTML = "<p>" + answerObject.message+"</p>";
+                    messageContainer.innerHTML+="<p>You've lost "+(-1*Number(answerObject.scoreAdjustment))+" points!" + "</p>";
                     updateScore();
                 }
             }
-            else if(status==="ERROR")
-                alert(answerObject.errorMessages);
+            else if(status==="ERROR") {
+                alert(answerObject.errorMessages+" Redirection you to the selection page.");
+                deleteCookie("sessionID");
+                window.location.href="huntsPage.html";
+            }
         })
 }
 
@@ -138,5 +141,19 @@ function updateScore(){
             }
             else alert(scoreObject.errorMessages);
         })
+}
 
+function displayMessage(message,reload){
+
+    let messageContainer = document.getElementById("answerMessage");
+
+    messageContainer.innerHTML=message;
+    messageContainer.style.display="block";
+
+    if(reload)
+        setTimeout(reloadPage,reloadTime);
+}
+
+function reloadPage(){
+    window.location.reload();
 }

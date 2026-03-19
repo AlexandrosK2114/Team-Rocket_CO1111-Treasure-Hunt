@@ -3,7 +3,6 @@ const recall=30000;
 var longitude;
 var latitude;
 
-
 //Function which stores the user's location
 function storePosition(position){
     longitude=position.coords.longitude;
