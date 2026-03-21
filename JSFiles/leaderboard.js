@@ -1,9 +1,8 @@
 function findMinePosition(data, playerName) {
     const leaderboard = data?.leaderboard || [];
     const index = leaderboard.findIndex(entry =>
-        String(entry.player).toLowerCase() === String(playerName || "").toLowerCase()// the || and empty string is to avoid errors
+        String(entry.player).toLowerCase() === String(playerName || "").toLowerCase()
     );
-    return index >= 0 
     if (index >= 0) {
         return index + 1;
     } else {
