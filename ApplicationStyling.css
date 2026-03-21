@@ -1,31 +1,23 @@
-*{
-    font-family:"Bahnschrift SemiBold";
-}
-html, body {
-    margin: 0;
-    padding: 0;
-}
+/*STYLING FOR THE HEADERS*/
 
 header {
     color:white;
-    width: 100%;
-    height: 160px;
     background-color:rgb(122,43,43);
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
 
 nav>span{
-    padding:10px;
-    border-radius:2px;
+    padding:1.3vw;
+    background-color:white;
+    margin-right:15px;
+    box-shadow:5px 5px rgb(59,58,58);
 }
 
 nav>span>a{
     text-decoration: none;
-    font-size:120%;
-    color:white;
+    color:rgb(59,58,58);
 
 }
 
@@ -38,46 +30,174 @@ header > h1{
     flex-grow: 0.8;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-#teamlogo-header {
-    height: 130px;
+#teamLogo-header {
+    max-height: 12vw;
+    width:auto;
     margin: 10px;
 }
 
-main{
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-}
+/*STYLING FOR THE FOOTERS*/
 
-main{
+footer {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background-color:rgb(71,55,55);
+    margin-top:5%;
+    padding:3%;
 }
 
-#indexInfo, #question{
+.links{
+    margin-left: 2%;
+    color:white;
+}
+
+.links > p >a{
+    color: white;
+}
+
+#linksLogos {
+    display: flex;
+    flex-direction: row;
+    gap:5%;
+}
+
+/*STYLING FOR INDEX MAIN CONTENTS*/
+
+.indexInfo{
     display:flex;
     flex-direction: column;
     padding:2.5%;
     margin-top:2%;
     margin-bottom:2%;
-    background-color:rgb(230,220,220);
+    background-color:#E8E8E8;
     border:rgb(122,43,43) dashed  2px;
     border-radius: 20px;
-    width:60%;
     color:rgb(122,43,43);
     box-shadow:10px 10px rgb(59,58,58);
 
 }
 
+.indexInfo > h1,h2{
+    color:rgb(59,58,58);
+}
+
+#BEGIN{
+    background-color:rgb(232,205,200);
+    padding:5%  10%;
+    font-size:250%;
+    cursor:pointer;
+    border:solid rgb(232,205,200) 2px;
+    border-radius:10px;
+    color:rgb(59,58,58);
+    box-shadow:10px 10px;
+}
+
+#BEGIN:hover{
+    background-color:rgb(122,43,43);
+    border:black;
+    color:cornsilk;
+    box-shadow:10px 10px black;
+}
+
+/*from https://www.w3schools.com/css/css3_buttons.asp*/
+#BEGIN:active{
+    transform: translateY(4px)
+}
+#mediaWidgets{
+    background-color:rgb(232,228,223);
+    margin:auto;
+}
+
+.material-icons{
+    font-size:48px;
+}
+
+.indexInfo>ul>li{
+    margin:3%;
+}
+
+.material-icons:hover{
+    cursor: pointer;
+}
+
+/*STYLING FOR THE HUNTS PAGE*/
+
+.huntOption {
+    font-size: 20px;
+    cursor: pointer;
+    border: solid  rgb(122, 43, 43) 2px;
+    border-radius: 10px;
+    color:  rgb(122, 43, 43);
+    box-shadow: 2px 2px 0 rgb(122, 43, 43);
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 6px 0;
+    background:  white;
+}
+.huntOption:hover{
+    background-color:rgb(122,43,43);
+    border: solid rgb(122,43,43);
+    color: cornsilk;
+}
+
+#Hunts{
+    list-style-type: none;
+}
+
+#errorMessage{
+    display:none;
+    background-color: white;
+    font-size: 150%;
+    padding:10px;
+    border-radius: 20px;
+    color:red;
+}
+
+#start {
+    background-color: rgb(232,228,223);
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border: solid rgb(232,228,223) 2px;
+    border-radius: 6px;
+    color: rgb(59,58,58);
+    box-shadow: 4px 4px 0 rgb(120,120,120);
+    float: left;
+    margin-right: 10px;
+}
+#start:hover {
+    background-color: grey;
+    border: solid black 2px;
+    color: cornsilk;
+}
+#start:active {
+    transform: translateY(3px);
+    box-shadow: 1px 1px 0 rgb(120,120,120);
+}
+#registrationDiv{
+    display: flex;
+    flex-direction: column;
+    padding: 2.5%;
+    background-color:#E8E8E8;
+    border: rgb(122, 43, 43) dashed 2px;
+    border-radius: 20px;
+    color: rgb(122, 43, 43);
+    box-shadow: 10px 10px rgb(59, 58, 58);
+}
+
+/*STYLING FOR THE APP PAGE*/
+
 #question{
-    align-content: center;
+    display:flex;
+    flex-direction: column;
+    padding:2.5%;
+    background-color:rgb(230,220,220);
+    border:rgb(122,43,43) dashed  2px;
+    border-radius: 20px;
+    color:rgb(122,43,43);
+    box-shadow:10px 10px rgb(59,58,58);
 }
 
 #question >*{
@@ -85,7 +205,7 @@ main{
     padding:2.5%;
     border-radius: 20px;
 }
-.answerButton{
+.appButton{
     background-color:rgb(59,58,58);
     color:white;
     font-size: 120%;
@@ -103,7 +223,7 @@ main{
     cursor:pointer;
 }
 
-.answerButton:hover{
+.appButton:hover{
     cursor:pointer;
 }
 
@@ -135,156 +255,43 @@ main{
 
 #questionOptions{
     display: flex;
+    flex-direction:row;
     gap:10px;
 }
 
 #qrIcon{
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
     background-color:rgb(59,58,58);
     border-radius: 5px;
 }
 
-
-#indexInfo > h1,h2{
-    color:rgb(59,58,58);
-}
-
-#BEGIN{
-    background-color:rgb(232,205,200);
-    margin-left:30%;
-    padding:5%  10%;
-    font-size:250%;
-    cursor:pointer;
-    border:solid rgb(232,205,200) 2px;
-    border-radius:10px;
-    color:rgb(59,58,58);
-    box-shadow:10px 10px;
-}
-
-#BEGIN > p{
-    color:rgb(59,58,58);
-}
-
-#BEGIN:hover{
-    background-color:rgb(122,43,43);
-    border:black;
-    color:cornsilk;
-    box-shadow:10px 10px black;
-}
-
-/*from https://www.w3schools.com/css/css3_buttons.asp*/
-#BEGIN:active{
-    transform: translateY(4px)
-}
-#mediaWidgets{
-    background-color:rgb(232,228,223);
-    margin:auto;
-}
-
-footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20%;
-    background-color:rgb(71,55,55);
-    margin-top:5%;
-    padding:3%;
-}
-
-.links{
-    margin-left: 2%;
-    color:white;
-}
-
-.links > p >a{
-        color: white;
-}
-#start {
-    background-color: rgb(232,228,223);
+#viewLeaderboardBtn {
+    margin-top: 1%;
     padding: 10px 20px;
-    font-size: 24px;
-    cursor: pointer;
-    border: solid rgb(232,228,223) 2px;
-    border-radius: 6px;
-    color: rgb(59,58,58);
-    box-shadow: 4px 4px 0 rgb(120,120,120);
-    float: left;
-    margin-right: 10px;
-}
-#start:hover {
-    background-color: grey;
-    border: solid black 2px;
-    color: cornsilk;
-}
-#start:active {
-    transform: translateY(3px);
-    box-shadow: 1px 1px 0 rgb(120,120,120);
-}
-#registrationDiv {
-    display: flex;
-    flex-direction: column;
-    padding: 2.5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-color: rgb(230, 220, 220);
-    border: rgb(122, 43, 43) dashed 2px;
-    border-radius: 20px;
-    width: 60%;
-    color: rgb(122, 43, 43);
-    box-shadow: 10px 10px rgb(59, 58, 58);
-}
-#linksLogos {
-    display: flex;
-    flex-direction: row;
-    gap:5%;
-}
-
-.logoImage{
-    width:30px;
-    height:30px;
-}
-.huntOption {
-    font-size: 20px;
-    cursor: pointer;
-    border: solid  rgb(122, 43, 43) 2px;
-    border-radius: 10%;
-    color:  rgb(122, 43, 43);
-    box-shadow: 2px 2px 0 rgb(122, 43, 43);
-    display: inline-block;
-    padding: 8px 16px;
-    margin: 6px 0;
-    background:  white;
-}
-.huntOption:hover{
-    background-color: grey;
-    border: solid black 2px;
-    color: cornsilk;
-}
-
-label{
-    color: #7b1f1f;
-    font-weight: bold;
-    font-size: 20px;
-    margin-right: 8px;
-}
-input{
-    color:rgb(122, 43, 43);;
-    background-color:white;
-    font-size:22px ;
-    border-radius: 5px;
-}
-.material-icons{
-    font-size:48px;
-}
-
-.material-icons:hover{
+    background-color: rgb(59, 58, 58);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 110%;
     cursor: pointer;
 }
-/* Leaderboard */
+
+#viewLeaderboardBtn:hover {
+    background-color: rgb(122, 43, 43);
+}
+
+#answerMessage{
+    margin-top:1%;
+    display:none;
+
+    p{
+        font-size:110%;
+    }
+}
+
+/*STYLING FOR THE LEADERBOARD PAGE*/
+
 #leaderboard {
     display: flex;
     flex-direction: column;
@@ -313,19 +320,201 @@ input{
     margin: 8px 0;
 }
 
-#viewLeaderboardBtn {
-    margin-top: 1%;
-    padding: 10px 20px;
-    background-color: rgb(59, 58, 58);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 110%;
-    cursor: pointer;
+/*STYLING FOR THE TESTING PAGE*/
+
+/*GENERAL STYLING*/
+*{
+    font-family: Arial, sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
-#viewLeaderboardBtn:hover {
-    background-color: rgb(122, 43, 43);
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
+main{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label{
+    color: #7b1f1f;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 8px;
+}
+input{
+    color:rgb(122, 43, 43);
+    background-color:white;
+    font-size:22px ;
+    border-radius: 5px;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (min-width:0) {
+    /*HEADERS*/
+    nav > span {
+        border-radius: 6px;
+    }
+
+    nav > span > a {
+        font-size: 50%;
+    }
+
+    header > h1 {
+        font-size: 25px;
+    }
+
+    /*FOOTERS*/
+    footer{
+        gap:8%;
+    }
+    footer>a,h3,p{
+        font-size:70%;
+    }
+
+    .logoImage{
+        width:18px;
+        height:18px;
+    }
+
+    /*INDEX MAIN*/
+    .indexInfo {
+        width:85%;
+    }
+
+    .indexInfo > p, ul,h1{
+        font-size: 100%;
+    }
+
+    #BEGIN{
+        margin-left:19%;
+    }
+
+    /*HUNTS PAGE*/
+    #registrationDiv{
+        margin-top:10%;
+        margin-bottom:10%;
+        width:85%;
+    }
+
+    /*APP PAGE*/
+    #question{
+        margin-top:12%;
+        margin-bottom:12%;
+        width:90%;
+    }
+    /*GENERAL*/
+    input{
+        font-size:15px;
+    }
+
+}
+@media screen and (min-width:450px){
+    /*HEADERS*/
+    nav > span {
+        border-radius: 6px;
+    }
+
+    nav > span > a {
+        font-size: 60%;
+    }
+
+    header > h1 {
+        font-size: 25px;
+    }
+
+    /*FOOTERS*/
+    footer{
+        gap:15%;
+    }
+    footer>a,h3,p{
+        font-size:90%;
+    }
+
+    .logoImage{
+        width:25px;
+        height:25px;
+    }
+
+    /*INDEX MAIN*/
+    .indexInfo {
+        width:85%;
+    }
+
+    .indexInfo > p, ul,h1{
+        font-size: 100%;
+    }
+
+    #BEGIN{
+        margin-left:19%;
+    }
+
+    /*HUNTS PAGE*/
+    #registrationDiv{
+        margin-top:10%;
+        margin-bottom:10%;
+        width:70%;
+    }
+}
+
+@media screen and (min-width:1200px){
+    /*HEADERS*/
+    nav > span {
+        border-radius: 6px;
+    }
+
+    nav > span > a {
+        font-size: 100%;
+    }
+
+    header > h1 {
+        font-size: 300%;
+    }
+
+    /*FOOTERS*/
+    footer{
+        gap:20%;
+    }
+    footer>a,h3,p{
+        font-size:140%;
+    }
+
+    .logoImage{
+        width:30px;
+        height:30px;
+    }
+
+    /*INDEX MAIN*/
+    .indexInfo {
+        width:50%;
+    }
+
+    .indexInfo > p, ul,h1{
+        font-size: 150%;
+    }
+
+    #BEGIN{
+        margin-left:28%;
+    }
+
+    /*HUNTS PAGE*/
+    #registrationDiv{
+        margin-top:5%;
+        margin-bottom:5%;
+        width:40%;
+    }
+}

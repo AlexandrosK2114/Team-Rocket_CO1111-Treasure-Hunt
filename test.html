@@ -1,19 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
 
-      gtag('config', 'G-G800GHY9CD');
-    </script>
-</head>
-<body>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-</body>
+          gtag('config', 'G-G800GHY9CD');
+        </script>
+        <link rel="stylesheet" href="ApplicationStyling.css">
+
+    </head>
+    <body>
+
+        <header>
+            <a href="index.html"><img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header"></a>
+            <h1>Team Phoenix </h1>
+            <nav>
+                <span style="border-right:solid 2px rgb(230,220,220); border-left:solid 2px rgb(230,220,220);"><a href="index.html">Homepage</a></span>
+                <span style="border-right:solid 2px rgb(230,220,220)"><a href="huntsPage.html">Available Hunts</a></span>
+            </nav>
+        </header>
+
+        <main>
+
+            <div id="">
+                <button class="testingSections">Unit Testing</button>
+                <button class="testingSections">User Acceptance</button>
+                <button class="testingSections">Heuristics</button>
+            </div>
+
+            <div id="unitTesting">
+                <p><a href="Testing/huntListTest.html">Testing list of treasure hunts</a></p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="links">
+                <h3>Socials:</h3>
+
+                <div id="linksLogos">
+                    <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage" alt="Logo of social media platform X"/> </a>
+                    <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" alt="Logo of social media platform Instrgram"/></a>
+                </div>
+
+            </div>
+
+            <div class="links">
+                <h3>Contact:</h3>
+                <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+            </div>
+
+            <div class="links">
+                <h3>Location:</h3>
+                <p>Larnaca, Cyprus</p>
+            </div>
+        </footer>
+
+    </body>
+
 </html>
