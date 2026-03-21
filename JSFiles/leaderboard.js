@@ -1,13 +1,15 @@
 function findMinePosition(data, playerName) {
     const leaderboard = data?.leaderboard || [];
+    if (!Array.isArray(leaderboard)) {
+        return 0;
+    }
     const index = leaderboard.findIndex(entry =>
         String(entry.player).toLowerCase() === String(playerName || "").toLowerCase()
     );
     if (index >= 0) {
         return index + 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 function goBack() {
@@ -19,7 +21,7 @@ function goBack() {
 }
 
 function startAgain() {
-    if (typeof deleteCookie === "function") {
+    if (typeof deleteCookie === "function") {// makes deleteCookie a function if it's not already, deletes the sessionID and playerName cookies
         deleteCookie("sessionID");
         deleteCookie("playerName");
     }
@@ -70,13 +72,14 @@ async function showLeaderboard(sorted, limit, completionMode) {
 
         const leaderboard = data.leaderboard || [];
         const myPosition = findMinePosition(data, playerName);
+        const positionNum = Number(myPosition);
         const displayList = limit ? leaderboard.slice(0, limit) : leaderboard;
-        const myEntry = leaderboard[myPosition - 1];
-        const inTopList = myPosition > 0 && myPosition <= displayList.length;
+        const myEntry = leaderboard[positionNum - 1];
+        const inTopList = positionNum > 0 && positionNum <= displayList.length;
 
         let html = "<h2>Leaderboard</h2>";
-        if (myPosition > 0) {
-            html += `<p class="your-position">Your position: ${myPosition}</p>`;
+        if (positionNum > 0) {
+            html += "<p class=\"your-position\">You are: " + positionNum + "</p>";
         }
         html += "<ol></ol>";
         leaderboardContainer.innerHTML = html;
@@ -93,10 +96,10 @@ async function showLeaderboard(sorted, limit, completionMode) {
         });
 
         // If user is not in top list, add them at the end so they can see themselves
-        if (myPosition > 0 && !inTopList && myEntry) {
+        if (positionNum > 0 && !inTopList && myEntry) {
             const li = document.createElement("li");
             li.className = "leaderboard-entry--you";
-            li.innerHTML = `${myPosition}. <b>${myEntry.player}</b> — ${myEntry.score} points (you)`;
+            li.innerHTML = positionNum + ". <b>" + myEntry.player + "</b> — " + myEntry.score + " points (you)";
             list.appendChild(li);
         }
 
