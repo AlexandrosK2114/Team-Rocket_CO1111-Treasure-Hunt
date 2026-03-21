@@ -1,11 +1,3 @@
-function goBack() {
-    const gameContainer = document.getElementById('game-container');
-    const leaderboardContainer = document.getElementById('leaderboard');
-
-    if (leaderboardContainer) leaderboardContainer.style.display = 'none';
-    if (gameContainer) gameContainer.style.display = 'block';
-}
-
 async function showLeaderboard({ sorted = true, limit = 10 } = {}) {
     const leaderboardContainer = document.getElementById('leaderboard');
     const gameContainer = document.getElementById('game-container');
@@ -44,8 +36,6 @@ async function showLeaderboard({ sorted = true, limit = 10 } = {}) {
             li.innerHTML = `<b>${index + 1}. ${entry.player}</b> — ${entry.score} points`;
             list.appendChild(li);
         });
-
-        leaderboardContainer.innerHTML += `<button type="button" onclick="goBack()">Back to Game</button>`;
 
         gameContainer.style.display = "none";
         leaderboardContainer.style.display = "block";

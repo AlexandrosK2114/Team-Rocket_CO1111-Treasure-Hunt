@@ -1,4 +1,4 @@
-const reloadTime=4000;
+const reloadTime=3500;
 var playerAnswer;
 var userSession=getCookie("sessionID");
 
@@ -15,7 +15,7 @@ function loadQuestion() {
             let status=questionObject.status;
 
             if(status==="OK") {
-                if (!questionObject.completed===true) {
+                if (questionObject.completed!==true) {
 
                     let question = questionObject.questionText;
                     let qType = questionObject.questionType;
@@ -25,11 +25,9 @@ function loadQuestion() {
 
                     questionTexBox.innerHTML += "<p>" + question + "</p>";
 
-                    let skipButton="<div id='questionOptions'><button class='appButton' onclick='skipQuestion()'>SKIP</button><img id='qrIcon' src='/applicationMedia/cameraIcon.png' alt='QR code scanner icon'></div>";
-                    questionTexBox.innerHTML+=skipButton;
-
-                    /*let qrScanner="";
-                    questionTexBox.innerHTML+=qrScanner;*/
+                    let answerButtons="<div id='questionOptions'><button class='appButton' onclick='skipQuestion()'>SKIP</button>";
+                    answerButtons+="<button onclick='openCamera()'><img id='qrIcon' src='/applicationMedia/cameraIcon.png' alt='QR code scanner icon'></button></div>";
+                    questionTexBox.innerHTML+=answerButtons;
 
                     if (qType === "BOOLEAN") {
                         let newElement1 = "<button class='appButton' onClick='validateAnswer(true,\"" + qType + "\")'>True</button>";
@@ -58,9 +56,10 @@ function loadQuestion() {
                         questionAnswers.innerHTML += inputBox;
                     }
                 }
-                else
-                    window.location.href="leaderboard.html";
-
+                else {
+                    document.getElementById("question").style.display="none";
+                    document.getElementById("congratulatoryMessage").style.display="block";
+                }
             } else if (status === "ERROR")
                 alert(questionObject.errorMessages);
         })
@@ -77,6 +76,7 @@ function skipQuestion(){
             if(skipObject.status==="OK"){
                 let message="</p>Question skipped</p>";
                 message+="<p>You've lost "+(-1* Number(skipObject.scoreAdjustment))+" points!</p>";
+                message+="<p>Loading next question...</p>";
                 displayMessage(message,true);
             }
             else if(skipObject.status==="ERROR") {
@@ -92,6 +92,11 @@ function validateAnswer(answer,type){
     }
     else{
         playerAnswer=document.getElementById("answerBox").value;
+
+        if(playerAnswer===""){
+            displayMessage("Please provide an answer");
+            return;
+        }
     }
     if(playerAnswer===undefined || playerAnswer===null){
         alert("ERROR");
@@ -104,24 +109,28 @@ function validateAnswer(answer,type){
         .then(response => response.json()) // Parse JSON text to JavaScript object
         .then(answerObject => {
 
-            let messageContainer = document.getElementById("answerMessage");
-
             let status=answerObject.status;
 
+            let message="";
+
             if(status==="OK"){
+
+
                 if(answerObject.correct===true) {
-                    messageContainer.innerHTML="<p>"+answerObject.message+"</p>"
-                    setTimeout(reloadPage,5000);
+                    message+="<p>"+answerObject.message+"</p>";
+                    message+="<p>You've gained "+answerObject.scoreAdjustment+" points!</p>";
+                    message+="<p>Loading next question...</p>";
+                    displayMessage(message, true);
                 }
                 else {
-                    messageContainer.style.display="block";
-                    messageContainer.innerHTML = "<p>" + answerObject.message+"</p>";
-                    messageContainer.innerHTML+="<p>You've lost "+(-1*Number(answerObject.scoreAdjustment))+" points!" + "</p>";
-                    updateScore();
+                    message+= "<p>" + answerObject.message+"</p>";
+                    message+="<p>You've lost "+(-1*Number(answerObject.scoreAdjustment))+" points!" + "</p>";
+                    displayMessage(message,false);
                 }
+                updateScore();
             }
             else if(status==="ERROR") {
-                alert(answerObject.errorMessages+" Redirection you to the selection page.");
+                alert(answerObject.errorMessages+" Redirecting you to the selection page.");
                 deleteCookie("sessionID");
                 window.location.href="huntsPage.html";
             }
@@ -156,4 +165,8 @@ function displayMessage(message,reload){
 
 function reloadPage(){
     window.location.reload();
+}
+
+function openCamera(){
+    window.location.href="/reader.html";
 }
