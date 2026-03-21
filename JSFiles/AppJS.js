@@ -59,6 +59,7 @@ function loadQuestion() {
                 else {
                     document.getElementById("question").style.display="none";
                     document.getElementById("congratulatoryMessage").style.display="block";
+                    setCookie("huntComplete","true",1);
                 }
             } else if (status === "ERROR")
                 alert(questionObject.errorMessages);

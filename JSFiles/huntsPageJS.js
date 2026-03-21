@@ -3,18 +3,30 @@ var app="TeamPhoenixApp";
 
 function checkForActiveSession(){
     if(cookieExists("sessionID")){
+
+        let huntCompleted=getCookie("huntComplete");
         let regDiv=document.getElementById("existingSessionDiv");
-        let element="<p>A Treasure Hunt is already in progress. Would you like to continue this session? "
-        element+="<button type='button' onclick='loadActiveSession()'>Continue</button></p>"
-        regDiv.innerHTML+=element;
+        let element="";
+
+        if(huntCompleted==="true"){
+            element="<p>Would you like to view your placement in your previous session?"
+            element+="<button type='button' onclick='loadActiveSession(true)'>Leaderboard</button></p>"
+            regDiv.innerHTML+=element;
+        }
+        else {
+            element = "<p>A Treasure Hunt is already in progress. Would you like to continue this session? "
+            element += "<button type='button' onclick='loadActiveSession(false)'>Continue</button></p>"
+            regDiv.innerHTML += element;
+        }
     }
 }
 
-function loadActiveSession(){
+function loadActiveSession(completed){
     let response = confirm("Are you sure?");
 
     if (response) {
-        window.location.href="app.html";
+        if(completed) window.location.href="leaderboard.html";
+        else window.location.href="app.html";
     }
 
 }
@@ -88,6 +100,7 @@ function startHunt() {
 
                     setCookie("sessionID", sessionID, 1);
                     setCookie("playerName", username.trim(), 1);
+                    setCookie("huntComplete","false", 1);
                     window.location.href = "app.html";
 
                 } else if (status === "ERROR") {
