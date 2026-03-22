@@ -69,7 +69,8 @@ footer {
 }
 
 /*STYLING FOR INDEX MAIN CONTENTS*/
-.indexInfo {
+.indexInfo{
+    color:rgb(59,58,58);
     display: flex;
     flex-direction: column;
     padding: 2.5%;
@@ -78,14 +79,11 @@ footer {
     background-color: #FAFAFA;
     border: #FAFAFA solid 2px;
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;}
-
-.indexInfo > h1,h2{
-    color:rgb(59,58,58);
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
 }
 
 .indexInfo:hover{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
 }
 
 #BEGIN{
@@ -109,10 +107,21 @@ footer {
     transform: scale(1.05);
 }
 
-/*from https://www.w3schools.com/css/css3_buttons.asp*/
-#BEGIN:active{
-    transform: translateY(4px)
+.indexInfo{
+    list-style: none;
 }
+.indexInfo li {
+    color:black ;
+    background: #f5f5f5;
+    margin-bottom: 12px;
+    border: rgb(122, 43, 43)solid 4px;
+    border-radius: 8px;
+    box-shadow:8px 8px black;
+}
+.indexInfo li:hover{
+    background-color:rgb(122, 43, 43) ;
+}
+
 #mediaWidgets{
     background-color:rgb(232,228,223);
     margin:auto;
@@ -200,17 +209,17 @@ footer {
 #question{
     display:flex;
     flex-direction: column;
-    padding:2.5%;
-    background-color:rgb(230,220,220);
-    border:rgb(122,43,43) dashed  2px;
+    padding:1.5%;
+    background-color:#FAFAFA;
+    border: #FAFAFA solid 2px;
     border-radius: 20px;
-    color:rgb(122,43,43);
-    box-shadow:10px 10px rgb(59,58,58);
+    color:rgb(59,58,58);
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
 }
 
 #question >*{
-    background-color: rgb(252,252,252);
-    padding:2.5%;
+    background-color:#FAFAFA;
+    padding:1.5%;
     border-radius: 20px;
 }
 .appButton{
@@ -238,6 +247,7 @@ footer {
 #playerScore{
     width:16%;
     font-size: 140%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
 }
 
 #questionTextBox{
@@ -249,6 +259,7 @@ footer {
     align-items: center;
     gap:2%;
     font-size: 130%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
 }
 
 #questionAnswers{
@@ -272,21 +283,6 @@ footer {
     height:40px;
     background-color:rgb(59,58,58);
     border-radius: 5px;
-}
-
-#viewLeaderboardBtn {
-    margin-top: 1%;
-    padding: 10px 20px;
-    background-color: rgb(59, 58, 58);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 110%;
-    cursor: pointer;
-}
-
-#viewLeaderboardBtn:hover {
-    background-color: rgb(122, 43, 43);
 }
 
 #answerMessage{
@@ -525,18 +521,3 @@ input{
     }
 }
 
-.indexInfo ul{
-    list-style: none;
-}
-.indexInfo li {
-    display: inline-block;
-    color:black ;
-    background: #f5f5f5;
-    margin-bottom: 12px;
-    border: rgb(122, 43, 43)solid 4px;
-    border-radius: 8px;
-    box-shadow:8px 8px black;
-}
-.indexInfo li:hover{
-    background-color:rgb(122, 43, 43) ;
-}
