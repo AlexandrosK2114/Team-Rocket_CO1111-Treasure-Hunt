@@ -1,9 +1,13 @@
+:root{
+    --darkBrown:rgb(71,55,55);
+}
+
 /*STYLING FOR THE HEADERS*/
 
 header {
     color:white;
     /*background-color:rgb(122,43,43);*/
-    background-color:rgb(71,55,55);
+    background-color:var(--darkBrown);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -44,7 +48,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color:rgb(71,55,55);
+    background-color:var(--darkBrown);
     margin-top:5%;
     padding:3%;
 }
@@ -85,21 +89,24 @@ footer {
 }
 
 #BEGIN{
-    background-color:rgb(232,205,200);
-    padding:5%  10%;
+    margin-top:10%;
+    margin-bottom:10%;
+    padding:50px;
+    background-color:var(--darkBrown);
     font-size:250%;
     cursor:pointer;
-    border:solid rgb(232,205,200) 2px;
+    border:solid var(--darkBrown) 2px;
     border-radius:10px;
-    color:rgb(59,58,58);
-    box-shadow:10px 10px;
+    color:white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 -25px 18px -14px inset,rgba(0, 0, 0, 0.3) 0 1px 2px,rgba(0, 0, 0, 0.3) 0 2px 4px,rgba(0, 0, 0, 0.3) 0 4px 8px,rgba(0, 0, 0, 0.3) 0 8px 16px,rgba(0, 0, 0, 0.3) 0 16px 32px;
+
 }
 
 #BEGIN:hover{
-    background-color:rgb(122,43,43);
-    border:black;
-    color:cornsilk;
-    box-shadow:10px 10px black;
+    background-color:#FAFAFA;
+    border:#FAFAFA;
+    color:rgb(71,55,55);
+    transform: scale(1.05);
 }
 
 /*from https://www.w3schools.com/css/css3_buttons.asp*/
