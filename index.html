@@ -2,6 +2,7 @@
 <html lang="en">
 
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Homepage</title>
@@ -19,12 +20,14 @@
         <script src="JSFiles/MediaPostToggle.js"></script>
         <link rel="stylesheet" href="ApplicationStyling.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="fireAnimation.css">
+        <script src="JSFiles/fireAnimation.js"></script>
 
     </head>
 
     <body onload="togglePosts()">
 
-        <header>
+        <header id="headerFire">
             <a href="index.html"><img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header"></a>
             <h1>Team Phoenix </h1>
             <nav>
@@ -36,13 +39,16 @@
 
         <main>
 
+            <h1><u>Our Application</u></h1>
             <div class="indexInfo">
 
-                <h1><u>The Application</u></h1>
+                <p>Our team has developed an API driven Treasure Hunt application. The intention of this project
+                    was to demonstrate how a coordinated team of individuals is able to produce a professional level
+                    web application, utilising simple technologies such as HTML, CSS, JavaScript and the API itself.
+                    Feel free to try out our app by clicking the button below or the navigation link above.
+                </p>
 
-                <p>We have developed a web-based treasure hunt. The application communicates with a server to retrieve the data required for displaying questions, evaluating answers and tracking user progression.</p>
-
-                <h1>Rules</h1>
+                <!--<h1>Rules</h1>
 
                 <ul>
                     <li>Begin by pressing BEGIN or "Available Hunts".</li>
@@ -52,14 +58,13 @@
                     <li>Some questions cannot be skipped.</li>
                     <li>Skipping questions deducts points.</li>
                     <li>Several questions are location based.</li>
-                </ul>
+                </ul>-->
 
-                <p><a href="huntsPage.html"><button id="BEGIN">BEGIN</button></a></p>
+
 
             </div>
 
-            <p style="font-size: 140%">Look at Our Development Process</p>
-            <p id="toggleIcon"></p>
+            <p><a href="huntsPage.html"><button id="BEGIN">BEGIN</button></a></p>
 
             <div id="socialMediaPosts">
                 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We are very proud to announce that our Team phoenix has now begun working on the project. <a href="https://t.co/DdwItRlh4s">pic.twitter.com/DdwItRlh4s</a></p>&mdash; Teamphoenix.UCLan (@T_phoenix0) <a href="https://twitter.com/T_phoenix0/status/2020476023763018121?ref_src=twsrc%5Etfw">February 8, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -79,15 +84,30 @@
                 <h1>Our Team</h1>
 
                 <ul>
-                    <li>Alexandros Kyriakou (Team leader)</li>
-                    <li>Charalambos Zornis(Design)</li>
-                    <li>Owais Oal Homsi(Contributors)</li>
-                    <li>Tymofii Klochko Shemiakin(Javascript,Testing)</li>
-                    <li>Grigoris Kirpis(Social media,Styling,Testing)</li>
-                    <li>Robyn Kyprianos Arendt(Contributors)</li>
+                    <li><h4>Alexandros Kyriakou (Team leader)</h4>
+                        <p>Team Coordination, Design, Functionality and Testing</p>
+                    </li>
+                    <li><h4>Charalambos Zornis</h4>
+                        <p>Logo Creation, Design, QR Reader functionality, Unit Testing</p>
+                    </li>
+                    <li><h4>Owais Oal Homsi</h4>
+                        <p>Testing and Design</p>
+                    </li>
+                    <li><h4>Tymofii Klochko Shemiakin</h4>
+                        <p>API Integration, Leaderboard Page, Cookie Implementation and Unit Testing</p>
+                    </li>
+                    <li><h4>Grigoris Kirpis</h4>
+                        <p>Social Media management, Design and Unit Testing</p>
+                    </li>
+                    <li><h4>Robyn Kyprianos Arendt</h4>
+                        <p>Unit Testing</p>
+                    </li>
                 </ul>
 
             </div>
+
+            <p style="font-size: 140%">Look at Our Development Process</p>
+            <p id="toggleIcon"></p>
 
         </main>
 
