@@ -25,34 +25,34 @@ function loadQuestion() {
 
                     questionTexBox.innerHTML += "<p>" + question + "</p>";
 
-                    let answerButtons="<div id='questionOptions'><button class='appButton' onclick='skipQuestion()'>SKIP</button>";
-                    answerButtons+="<button onclick='openCamera()'><img id='qrIcon' src='/applicationMedia/cameraIcon.png' alt='QR code scanner icon'></button></div>";
+                    let answerButtons="<div id='questionOptions'><button class='optionButton' onclick='skipQuestion()'>SKIP</button>";
+                    answerButtons+="<button onclick='openCamera()' class='optionButton'><img id='qrIcon' src='/applicationMedia/cameraIcon.png' alt='QR code scanner icon'></button></div>";
                     questionTexBox.innerHTML+=answerButtons;
 
                     if (qType === "BOOLEAN") {
-                        let newElement1 = "<button class='appButton' onClick='validateAnswer(true,\"" + qType + "\")'>True</button>";
+                        let newElement1 = "<button class='answerButton' onClick='validateAnswer(true,\"" + qType + "\")'>True</button>";
                         questionAnswers.innerHTML += newElement1;
-                        let newElement2 = "<button class='appButton' onclick='validateAnswer(false,\"" + qType + "\")'>False</button>";
+                        let newElement2 = "<button class='answerButton' onclick='validateAnswer(false,\"" + qType + "\")'>False</button>";
                         questionAnswers.innerHTML += newElement2;
                     }
                     else if (qType === "INTEGER") {
-                        let inputBox = "<p><input type='number' id='answerBox' value='Your Answer'><button type='button' onclick='validateAnswer()' class='appButton'>Submit</button></p>"
+                        let inputBox = "<p><input type='number' id='inputField' value='Your Answer'><button type='button' onclick='validateAnswer()' class='submitButton'>Submit</button></p>"
                         questionAnswers.innerHTML += inputBox;
                     }
                     else if (qType === "NUMERIC") {
-                        let inputBox = "<p><input type='number' id='answerBox' value='Your Answer'><button type='button' onclick='validateAnswer()'>Submit</button></p>"
+                        let inputBox = "<p><input type='number' id='inputField' value='Your Answer'><button type='button' onclick='validateAnswer()' class='submitButton'>Submit</button></p>"
                         questionAnswers.innerHTML += inputBox;
 
                     }
                     else if (qType === "MCQ") {
-                        let buttonA = "<button type='button' onclick='validateAnswer(\"" + "A" + "\",\"" + qType + "\")' class='appButton'>A</button>";
-                        let buttonB = "<button type='button' onclick='validateAnswer(\"" + "B" + "\",\"" + qType + "\")' class='appButton'>B</button>";
-                        let buttonC = "<button type='button' onclick='validateAnswer(\"" + "C" + "\",\"" + qType + "\")' class='appButton'>C</button>";
-                        let buttonD = "<button type='button' onclick='validateAnswer(\"" + "D" + "\",\"" + qType + "\")' class='appButton'>D</button>";
+                        let buttonA = "<button type='button' onclick='validateAnswer(\"" + "A" + "\",\"" + qType + "\")' class='answerButton'>A</button>";
+                        let buttonB = "<button type='button' onclick='validateAnswer(\"" + "B" + "\",\"" + qType + "\")' class='answerButton'>B</button>";
+                        let buttonC = "<button type='button' onclick='validateAnswer(\"" + "C" + "\",\"" + qType + "\")' class='answerButton'>C</button>";
+                        let buttonD = "<button type='button' onclick='validateAnswer(\"" + "D" + "\",\"" + qType + "\")' class='answerButton'>D</button>";
                         questionAnswers.innerHTML += buttonA + buttonB + buttonC + buttonD;
                     }
                     else if (qType === "TEXT") {
-                        let inputBox = "<p><input type='text' id='answerBox'><button type='button' onclick='validateAnswer()' class='appButton'>Submit</button> </p>"
+                        let inputBox = "<p><input type='text' id='inputField'><button type='button' onclick='validateAnswer()' class='submitButton'>Submit</button> </p>"
                         questionAnswers.innerHTML += inputBox;
                     }
                 }
@@ -91,8 +91,9 @@ function validateAnswer(answer,type){
     if(type==="BOOLEAN" || type==="MCQ"){
         playerAnswer=answer;
     }
+
     else{
-        playerAnswer=document.getElementById("answerBox").value;
+        playerAnswer=document.getElementById("inputField").value;
 
         if(playerAnswer===""){
             displayMessage("Please provide an answer");
