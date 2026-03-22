@@ -1,3 +1,17 @@
+function findMinePosition(data, playerName) {
+    const leaderboard = data?.leaderboard || [];
+    if (!Array.isArray(leaderboard)) {
+        return 0;
+    }
+    const index = leaderboard.findIndex(entry =>
+        String(entry.player).toLowerCase() === String(playerName || "").toLowerCase()
+    );
+    if (index >= 0) {
+        return index + 1;
+    }
+    return 0;
+}
+
 function goBack() {
     const gameContainer = document.getElementById('game-container');
     const leaderboardContainer = document.getElementById('leaderboard');
@@ -6,7 +20,18 @@ function goBack() {
     if (gameContainer) gameContainer.style.display = 'block';
 }
 
-async function showLeaderboard({ sorted = true, limit = 10 } = {}) {
+function startAgain() {
+    if (typeof deleteCookie === "function") {// makes deleteCookie a function if it's not already, deletes the sessionID and playerName cookies
+        deleteCookie("sessionID");
+        deleteCookie("playerName");
+    }
+    window.location.href = "huntsPage.html";
+}
+
+async function showLeaderboard(sorted, limit, completionMode) {
+    sorted = sorted !== false;
+    limit = limit || 10;
+    completionMode = completionMode || false;
     const leaderboardContainer = document.getElementById('leaderboard');
     const gameContainer = document.getElementById('game-container');
 
@@ -14,7 +39,7 @@ async function showLeaderboard({ sorted = true, limit = 10 } = {}) {
         console.error('Missing #leaderboard element in HTML.');
         return;
     }
-    if (!gameContainer) {
+    if (!completionMode && !gameContainer) {
         console.error('Missing #game-container element in HTML.');
         return;
     }
@@ -22,10 +47,16 @@ async function showLeaderboard({ sorted = true, limit = 10 } = {}) {
     const sessionId = getCookie("sessionID") || sessionStorage.getItem("session");
     if (!sessionId) {
         alert("No session found. Start a hunt first.");
+        if (completionMode) {
+            window.location.href = "huntsPage.html";
+        }
         return;
     }
 
-    const url = `https://codecyprus.org/th/api/leaderboard?session=${encodeURIComponent(sessionId)}&sorted=${sorted}&limit=${limit}`;
+    const playerName = getCookie("playerName") || "";
+
+    // Fetch without limit first to find user's position, so then the player can see himself
+    const url = `https://codecyprus.org/th/api/leaderboard?session=${encodeURIComponent(sessionId)}&sorted=${sorted}`;
 
     try {
         const response = await fetch(url);
@@ -33,30 +64,64 @@ async function showLeaderboard({ sorted = true, limit = 10 } = {}) {
 
         if (data.status !== "OK") {
             alert("Error fetching leaderboard: " + (data.errorMessages || "Unknown error"));
+            if (completionMode) {
+                window.location.href = "huntsPage.html";
+            }
             return;
         }
 
-        leaderboardContainer.innerHTML = `<h2>Leaderboard</h2><ol></ol>`;
+        const leaderboard = data.leaderboard || [];
+        const myPosition = findMinePosition(data, playerName);
+        const positionNum = Number(myPosition);
+        const displayList = limit ? leaderboard.slice(0, limit) : leaderboard;
+        const myEntry = leaderboard[positionNum - 1];
+        const inTopList = positionNum > 0 && positionNum <= displayList.length;
+
+        let html = "<h2>Leaderboard</h2>";
+        if (positionNum > 0) {
+            html += "<p class=\"your-position\">You are: " + positionNum + "</p>";
+        }
+        html += "<ol></ol>";
+        leaderboardContainer.innerHTML = html;
         const list = leaderboardContainer.querySelector("ol");
 
-        (data.leaderboard || []).forEach((entry, index) => {
+        displayList.forEach((entry, index) => {
             const li = document.createElement("li");
-            li.innerHTML = `<b>${index + 1}. ${entry.player}</b> — ${entry.score} points`;
+            const isCurrentPlayer = playerName && String(entry.player).toLowerCase() === String(playerName).toLowerCase();
+            if (isCurrentPlayer) {
+                li.className = "leaderboard-entry--you";
+            }
+            li.innerHTML = `${index + 1}. <b>${entry.player}</b> — ${entry.score} points${isCurrentPlayer ? " (you)" : ""}`;
             list.appendChild(li);
         });
 
-        leaderboardContainer.innerHTML += `<button type="button" onclick="goBack()">Back to Game</button>`;
+        // If user is not in top list, add them at the end so they can see themselves
+        if (positionNum > 0 && !inTopList && myEntry) {
+            const li = document.createElement("li");
+            li.className = "leaderboard-entry--you";
+            li.innerHTML = positionNum + ". <b>" + myEntry.player + "</b> — " + myEntry.score + " points (you)";
+            list.appendChild(li);
+        }
 
-        gameContainer.style.display = "none";
+        if (completionMode) {
+            leaderboardContainer.innerHTML += `<button type="button" class="appButton" onclick="startAgain()">Start Again!</button>`;
+        }
+
         leaderboardContainer.style.display = "block";
+        if (gameContainer && !completionMode) {
+            gameContainer.style.display = "none";
+        }
     } catch (err) {
         console.error("Network error while fetching leaderboard:", err);
         alert("Network issue! Please try again.");
+        if (completionMode) {
+            window.location.href = "huntsPage.html";
+        }
     }
 }
 
 // Backwards compatibility if something else calls the old name
 function getLeaderBoard(sessionID) {
     sessionStorage.setItem("session", sessionID);
-    return showLeaderboard({ sorted: true, limit: 10 });
+    return showLeaderboard(true, 10, false);
 }

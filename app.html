@@ -30,23 +30,22 @@
     </header>
     <main>
 
-        <div id="progressionBar"></div>
-        <div id="game-container">
-            <div id="question">
-                <div id="playerScore"></div>
+        <div id="question">
+            <div id="playerScore"></div>
 
-                <div id="questionTextBox">
-                </div>
+            <div id="questionTextBox"></div>
 
-                <div id="questionAnswers">
-                </div>
+            <div id="questionAnswers"></div>
 
-                <span id="answerMessage"></span>
-            </div>
-
-            <button type="button" class="appButton" onclick="showLeaderboard()">View Leaderboard</button>
+            <span id="answerMessage"></span>
         </div>
-        <div id="leaderboard" style="display: none;"></div>
+
+        <div id="congratulatoryMessage" style="display:none">
+
+            <p>Congratulations! You completed the Treasure Hunt!</p>
+            <a href="leaderboard.html"><button onclick="leaderboard.html">View leaderboard</button></a>
+            <a href="index.html"><button>Return to Homepage</button></a>
+        </div>
     </main>
     <footer>
         <div class="links">
