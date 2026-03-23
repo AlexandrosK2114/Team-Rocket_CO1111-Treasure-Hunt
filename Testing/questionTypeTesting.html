@@ -7,29 +7,32 @@
 </head>
 <body>
 
-<h1>Testing Questions Types</h1>
+<h1>Questions Type Testing</h1>
 
-<h4>This test is meant to evaluate what type of question is returned from the API</h4>
+<p>This is testing for the /question functionality of the API and is meant to evaluate what type of
+    question is returned from it. The user may provide
+    the kind of question they would like to receive by typing one of the following: BOOLEAN, NUMERIC, INTEGER,
+    TEXT, MCQ. Any other kind of input will lead to an error.
+</p>
 
-<p>Please provide what kind of question you would like to receive from the API (BOOLEAN,MCQ,INTEGER,NUMERIC)</p>
+<p><label for="typeTest">Please provide the type of the question you would like to receive:</label></p>
 
-<p><input type="Text" id="typeTest"><button type="submit" onclick="evaluateQType(document.getElementById('typeTest').value,true,'')">Submit</button></p>
+<p><input type="text" id="typeTest"><button type="submit" onclick="evaluateQType(document.getElementById('typeTest').value,true)">Submit</button></p>
 
 <div id="userResult"></div>
 
 <div id="sampleQuestion"></div>
 
-<table id="unitTest" border="1">>
+<table id="unitTest" border="1">
     <tr>
         <th>Input</th>
         <th>Expected Output</th>
-        <th>Retrieved Hunts</th>
+        <th>Retrieved Question Type</th>
         <th>Status</th>
-        <th>Output</th>
-
     </tr>
 
 </table>
+
 <script src="questionTypeTesting.js"></script>
 
 </body>

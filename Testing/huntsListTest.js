@@ -6,20 +6,30 @@ let testPairs=[
     {n:10,expected:10},
 ];
 
-/*function takeInput(){
-    let n=document.getElementById("input").value;
-    listHunts(n,true);
-}*/
+function test(){
 
-function listHunts(n,ex,buildList){
+    let row="";
 
-    if(n<0){
+    for(i in testPairs){
+        let pair=testPairs[i];
+        let input=pair.n;
+        let ex=pair.expected;
+        listHunts(input,false,ex);
+
+
+    }
+}
+
+function listHunts(Input,userInput,expected){
+
+    if(Input<0){
         alert("Invalid Number");
         return;
     }
 
-    let URL="https://codecyprus.org/th/test-api/list?number-of-ths="+String(n);
-    let cal;
+    let URL="https://codecyprus.org/th/test-api/list?number-of-ths="+String(Input);
+
+    let retrievedHunts
 
     fetch(URL)
         .then(response => response.json()) // Parse JSON text to JavaScript object
@@ -28,47 +38,36 @@ function listHunts(n,ex,buildList){
             if(object.status==="OK"){
 
                 let arr=object.treasureHunts;
-                cal=arr.length;
+                retrievedHunts=arr.length;
 
-                /*if(buildList){
+                if(userInput){
 
                     let list=document.getElementById("huntList");
                     let listItems=""
-                    for(let i=0; i<cal; i++)
+                    for(let i=0; i<retrievedHunts; i++)
                         listItems+="<li>"+arr[i].name+"</li>";
                     list.innerHTML=listItems;
-                }*/
-
-                let row="<tr>\n" +
-                    "<td>" +n+  "</td>" +
-                    "<td>" +ex+ "</td>" +
-                    "<td>" +cal+ "</td>" +
-                    "<td><img src='" + (ex===cal ? 'correct.png' : 'wrong.png') + "' alt='Success or failed icon'/></td>\n"+
-                    "<td><ol>";
-
-                for(let i=0; i<cal; i++){
-                    row+="<li>"+arr[i].name+"</li>";
                 }
 
-                row+="</ol></td></tr>"
+                else {
+                    let row = "<tr>\n" +
+                        "<td>" + Input + "</td>" +
+                        "<td>" + expected + "</td>" +
+                        "<td>" + retrievedHunts + "</td>" +
+                        "<td><img src='" + (expected === retrievedHunts ? 'correct.png' : 'wrong.png') + "' alt='Success or failed icon'/></td>\n" +
+                        "<td><ol>";
 
-                document.getElementById("unitTest").innerHTML+=row;
+                    for (let i = 0; i < retrievedHunts; i++) {
+                        row += "<li>" + arr[i].name + "</li>";
+                    }
+
+                    row += "</ol></td></tr>"
+
+                    document.getElementById("unitTest").innerHTML += row;
+                }
             }
             else alert("ERROR");
         })
 }
 
-function test(){
-
-    let row="";
-
-    for(i in testPairs){
-        let pair=testPairs[i];
-        let h=pair.n;
-        let ex=pair.expected;
-        listHunts(h,ex,false);
-
-
-    }
-}
 test();

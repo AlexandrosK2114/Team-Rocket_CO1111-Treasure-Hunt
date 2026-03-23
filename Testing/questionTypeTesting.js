@@ -7,7 +7,6 @@ var testPairs=[
 ];
 
 function test(){
-    let row="";
     for(i in testPairs){
         let pair=testPairs[i];
         let input=pair.n;
@@ -21,6 +20,11 @@ test();
 async function evaluateQType(Input,userInput,expected){
 
     let URL="https://codecyprus.org/th/test-api/question?completed&question-type="+Input+"&can-be-skipped&requires-location" ;
+
+    if(!(Input==='BOOLEAN'|| Input==='NUMERIC' || Input==='INTEGER' || Input==='MCQ' || Input==='TEXT')){
+        alert("ERROR. Incorrect input");
+        return;
+    }
 
     fetch(URL)
         .then(response => response.json()) // Parse JSON text to JavaScript object
@@ -73,8 +77,7 @@ async function evaluateQType(Input,userInput,expected){
                     "<td>" + Input + "</td>" +
                     "<td>" + expected + "</td>" +
                     "<td>" + retrievedType + "</td>" +
-                    "<td><img src='" + (expected === retrievedType ? 'correct.png' : 'wrong.png') + "' alt='Success or failed icon'/></td>\n" +
-                    "<td><ol>";
+                    "<td><img src='" + (expected === retrievedType ? 'correct.png' : 'wrong.png') + "' alt='Success or failed icon'/></td>";
 
                 document.getElementById("unitTest").innerHTML+=row;
 

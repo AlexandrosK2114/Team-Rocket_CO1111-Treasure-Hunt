@@ -9,11 +9,15 @@
 
     <h1>List of Treasure Hunts Testing</h1>
 
-    <h3>How many treasure hunts would you like to list</h3>
+    <p>This is testing for the /list functionality of the API, which provides an object containing the available
+    treasure hunts the user can choose from. For the test, the user may provide how many treasure hunts they would
+    like to receive from the input element below.
+    </p>
 
-    <!--<p><input type="number" id="input"><button type="button" onclick="let i=takeInput()">Submit</button></p>
+    <p><label for="userInput">Please provide the number of treasure hunts:</label><br></p>
+    <p><input type="number" id="userInput"><button type="button" onclick="listHunts(document.getElementById('userInput').value,true)">Submit</button></p>
 
-    <ol id="huntList"></ol>-->
+    <ol id="huntList"></ol>
 
     <table id="unitTest" border="1">
         <tr>
