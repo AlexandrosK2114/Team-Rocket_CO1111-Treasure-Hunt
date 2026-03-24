@@ -14,8 +14,8 @@ function checkForActiveSession(){
             regDiv.innerHTML+=element;
         }
         else {
-            element = "<p>A Treasure Hunt is already in progress. Would you like to continue this session? "
-            element += "<button type='button' onclick='loadActiveSession(false)'>Continue</button></p>"
+            element = "<p>A Treasure Hunt is already in progress. Would you like to continue this session?</p> "
+            element += "<p><button type='button' onclick='loadActiveSession(false)' class='appButton'>Continue</button></p>"
             regDiv.innerHTML += element;
         }
     }
@@ -46,7 +46,7 @@ async function getChallenges() {
                 let listItem=document.createElement("li");
                 let huntID=huntsArray[i].uuid;
                 let huntName=huntsArray[i].name
-                listItem.innerHTML ="<button onclick='storeHuntID(\""+huntID+"\")' class='huntOption'>"+huntName+"</button>";
+                listItem.innerHTML ="<button onclick='storeHuntID(\""+huntID+"\")'>"+huntName+"</button>";
                 listItem.innerHTML+="<p>"+huntsArray[i].description+"</p>";
                 list.appendChild(listItem);
             }
