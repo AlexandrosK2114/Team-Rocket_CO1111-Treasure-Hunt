@@ -119,7 +119,7 @@ function validateAnswer(answer,type){
 
 
                 if(answerObject.correct===true) {
-                    message+="<p>"+answerObject.message+"</p>";
+                    message+="<p>Well done!</p>";
                     message+="<p>You've gained "+answerObject.scoreAdjustment+" points!</p>";
                     message+="<p>Loading next question...</p>";
                     displayMessage(message, true);

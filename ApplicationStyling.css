@@ -305,6 +305,7 @@ footer {
 
 #playerScore{
     box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+    color:rgb(122, 43, 43);
 }
 
 #questionTextBox{
@@ -342,12 +343,9 @@ footer {
 }
 
 #answerMessage{
-    margin-top:1%;
     display:none;
-
-    p{
-        font-size:110%;
-    }
+    align-self: center;
+    text-align: center;
 }
 
 /*STYLING FOR THE LEADERBOARD PAGE*/
@@ -403,10 +401,6 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-main h1,h2,h3{
-    align-self:flex-start;
 }
 
 label{
@@ -539,23 +533,23 @@ input{
 
     #playerScore{
         width:30%;
-        font-size: 160%;
+        font-size: 140%;
         margin-bottom:5%;
     }
 
     #questionTextBox{
-        font-size:230%;
+        font-size:150%;
         margin-bottom:5%;
         gap:2%;
     }
 
     #qrIcon{
-        width:25px;
-        height:25px;
+        width:30px;
+        height:30px;
     }
 
     .optionButton{
-        font-size: 65%;
+        font-size: 85%;
     }
 
     .answerButton{
@@ -563,19 +557,10 @@ input{
     }
 
     .submitButton{
-        font-size: 170%;
+        font-size: 140%;
     }
     #inputField{
-        font-size: 150%;
-    }
-
-    #answerMessage{
-        margin-top:1%;
-        display:none;
-
-        p{
-            font-size:110%;
-        }
+        font-size: 110%;
     }
 
     /*GENERAL*/
@@ -584,7 +569,6 @@ input{
     }
 
     main h1,h2,h3{
-        margin-left:5%;
         font-size: 130%;
     }
 
@@ -680,28 +664,28 @@ input{
     #question{
         margin-top:12%;
         margin-bottom:12%;
-        width:90%;
+        width:80%;
     }
 
     #playerScore{
         width:25%;
-        font-size: 160%;
+        font-size: 140%;
         margin-bottom:5%;
     }
 
     #questionTextBox{
-        font-size:200%;
+        font-size:160%;
         margin-bottom:5%;
         gap:2%;
     }
 
     #qrIcon{
-        width:25px;
-        height:25px;
+        width:35px;
+        height:35px;
     }
 
     .optionButton{
-        font-size: 65%;
+        font-size: 95%;
     }
 
     .answerButton{
@@ -709,24 +693,18 @@ input{
     }
 
     .submitButton{
-        font-size: 170%;
+        font-size: 145%;
     }
     #inputField{
-        font-size: 150%;
+        font-size: 130%;
     }
 
     #answerMessage{
-        margin-top:1%;
-        display:none;
-
-        p{
-            font-size:110%;
-        }
+        font-size:130%;
     }
 
     /*GENERAL*/
     main h1,h2,h3{
-        margin-left:5%;
         font-size: 150%;
     }
 
@@ -812,18 +790,17 @@ input{
     /*APP PAGE*/
     #question{
         margin-top:2%;
-        margin-bottom:2%;
+        margin-bottom:0;
         width:50%;
     }
 
     #playerScore{
-        width:20%;
-        font-size: 160%;
+        font-size:120%;
         margin-bottom:5%;
     }
 
     #questionTextBox{
-        font-size:150%;
+        font-size:135%;
         margin-bottom:5%;
         gap:2%;
     }
@@ -834,18 +811,18 @@ input{
     }
 
     .optionButton{
-        font-size: 90%;
+        font-size: 100%;
     }
 
     .answerButton{
-        font-size: 200%;
+        font-size: 210%;
     }
 
     .submitButton{
-        font-size: 170%;
+        font-size: 100%;
     }
     #inputField{
-        font-size: 150%;
+        font-size: 100%;
     }
 
     #answerMessage{
@@ -858,7 +835,6 @@ input{
     }
 
     main h1,h2,h3{
-        margin-left:7%;
         font-size: 180%;
     }
 
