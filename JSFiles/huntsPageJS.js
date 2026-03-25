@@ -5,19 +5,20 @@ function checkForActiveSession(){
     if(cookieExists("sessionID")){
 
         let huntCompleted=getCookie("huntComplete");
-        let regDiv=document.getElementById("existingSessionDiv");
+        let block=document.getElementById("existingSessionDiv");
         let element="";
 
         if(huntCompleted==="true"){
-            element="<p>Would you like to view your placement in your previous session?"
-            element+="<button type='button' onclick='loadActiveSession(true)'>Leaderboard</button></p>"
-            regDiv.innerHTML+=element;
+            element="<p>Would you like to view your placement in your previous session?</p>"
+            element+="<p><button type='button' onclick='loadActiveSession(true)' class='appButton'>Leaderboard</button></p>"
+            block.innerHTML+=element;
         }
         else {
             element = "<p>A Treasure Hunt is already in progress. Would you like to continue this session?</p> "
             element += "<p><button type='button' onclick='loadActiveSession(false)' class='appButton'>Continue</button></p>"
-            regDiv.innerHTML += element;
+            block.innerHTML += element;
         }
+        block.style.display="block";
     }
 }
 
@@ -43,12 +44,10 @@ async function getChallenges() {
             let list=document.getElementById("Hunts");
 
             for(let i=0; i<huntsArray.length; i++) {
-                let listItem=document.createElement("li");
                 let huntID=huntsArray[i].uuid;
-                let huntName=huntsArray[i].name
-                listItem.innerHTML ="<button onclick='storeHuntID(\""+huntID+"\")'>"+huntName+"</button>";
-                listItem.innerHTML+="<p>"+huntsArray[i].description+"</p>";
-                list.appendChild(listItem);
+                let huntName=huntsArray[i].name;
+                let listItem="<li onclick='storeHuntID(\""+huntID+"\")'><h2>"+huntName+"</h2><p>"+huntsArray[i].description+"</p></li>";
+                list.innerHTML+=listItem;
             }
         });
 }

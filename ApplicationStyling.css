@@ -146,6 +146,7 @@ footer {
 /*STYLING FOR THE HUNTS PAGE*/
 
 .HuntRules{
+    margin:0;
     background-color: #FAFAFA;
     border: #FAFAFA solid 2px;
     border-radius: 20px;
@@ -156,44 +157,37 @@ footer {
     color:rgb(59,58,58);
 }
 
+#registrationDiv h3{
+    margin:0;
+}
+
 #registrationDiv{
-    margin-top:5%;
     display: flex;
     flex-direction: column;
-    padding: 2.5%;
+    padding: 3%;
     background-color:#FAFAFA;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
 
 }
 
-#registrationDiv:hover{
+#registrationDiv:hover, .HuntRules:hover{
     box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
 }
 
 #existingSessionDiv{
+    display:none;
     padding:2%;
     color:#FAFAFA;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     border-radius: 10px;
     background-color:rgb(122, 43, 43);;
     box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px;
 }
 
-#existingSessionDiv p{
+#existingSessionDiv p {
     color: #FAFAFA;
     text-align: center;
-}
-
-.appButton{
-    background-color:#FAFAFA;
-    border:#FAFAFA solid;
-}
-
-.appButton:hover{
-    cursor: pointer;
 }
 
 #Hunts{
@@ -201,35 +195,31 @@ footer {
 }
 
 #Hunts li{
+    margin:0;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
+    align-content: center;
     background-color:#FAFAFA;
-    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
-
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 5px 10px, rgba(0, 0, 0, 0.23) 0 3px 3px;
 }
 
 #Hunts li:hover{
-    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 10px 18px, rgba(0, 0, 0, 0.22) 0 8px 6px;
+    transform: scale(1.05);
+    cursor:pointer;
 }
 
-#Hunts button {
-    color: rgb(59,58,58);
-    font-size: 20px;
-    border:rgb(232,228,223);
-    border-radius: 20px;
-    display: inline-block;
-    background-color: rgb(232,228,223);
-    box-shadow: 4px 4px 0 rgb(120,120,120);
-}
+#Hunts li:active {
+    background-color: var(--darkBrown);
+    transform: scale(1.05);
 
-#Hunts button:hover,.appButton:hover{
-    transform: scale(1.08);
-    cursor: pointer;
+    *{
+        color: #FAFAFA;
+    }
 }
-
-#Hunts button:active,.appButton:active{
-    transform: translateY(3px);
+#Hunts li>h2{
+    margin:0;
 }
 
 #start{
@@ -420,21 +410,29 @@ main h1,h2,h3{
 }
 
 label{
-    color: #7b1f1f;
     font-weight: bold;
-    font-size: 20px;
-    margin-right: 8px;
 }
+
 input{
     color:rgb(122, 43, 43);
     background-color:white;
-    font-size:22px ;
     border-radius: 5px;
 }
 
-#heading{
-    position:absolute;
-    float:left;
+.appButton{
+    background-color:#FAFAFA;
+    border:#FAFAFA solid;
+    border-radius: 20px;
+    padding:1%;
+}
+
+.appButton:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.appButton:active{
+    transform: translateX(3px);
 }
 
 /*MEDIA QUERIES*/
@@ -493,9 +491,6 @@ input{
     /*HUNTS PAGE*/
     .HuntRules{
         padding:5%;
-        margin-top: 2%;
-        margin-bottom: 5%;
-        border-radius: 20px;
     }
 
     .HuntRules li{
@@ -504,12 +499,17 @@ input{
     }
 
     #existingSessionDiv{
+        margin:5% 0;
         width:80%;
     }
 
     #registrationDiv{
         width:90%;
         padding: 2.5%;
+    }
+
+    #registrationDiv h2{
+        font-size: 90%;
     }
 
     #Hunts{
@@ -519,25 +519,7 @@ input{
     #Hunts li{
         margin-bottom:5%;
         padding:4%;
-        font-size: 40%;
-    }
-
-    #Hunts li>p{
-        padding:0;
-        font-size: 200%;
-    }
-
-    #Hunts button {
-        width:50%;
-        font-size: 200%;
-        padding:5%;
-        margin-right:3%;
-        border:rgb(232,228,223);
-    }
-
-    .appButton{
-        background-color:#FAFAFA;
-        font-size:100%;
+        font-size: 100%;
     }
 
     #start {
@@ -610,6 +592,15 @@ input{
         font-size: 100%;
     }
 
+    label{
+        font-size: 100%;
+        margin-right:1%;
+    }
+
+    input{
+        font-size:70%;
+    }
+
 }
 @media screen and (min-width:450px){
     /*HEADERS*/
@@ -657,10 +648,32 @@ input{
     }
 
     /*HUNTS PAGE*/
-    #registrationDiv{
-        margin-top:10%;
-        margin-bottom:10%;
+    .HuntRules li{
+        font-size:125%;
+    }
+
+    #existingSessionDiv{
         width:70%;
+    }
+
+    #registrationDiv{
+        width:80%;
+    }
+
+    #registrationDiv h2{
+        font-size: 110%;
+    }
+
+    #Hunts li{
+        font-size: 100%;
+    }
+
+    #start {
+        font-size: 150%;
+    }
+
+    #errorMessage{
+        font-size: 150%;
     }
 
     /*APP PAGE*/
@@ -768,10 +781,32 @@ input{
     }
 
     /*HUNTS PAGE*/
+    .HuntRules li{
+        font-size:150%;
+    }
+
+    #existingSessionDiv{
+        width:50%;
+    }
+
     #registrationDiv{
-        margin-top:5%;
-        margin-bottom:5%;
-        width:40%;
+        width:70%;
+    }
+
+    #registrationDiv h2{
+        font-size: 150%;
+    }
+
+    #Hunts li{
+        font-size: 100%;
+    }
+
+    #start {
+        font-size: 200%;
+    }
+
+    #errorMessage{
+        font-size: 150%;
     }
 
     /*APP PAGE*/
