@@ -70,10 +70,9 @@ footer {
 
 /*STYLING FOR INDEX MAIN CONTENTS*/
 .indexInfo {
-    text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 2.5%;
+    text-align: center;
     margin-top: 2%;
     margin-bottom: 2%;
     background-color: #FAFAFA;
@@ -88,11 +87,9 @@ footer {
 }
 
 .indexInfo li {
-    padding:5%;
     display: inline-block;
     color:black;
     background: #FAFAFA;
-    margin-bottom: 12px;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
 }
@@ -130,20 +127,20 @@ footer {
 #BEGIN:active{
     transform: translateY(4px)
 }
-#mediaWidgets{
-    background-color:rgb(232,228,223);
-    margin:auto;
-}
 
-.material-icons{
-    font-size:48px;
-}
-
-.indexInfo>ul>li{
-    margin:3%;
-}
 .material-icons:hover{
     cursor: pointer;
+}
+
+#toggleIcon{
+    margin-left:1%;
+    border:none;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+}
+
+#toggleIcon:active{
+    transform: scale(1.09);
 }
 
 /*STYLING FOR THE HUNTS PAGE*/
@@ -399,6 +396,7 @@ footer {
 *{
     font-family: Arial, sans-serif;
 }
+
 html, body {
     margin: 0;
     padding: 0;
@@ -415,6 +413,10 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+main h1,h2,h3{
+    align-self:flex-start;
 }
 
 label{
@@ -466,14 +468,26 @@ input{
 
     /*INDEX MAIN*/
     .indexInfo {
+        padding:3%;
         width:85%;
     }
 
-    .indexInfo > p, ul,h1{
+    .indexInfo p{
         font-size: 100%;
     }
 
-    #BEGIN{
+    .indexInfo li {
+        padding:2%;
+        margin-bottom: 2%;
+    }
+
+    .indexInfo li h4{
+        font-size:100%;
+    }
+
+    #toggleIcon{
+        width:50px;
+        height:50px;
     }
 
     /*HUNTS PAGE*/
@@ -528,9 +542,6 @@ input{
 
     #start {
         font-size: 120%;
-    }
-
-    #start:hover {
     }
 
     #errorMessage{
@@ -590,6 +601,15 @@ input{
         font-size:15px;
     }
 
+    main h1,h2,h3{
+        margin-left:5%;
+        font-size: 130%;
+    }
+
+    main p{
+        font-size: 100%;
+    }
+
 }
 @media screen and (min-width:450px){
     /*HEADERS*/
@@ -620,14 +640,20 @@ input{
 
     /*INDEX MAIN*/
     .indexInfo {
-        width:85%;
+        width:75%;
     }
 
-    .indexInfo > p, ul,h1{
-        font-size: 100%;
+    .indexInfo p{
+        font-size: 115%;
     }
 
-    #BEGIN{
+    .indexInfo li h4{
+        font-size:120%;
+    }
+
+    #toggleIcon{
+        width:60px;
+        height:60px;
     }
 
     /*HUNTS PAGE*/
@@ -684,6 +710,16 @@ input{
             font-size:110%;
         }
     }
+
+    /*GENERAL*/
+    main h1,h2,h3{
+        margin-left:5%;
+        font-size: 150%;
+    }
+
+    main p{
+        font-size: 130%;
+    }
 }
 
 @media screen and (min-width:1200px){
@@ -715,14 +751,20 @@ input{
 
     /*INDEX MAIN*/
     .indexInfo {
-        width:50%;
+        width:75%;
     }
 
-    .indexInfo > p, ul,h1{
-        font-size: 150%;
+    .indexInfo p{
+        font-size: 135%;
     }
 
-    #BEGIN{
+    .indexInfo li h4{
+        font-size:140%;
+    }
+
+    #toggleIcon{
+        width:70px;
+        height:70px;
     }
 
     /*HUNTS PAGE*/
@@ -780,4 +822,12 @@ input{
         }
     }
 
+    main h1,h2,h3{
+        margin-left:7%;
+        font-size: 180%;
+    }
+
+    main p{
+        font-size: 150%;
+    }
 }
