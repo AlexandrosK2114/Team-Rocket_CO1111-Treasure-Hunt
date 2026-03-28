@@ -50,7 +50,7 @@ footer {
     justify-content: center;
     background-color:var(--darkBrown);
     margin-top:5%;
-    padding:3%;
+    padding:10% 3%;
 }
 
 .links{
@@ -363,6 +363,22 @@ footer {
     text-align: center;
 }
 
+#congratulatoryMessage{
+    margin:18% 2%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    background-color:#FAFAFA;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+    border-radius: 20px;
+    padding:30% 10%;
+}
+
+#congratulatoryMessage *{
+    margin:5%;
+    text-align: center;
+}
+
 /*STYLING FOR THE LEADERBOARD PAGE*/
 
 #leaderboard {
@@ -429,19 +445,27 @@ input{
 }
 
 .appButton{
-    background-color:#FAFAFA;
-    border:#FAFAFA solid;
-    border-radius: 20px;
-    padding:1%;
+    margin-top:10%;
+    margin-bottom:10%;
+    padding:50px;
+    background-color:var(--darkBrown);
+    font-size:100%;
+    cursor:pointer;
+    border:solid var(--darkBrown) 2px;
+    border-radius:10px;
+    color:white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 -25px 18px -14px inset,rgba(0, 0, 0, 0.3) 0 1px 2px,rgba(0, 0, 0, 0.3) 0 2px 4px,rgba(0, 0, 0, 0.3) 0 4px 8px,rgba(0, 0, 0, 0.3) 0 8px 16px,rgba(0, 0, 0, 0.3) 0 16px 32px;
 }
 
 .appButton:hover{
-    cursor: pointer;
-    transform: scale(1.03);
+    background-color:#FAFAFA;
+    border:#FAFAFA;
+    color:rgb(71,55,30);
+    transform: scale(1.05);
 }
 
 .appButton:active{
-    transform: translateX(3px);
+    transform: translateY(4px)
 }
 
 /*MEDIA QUERIES*/
