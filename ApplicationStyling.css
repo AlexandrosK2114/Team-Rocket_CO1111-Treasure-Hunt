@@ -467,7 +467,15 @@ input{
 .appButton:active{
     transform: translateY(4px)
 }
-
+/*Team notes styling */
+.teamNotes{
+    background: #FAFAFA;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+    list-style: none;
+    text-align: left;
+    padding: 5%;
+}
 /*MEDIA QUERIES*/
 @media screen and (min-width:0) {
     /*HEADERS*/
@@ -623,6 +631,10 @@ input{
     input{
         font-size:70%;
     }
+   /* ""Team Notes""*/
+    .teamNotes{
+        font-size:120%;
+    }
 
 }
 @media screen and (min-width:450px){
@@ -749,6 +761,10 @@ input{
 
     main p{
         font-size: 130%;
+    }
+    /* ""Team Notes""*/
+    .teamNotes{
+        font-size:120%;
     }
 }
 
@@ -880,4 +896,11 @@ input{
     main p{
         font-size: 150%;
     }
+    /* ""Team Notes""*/
+    .teamNotes{
+        font-size:120%;
+    }
 }
+
+
+
