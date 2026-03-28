@@ -1,10 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Notes</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-G800GHY9CD');
+    </script>
+
+    <link rel="stylesheet" href="ApplicationStyling.css">
+    <link rel="stylesheet" href="fireAnimation.css">
+    <script src="JSFiles/fireAnimation.js"></script>
+
+</head>
+
+    <body>
+
+    <header id="headerFire">
+        <a href="index.html"><img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header"></a>
+        <h1>Team Phoenix </h1>
+        <nav>
+            <span><a href="index.html">Homepage</a></span>
+            <span><a href="huntsPage.html">Available Hunts </a></span>
+            <span><a href="test.html">Testing</a></span>
+            <span><a href="teamNotes.html">Team Notes</a></span>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Team Phoenix Development Notes</h1>
+
+        <p>This page contains information on our development process, team meetings and discussions.</p>
+
+        <h2>Team Members</h2>
+
+        <ul>
+            <li>Alexandros Kyriakou (Team Leader)</li>
+            <li>Grigoris Kypris</li>
+            <li>Timofii Klochko-Shemiakin</li>
+            <li>Owais Oal-Homsi</li>
+            <li>Robyn Kyprianos Arendt</li>
+        </ul>
+
+        <h2>Team Meeting 1 Thursday 18/12/2025 13:00pm</h2>
+
+        <div class="teamNotes">
+            <p>Location: University Cafeteria</p>
+            <p>Participants: Alexandros and Timofii</p>
+            <p>Discussed: Initial index layout and styling as well as the contents it would house.</p>
+            <p>Appointed tasks: Alexandros would cover the indexes main part contents and Timofii would
+            integrate Google Analytics.</p>
+            <p>General notes: Discussions were minimal since most team members were absent. Grigoris could not attend due to illness</p>
+        </div>
+
+        <h2>Team Meeting 2 Wednesday 28/01/2026 14:00pm</h2>
+
+        <div class="teamNotes">
+            <p>Location: University Cafeteria</p>
+            <p>Participants: Alexandros, Charalambos and Grigoris</p>
+            <p>Discussed: Team name, application color palette and styling, general team member roles and index page
+            contents</p>
+            <p>Appointed tasks: Alexandros would cover the main body contents of the index, Owais would create and style
+            the header and Charalambos the footer, Grigoris would handle the social Media accounts and integrate them into
+            the index page and Timofii the Google Analytics integration.</p>
+            <p>General notes: Team name was chosen as "Phoenix", team members who could not attend were informed through WhatsApp,
+            chosen application colors were deep reds, light greys, oranges and dark browns and the deadline for the appointed tasks
+            was 10/02/2026</p>
+        </div>
+
+        <h2>Team meeting 3 Thursday 29/01/2026 15:00pm</h2>
+
+        <div class="teamNotes">
+            <p>Location: CO1111 Lab</p>
+            <p>Participants: Alexandros, Charalambos, Grigoris and Owais</p>
+            <p>Discussed: How to use GitHub, index page layout and social media posts</p>
+            <p>Completed tasks since last meeting: Grigoris had created social media accounts to Instagram and X and Owais had created
+            the header.
+            <p>General notes: Every member apart from Robyn was a contributor of the GitHub repository</p>
+        </div>
+
+        <h2>Team meeting 4 Wednesday 10/02/2026 14:00pm</h2>
+
+        <div class="teamNotes">
+            <p>Location: University Cafeteria</p>
+            <p>Participants: Alexandros, Charalambos, Grigoris and Timofii</p>
+            <p>Discussed: Hunts page of the application where users can register to play and how the team will
+                create it</p>
+            <p>Completed tasks since last meeting: Charalambos had create the footer with some styling, Grigoris had made
+                a few post to our social media accounts and had added widgets into the index, Alexandros created the main section
+                of the index page with styling and Timofii had successfully integrated Google Analytics.
+            <p>Appointed tasks: Alexandros and Timofii would handle the JavaScript code needed to communicate with the API
+                to retrieve, select and start the treasure hunt, Grigoris would style the Hunts page and Charalambos would add
+                geolocation features</p>
+            <p>General notes: Deadline of the above tasks was 18/02/2025</p>
+        </div>
+
+        <h2>Team meeting 5 Wednesday 25/02/2026 14:00pm</h2>
+
+        <div class="teamNotes">
+            <p>Location: University Cafeteria</p>
+            <p>Participants: Alexandros, Grigoris and Timofii</p>
+            <p>Discussed: The creation of the page where users would be playing and the leaderboard page</p>
+            <p>Completed tasks since last meeting: Charalambos had created and implemented the team's logo into the header,
+            Grigoris continued posting to our social media accounts, adding post widgets and had styled the form users use to
+            register for the treasure hunt, Alexandros added JavaScript which calls /api/list to present the hunts and implemented
+                geolocation functionality and Timofii added the code that calls /api/start, the functions
+                for the cookies and the instascan library</p>
+            <p>Appointed tasks: Alexandros would add the code which calls /api/question, /api/skip and /api/answer, Grigoris
+            would add JavaScript code which presents appropiate question options according to the question type received
+            from the API and Timofii would create the leaderboard page where users can view their placement.</p>
+            <p>General Notes:The initial deadline of the appointed tasks was 25/02/2026 but was moved to 02/03/2026 due
+            to other assignments</p>
+        </div>
+
+        <h2>Team meeting 6 Wednesday 04/03/2026 14:00pm</h2>
+
+        <div class="teamNotes">
+            <p>Location: University Cafeteria</p>
+            <p>Participants: Alexandros, Grigoris, Charalambos and Timofii</p>
+            <p>Discussed: Progress on playing page of the treasure hunt and minor testing discussions.</p>
+            <p>Completed tasks since last meeting: Grigoris had added divisions for Alexandros to use to display the
+            question and its associated options and information as well as the JavaScript code which created relevant
+            elements according to the question type retrieved from the API, Alexandros had added the code which starts
+            the treasure hunt, retrieves the question object with /api/question, skips questions with /api/skip, functions
+            for answer validation, presets the question information and available answers and Timofii added the code which
+            creates the leaderboard, leaderboard styling and leaderboard unit testing. Grigors also continued to post in
+            our social media accounts and adding widgets.</p>
+            <p>Appointed tasks: Charalabmos would create the qr code reader functionality and Alexandros
+            would continue improving the functionality of the application.</p>
+            <p>General Notes: Something had gone wrong in the repository and the instascan library Tim added was gone.
+            Additionally, no other tasks were distributed until the functionality of the playing page was finished</p>
+        </div>
+
+        <h2>Team meeting 7 Wednesday 04/03/2026 14:00pm</h2>
+
+        <div class="teamNotes">
+            <p>Location: University Cafeteria</p>
+            <p>Participants: Alexandros, Grigoris, Charalambos and Timofii</p>
+            <p>Discussed: Progress on playing page of the treasure hunt and minor testing discussions.</p>
+            <p>Completed tasks since last meeting: Grigoris had added divisions for Alexandros to use to display the
+                question and its associated options and information as well as the JavaScript code which created relevant
+                elements according to the question type retrieved from the API, Alexandros had added the code which starts
+                the treasure hunt, retrieves the question object with /api/question, skips questions with /api/skip, functions
+                for answer validation, presets the question information and available answers and Timofii added the code which
+                creates the leaderboard, leaderboard styling and leaderboard unit testing. Grigors also continued to post in
+                our social media accounts and adding widgets.</p>
+            <p>Appointed tasks: Charalabmos would create the qr code reader functionality and Alexandros
+                would continue improving the functionality of the application.</p>
+            <p>General Notes: Something had gone wrong in the repository and the instascan library Tim added was gone.
+                Additionally, no other tasks were distributed until the functionality of the playing page was finished</p>
+        </div>
+
+        <h2>Team meeting 8 Wednesday 18/03/2026 13:00pm</h2>
+
+        <div class="teamNotes">
+            <p>Location: University Cafeteria</p>
+            <p>Participants: Alexandros, Grigoris, Charalambos and Timofii</p>
+            <p>Discussed: Progress on the entire application and its styling as well as how testing would be handled</p>
+            <p>Completed tasks since last meeting: Alexandros had improved the responsiveness of all pages, Charalambos
+            had added the qr code reader code, Grigoris had worked on some styling and continued to update our social
+            media accounts and Timofii made some changes to the leaderboard page.</p>
+            <p>Appointed tasks: Every person had to complete at least one unit test from the testing API until 22/03
+            and give gather feedback for the application from other people (User acceptance testing) by giving the
+            application to at least one person after the 22nd to try it.</p>
+            <p>General Notes: After discussing with the team, it was deemed the styling of the application was
+            underwhelming and required changes and other dynamic elements</p>
+        </div>
+
+        <h2>Team meeting 9 Wednesday 26/03/2026 13:00pm</h2>
+
+        <div class="teamNotes">
+            <p>Location: University Cafeteria</p>
+            <p>Participants: Alexandros, Grigoris and Timofii</p>
+            <p>Discussed: Styling changes, testing progress and general thoughts about the application</p>
+            <p>Completed tasks since last meeting: Alexandros had added JavaScript code which presents appropriate messages
+            after ansnwering or skipping questions and when errors occur during registration. Alaxndros and Grigoris had drastically
+            changed the application's styling and responsiveness after team and user acceptance feedback. Grigoris had completed
+            question type user testing, Charalambos starting treasure hunts unit testing and Alexandros listing treausure hunts
+            unit testing. Moreover, Grigoris and Timofii had provided feedback from one user acceptance test and Alex from three.</p>
+            <p>Appointed tasks: Timofii had to update the leaderboard's styling in accordance with the rest of the application.</p>
+            <p>General Notes: No other tasks were distributed as the team leader was working towards the final tasks required
+            for the submission.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="links">
+            <h3>Socials:</h3>
+
+            <div id="linksLogos">
+                <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage" alt="Logo of social media platform X"/> </a>
+                <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" alt="Logo of social media platform Instrgram"/></a>
+            </div>
+
+        </div>
+
+        <div class="links">
+            <h3>Contact:</h3>
+            <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+        </div>
+
+        <div class="links">
+            <h3>Location:</h3>
+            <p>Larnaca, Cyprus</p>
+        </div>
+    </footer>
+
+    </body>
+
 </html>
