@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Score Testing</title>
+    </head>
+
+    <body>
+
+        <main>
+
+            <h1>Score Testing</h1>
+
+            <p>This is testing for the /score functionality of the API. The user may provide the score they wish to
+                receive from the API. This must be a numerical value in the range of [-1000,1000], otherwise it will
+                be capped at those limits.
+            </p>
+
+            <p><label for="userInput">Please provide the number of treasure hunts:</label><br></p>
+            <p><input type="number" id="userInput"><button type="button" onclick="presentScore(document.getElementById('userInput').value,true,0)">Submit</button></p>
+
+            <div id="userScore"></div>
+
+            <table id="unitTest" border="1">
+                <tr>
+                    <th>Input</th>
+                    <th>Expected Output</th>
+                    <th>Retrieved Output</th>
+                    <th>Status</th>
+                </tr>
+            </table>
+            <script src="Score_testing.js"></script>
+        </main>
+
+    </body>
+
+</html>
