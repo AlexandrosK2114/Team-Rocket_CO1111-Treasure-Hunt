@@ -382,31 +382,100 @@ footer {
 /*STYLING FOR THE LEADERBOARD PAGE*/
 
 #leaderboard {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    padding: 2.5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-color: rgb(230, 220, 220);
-    border: rgb(122, 43, 43) dashed 2px;
+    gap: clamp(0.65rem, 2.5vw, 1rem);
+    width: 100%;
+    max-width: min(calc(100vw - 1.5rem), 36rem);
+    margin: 2% auto;
+
+    padding: clamp(1rem, 3.5vw, 1.75rem);
+    background-color: #FAFAFA;
+    
+    border: rgb(122, 43, 43) solid 2px;
     border-radius: 20px;
-    width: 60%;
-    color: rgb(122, 43, 43);
-    box-shadow: 10px 10px rgb(59, 58, 58);
-}
+    color: rgb(255, 34, 34);
+    }
 
 #leaderboard h2 {
-    color: rgb(59, 58, 58);
-    margin-top: 0;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    color: rgb(122, 43, 43);
+    border-bottom: rgb(122, 43, 43) solid 2px;
+    font-size: clamp(1.1rem, 4vw, 1.45rem);
 }
 
 #leaderboard ol {
-    font-size: 120%;
-    line-height: 1.8;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: clamp(0.9rem, 3.2vw, 1.1rem);
+    line-height: 1.5;
+    color: rgb(59, 58, 58);
+    border: rgb(122, 43, 43) solid 1px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgb(252, 252, 252);
 }
 
 #leaderboard li {
-    margin: 8px 0;
+    margin: 0;
+    padding: clamp(0.5rem, 2.2vw, 0.85rem) clamp(0.65rem, 2.5vw, 1.1rem);
+    color: rgb(59, 58, 58);
+    border-bottom: 1px solid rgba(122, 43, 43, 0.22);/*border-bottom for the leaderboard*/
+    display: flex;/* here flex is to display the leaderboard in a row*/
+    flex-wrap: wrap;
+    align-items: center
+    gap: 0.25rem 0.5rem
+    cursor: pointer; 
+    transition: background-color 0.8s ease, color 0.18s ease; /*ease method for smooth transition*/
+}/*the transition to make the leaderboard look more smooth*/
+
+#leaderboard li:last-child {
+    border-bottom: none;#
+    border-radius: 12px;
+}
+
+#leaderboard li:nth-child(even) {
+    background-color: rgba(122, 43, 43, 0.06);
+}
+
+#leaderboard li.leaderboard-entry--you {
+    background-color: rgba(122, 43, 43, 0.14);
+}
+
+@media (hover: hover) {
+    #leaderboard li:hover {
+        background-color: #ffd0d033;
+        box-shadow: inset 4px 0 0 rgb(122, 43, 43);
+    }
+
+    #leaderboard li:nth-child(even):hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    #leaderboard li.leaderboard-entry--you:hover {
+        background-color: rgba(122, 43, 43, 0.26);
+    }
+}
+
+#leaderboard li:active {
+    background-color: rgba(122, 43, 43, 0.24);
+    box-shadow: inset 4px 0 0 rgb(93, 30, 30);
+}
+
+#leaderboard li b {
+    color: rgb(122, 43, 43);
+}
+
+#leaderboard .your-position {
+    margin: 0;
+    text-align: center;
+    color: rgb(122, 43, 43);
+    font-weight: bold;
+    font-size: clamp(0.85rem, 3vw, 1rem);
 }
 
 /*STYLING FOR THE TESTING PAGE*/

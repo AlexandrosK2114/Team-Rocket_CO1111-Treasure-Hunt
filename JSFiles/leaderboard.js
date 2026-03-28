@@ -30,7 +30,7 @@ function startAgain() {
 
 async function showLeaderboard(sorted, limit, completionMode) {
     sorted = sorted !== false;
-    limit = limit || 10;
+    limit = limit || 15;
     completionMode = completionMode || false;
     const leaderboardContainer = document.getElementById('leaderboard');
     const gameContainer = document.getElementById('game-container');
@@ -70,7 +70,7 @@ async function showLeaderboard(sorted, limit, completionMode) {
             return;
         }
 
-        const leaderboard = data.leaderboard || [];
+        const leaderboard = data.leaderboard || [];//data contains the leaderboard data
         const myPosition = findMinePosition(data, playerName);
         const positionNum = Number(myPosition);
         const displayList = limit ? leaderboard.slice(0, limit) : leaderboard;
@@ -85,7 +85,7 @@ async function showLeaderboard(sorted, limit, completionMode) {
         leaderboardContainer.innerHTML = html;
         const list = leaderboardContainer.querySelector("ol");
 
-        displayList.forEach((entry, index) => {
+        displayList.forEach((entry, index) => { // makes a call to the leaderboard API and returns the leaderboard data
             const li = document.createElement("li");
             const isCurrentPlayer = playerName && String(entry.player).toLowerCase() === String(playerName).toLowerCase();
             if (isCurrentPlayer) {
@@ -123,5 +123,5 @@ async function showLeaderboard(sorted, limit, completionMode) {
 // Backwards compatibility if something else calls the old name
 function getLeaderBoard(sessionID) {
     sessionStorage.setItem("session", sessionID);
-    return showLeaderboard(true, 10, false);
+    return showLeaderboard(true, 15, false);
 }

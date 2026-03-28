@@ -19,12 +19,16 @@
     </nav>
 </header>
 
-    <main>
+<main>
+    <div id="leaderboard">
+        <p>Loading leaderboard...</p>
+    </div>
+</main>
 
-        <div id="game-container"></div>
-        <div id="leaderboard"></div>
-
-    </main>
-
+<script src="JSFiles/Cookies.js"></script>
+<script src="JSFiles/leaderboard.js"></script>
+<script>
+    showLeaderboard(true, 10, true);
+</script>
 </body>
 </html>
