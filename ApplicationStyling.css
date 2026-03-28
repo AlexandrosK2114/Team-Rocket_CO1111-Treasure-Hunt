@@ -3,42 +3,36 @@
 }
 
 /*STYLING FOR THE HEADERS*/
-
 header {
     color:white;
-    /*background-color:rgb(122,43,43);*/
     background-color:var(--darkBrown);
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     align-items: center;
-}
-
-nav>span{
-    padding:1.3vw;
-    background-color:white;
-    margin-right:15px;
-    box-shadow:5px 5px rgb(59,58,58);
-}
-
-nav>span>a{
-    text-decoration: none;
-    color:rgb(59,58,58);
-
+    gap:5%;
 }
 
 header>a {
     flex-grow: 0.02;
 }
 
-header > h1{
-    color:white;
-    flex-grow: 0.8;
+header button{
+    border:solid #FAFAFA;
+    border-radius: 10px;
+    background-color: #FAFAFA;
 }
 
-#teamLogo-header {
-    max-height: 12vw;
-    width:auto;
-    margin: 10px;
+header button:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+header button:active{
+    transform: translateY(5px);
+}
+
+header > h1{
+    color:white;
 }
 
 /*STYLING FOR THE FOOTERS*/
@@ -427,14 +421,14 @@ footer {
     border-bottom: 1px solid rgba(122, 43, 43, 0.22);/*border-bottom for the leaderboard*/
     display: flex;/* here flex is to display the leaderboard in a row*/
     flex-wrap: wrap;
-    align-items: center
-    gap: 0.25rem 0.5rem
+    align-items: center;
+    gap: 0.25rem 0.5rem;
     cursor: pointer; 
     transition: background-color 0.8s ease, color 0.18s ease; /*ease method for smooth transition*/
 }/*the transition to make the leaderboard look more smooth*/
 
 #leaderboard li:last-child {
-    border-bottom: none;#
+    border-bottom: none;
     border-radius: 12px;
 }
 
@@ -541,23 +535,40 @@ input{
     background: #FAFAFA;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
-    list-style: none;
     text-align: left;
     padding: 5%;
 }
+
+#teamNotesMain{
+    justify-content: center;
+    text-align: center;
+}
+
+/*QR Reader styling*/
+#cameraContainer{
+    background-color: #FAFAFA;
+    border-radius:20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+}
+
+#content{
+    background-color: black;
+}
+
+#preview{
+}
+
 /*MEDIA QUERIES*/
 @media screen and (min-width:0) {
     /*HEADERS*/
-    nav > span {
-        border-radius: 6px;
-    }
-
-    nav > span > a {
-        font-size: 50%;
+    #teamLogo-header {
+        width:90px;
+        height:90px;
+        margin: 5%;
     }
 
     header > h1 {
-        font-size: 25px;
+        font-size: 130%;
     }
 
     /*FOOTERS*/
@@ -679,6 +690,16 @@ input{
         font-size: 110%;
     }
 
+    /*Team Notes*/
+    .teamNotes{
+        width:80%;
+        font-size:90%;
+    }
+
+    #teamNotesMain h2{
+        margin:10% 5%;
+    }
+
     /*GENERAL*/
     input{
         font-size:15px;
@@ -699,10 +720,6 @@ input{
 
     input{
         font-size:70%;
-    }
-   /* ""Team Notes""*/
-    .teamNotes{
-        font-size:120%;
     }
 
 }
@@ -831,22 +848,19 @@ input{
     main p{
         font-size: 130%;
     }
-    /* ""Team Notes""*/
+    /*Team Notes*/
     .teamNotes{
-        font-size:120%;
+        width:70%;
+        font-size:100%;
+    }
+
+    #teamNotesMain h2{
+        margin:6% 2%;
     }
 }
 
 @media screen and (min-width:1200px){
     /*HEADERS*/
-    nav > span {
-        border-radius: 6px;
-    }
-
-    nav > span > a {
-        font-size: 100%;
-    }
-
     header > h1 {
         font-size: 300%;
     }
@@ -965,9 +979,14 @@ input{
     main p{
         font-size: 150%;
     }
-    /* ""Team Notes""*/
+    /*Team Notes*/
     .teamNotes{
-        font-size:120%;
+        width:50%;
+        font-size:110%;
+    }
+
+    #teamNotesMain h2{
+        margin:3% 2%;
     }
 }
 
