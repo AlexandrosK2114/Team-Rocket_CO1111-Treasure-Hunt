@@ -17,6 +17,7 @@
         <script src="JSFiles/AppJS.js"></script>
         <script src="JSFiles/Geolocation.js"></script>
         <script src="JSFiles/leaderboard.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="ApplicationStyling.css">
         <link rel="stylesheet" href="fireAnimation.css">
         <script src="JSFiles/fireAnimation.js"></script>
@@ -41,9 +42,10 @@
 
     <main>
 
-        <div id="progressionBar"></div>
-
         <div id="question">
+
+            <p id="progress"></p>
+
             <div id="playerScore"></div>
 
             <div id="questionTextBox"></div>
@@ -56,6 +58,16 @@
         <div id="congratulatoryMessage" style="display:none">
 
             <h2>Congratulations! You have completed the Treasure Hunt!</h2>
+            <p class="finalScore"><b>Your Score:</b></p>
+            <p><a href="leaderboard.html"><button class="appButton">View Leaderboard</button></a></p>
+            <p><a href="index.html"><button class="appButton">Return to Homepage</button></a></p>
+
+        </div>
+
+        <div id="finishedMessage" style="display:none">
+
+            <h2>Your session has finished.</h2>
+            <p class="finalScore"><b>Your Score:</b></p>
             <p><a href="leaderboard.html"><button class="appButton">View Leaderboard</button></a></p>
             <p><a href="index.html"><button class="appButton">Return to Homepage</button></a></p>
 

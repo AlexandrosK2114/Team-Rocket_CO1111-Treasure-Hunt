@@ -1,3 +1,4 @@
+/*This code was taken from https://www.subframe.com/tips/css-fire-animation-examples (Zhan, n.d.)*/
 :root {
     --accent: #ffd166;
 }
@@ -29,3 +30,6 @@
         opacity: 0;
     }
 }
+
+/*Zhan, I. (n.d.). '10 CSS Fire Animation Examples'. Available at:https://www.subframe.com/tips/css-fire-animation-examples
+(Accessed: 29/03/2026).*/

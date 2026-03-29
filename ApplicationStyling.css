@@ -1,3 +1,7 @@
+/*Some styles for buttons and box-shadows were taken from https://getcssscan.com/css-buttons-examples
+and https://getcssscan.com/css-box-shadow-examples
+ */
+
 :root{
     --darkBrown:rgb(71,55,55);
 }
@@ -286,7 +290,11 @@ footer {
 }
 
 /*STYLING FOR THE APP PAGE*/
-
+#progress{
+    display:flex;
+    align-items: center;
+    align-self: center;
+}
 #progressionBar{
     display:flex;
     flex-direction: row;
@@ -400,7 +408,7 @@ footer {
     text-align: center;
 }
 
-#congratulatoryMessage{
+#congratulatoryMessage,#finishedMessage{
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -409,7 +417,7 @@ footer {
     border-radius: 20px;
 }
 
-#congratulatoryMessage *{
+#congratulatoryMessage *, #finishedMessage{
     margin:5%;
     text-align: center;
 }
@@ -710,18 +718,18 @@ input{
     /*APP PAGE*/
     #question{
         margin-top:12%;
-        margin-bottom:12%;
-        width:90%;
+        margin-bottom:30%;
+        width:80%;
     }
 
     #playerScore{
-        width:30%;
-        font-size: 140%;
+        width:35%;
+        font-size: 130%;
         margin-bottom:5%;
     }
 
     #questionTextBox{
-        font-size:150%;
+        font-size:130%;
         margin-bottom:5%;
         gap:2%;
     }
@@ -732,21 +740,21 @@ input{
     }
 
     .optionButton{
-        font-size: 85%;
+        font-size: 75%;
     }
 
     .answerButton{
-        font-size: 170%;
+        font-size: 150%;
     }
 
     .submitButton{
-        font-size: 140%;
-    }
-    #inputField{
         font-size: 110%;
     }
+    #inputField{
+        font-size: 70%;
+    }
 
-    #congratulatoryMessage{
+    #congratulatoryMessage,#finishedMessage{
         margin:25% 5%;
         padding:5%;
     }
@@ -879,17 +887,17 @@ input{
     #question{
         margin-top:12%;
         margin-bottom:12%;
-        width:80%;
+        width:85%;
     }
 
     #playerScore{
-        width:25%;
-        font-size: 140%;
+        width:30%;
+        font-size: 130%;
         margin-bottom:5%;
     }
 
     #questionTextBox{
-        font-size:160%;
+        font-size:140%;
         margin-bottom:5%;
         gap:2%;
     }
@@ -908,17 +916,17 @@ input{
     }
 
     .submitButton{
-        font-size: 145%;
+        font-size: 120%;
     }
     #inputField{
-        font-size: 130%;
+        font-size: 110%;
     }
 
     #answerMessage{
-        font-size:130%;
+        font-size:120%;
     }
 
-    #congratulatoryMessage{
+    #congratulatoryMessage,#finishedMessage{
         margin:20% 3%;
         padding:5%;
         font-size:130%;
@@ -1073,7 +1081,7 @@ input{
         }
     }
 
-    #congratulatoryMessage{
+    #congratulatoryMessage,#finishedMessage{
         margin:2% 3%;
         padding:5%;
         font-size:100%;

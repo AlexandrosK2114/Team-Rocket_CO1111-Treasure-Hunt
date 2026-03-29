@@ -1,18 +1,10 @@
+//Function which creates a cookie
 function setCookie(cookieName, cookieValue, expireDays) {
     let date = new Date();
     date.setTime(date.getTime() + (expireDays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + date.toUTCString();
     document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
 }
-
-var date = new Date();
-setCookie("date", date.toUTCString());
-var expires = "expires=" + date.toUTCString();
-
-setCookie("firstname", expires);
-
-console.log(getCookie("Firstname"));
-console.log(getCookie("Lastname"));
 
 //A Function gets the cookie documents
 function  getCookie(cname) {
@@ -32,10 +24,12 @@ function  getCookie(cname) {
     return "";
 }
 
+//Function which checks if the cookie with the given name exists
 function cookieExists(cname) {
     return getCookie(cname) != null && getCookie(cname) !== "";
 }
 
+//Function which deletes the cookie with the given name
 function deleteCookie(cname) {
     document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }

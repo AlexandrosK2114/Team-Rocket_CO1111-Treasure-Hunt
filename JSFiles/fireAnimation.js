@@ -1,3 +1,5 @@
+//The code was taken from https://www.subframe.com/tips/css-fire-animation-examples (Zhan, n.d.)
+
 document.addEventListener('DOMContentLoaded', function() {
     // Create flames in header
     const headerFire = document.getElementById('headerFire');
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         flame.classList.add('flame');
 
         // Randomize flame properties
-        const size = 10 + Math.random() * 20;
+        const size = 10 + Math.random() * 15;
         const leftPos = Math.random() * 100;
         const delay = Math.random() * 3;
         const duration = 1.5 + Math.random() * 2;
@@ -31,3 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
         container.appendChild(flame);
     }
 })
+
+//Zhan, I. (n.d.). '10 CSS Fire Animation Examples'. Available at:https://www.subframe.com/tips/css-fire-animation-examples
+//(Accessed: 29/03/2026).

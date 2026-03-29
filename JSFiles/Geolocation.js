@@ -1,5 +1,7 @@
+//Constant used to call the getLocation() function every 30 seconds
 const recall=30000;
 
+//Variables used to store the player's longitude and latitude
 var longitude;
 var latitude;
 
@@ -10,6 +12,7 @@ function storePosition(position){
     console.log("Longitude: "+longitude);
     console.log("Latitude: "+latitude);
 
+    //Using the /api/location functionality to update the user's location every 30 seconds
     let userSession=getCookie("sessionID");
     let locationURL="https://codecyprus.org/th/api/location?session="+userSession+"&latitude="+latitude+"&longitude="+longitude;
 
