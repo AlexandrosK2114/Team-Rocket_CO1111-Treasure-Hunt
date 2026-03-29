@@ -206,9 +206,11 @@ function updateScore(finished) {
                 //Retrieving the current score of the player
                 let playerScore = scoreObject.score;
 
+                console.log(finished);
                 //If the session has concluded, the current score is displayed in the final message
-                if(finished){
-                    document.getElementById("finalScore").innerText+=playerScore;
+                if(finished===true){
+                    document.getElementById("finalScore").innerHTML+=playerScore;
+                    document.getElementById("finishedScore").innerHTML+=playerScore;
                 }
 
                 //If the session is ongoing, the displayed score inside the associated container is updated
