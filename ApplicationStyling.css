@@ -401,14 +401,12 @@ footer {
 }
 
 #congratulatoryMessage{
-    margin:18% 2%;
     display: flex;
     flex-direction: column;
     justify-items: center;
-    background-color:#FAFAFA;
+    background-color: #FAFAFA;
     box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
     border-radius: 20px;
-    padding:30% 10%;
 }
 
 #congratulatoryMessage *{
@@ -748,6 +746,11 @@ input{
         font-size: 110%;
     }
 
+    #congratulatoryMessage{
+        margin:25% 5%;
+        padding:5%;
+    }
+
     /*Team Notes*/
     .teamNotes{
         width:80%;
@@ -915,6 +918,13 @@ input{
         font-size:130%;
     }
 
+    #congratulatoryMessage{
+        margin:20% 3%;
+        padding:5%;
+        font-size:130%;
+    }
+
+
     /*GENERAL*/
     main h1,h2,h3{
         font-size: 150%;
@@ -1049,6 +1059,7 @@ input{
     .submitButton{
         font-size: 100%;
     }
+
     #inputField{
         font-size: 100%;
     }
@@ -1062,6 +1073,13 @@ input{
         }
     }
 
+    #congratulatoryMessage{
+        margin:2% 3%;
+        padding:5%;
+        font-size:100%;
+    }
+
+    /*GENERAL*/
     main h1,h2,h3{
         font-size: 180%;
     }
