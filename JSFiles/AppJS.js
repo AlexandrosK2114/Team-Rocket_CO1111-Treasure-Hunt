@@ -49,7 +49,7 @@ function loadQuestion() {
 
                     //Creating a skip button and a qr reader opener and adding them under the question text
                     let answerButtons = "<div id='questionOptions'><button class='optionButton' onclick='skipQuestion()'>SKIP</button>";
-                    answerButtons += "<button onclick='openCamera()' class='optionButton'><img id='qrIcon' src='cameraIcon.png' alt='QR code scanner icon'/></button></div>";
+                    answerButtons += "<button onclick='openCamera()' class='optionButton'><img id='qrIcon' src='../applicationMedia/cameraIcon.png' alt='QR code scanner icon'/></button></div>";
                     questionTexBox.innerHTML += answerButtons;
 
                     //Using the retrieved question type to create the necessary answer options
