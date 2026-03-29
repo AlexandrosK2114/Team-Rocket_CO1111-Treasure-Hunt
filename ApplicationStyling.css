@@ -3,59 +3,79 @@
 }
 
 /*STYLING FOR THE HEADERS*/
-
 header {
     color:white;
-    /*background-color:rgb(122,43,43);*/
     background-color:var(--darkBrown);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 
-nav>span{
-    padding:1.3vw;
-    background-color:white;
-    margin-right:15px;
-    box-shadow:5px 5px rgb(59,58,58);
-}
-
-nav>span>a{
-    text-decoration: none;
-    color:rgb(59,58,58);
+header div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top:2%;
 
 }
-
-header>a {
-    flex-grow: 0.02;
-}
-
 header > h1{
     color:white;
-    flex-grow: 0.8;
 }
 
-#teamLogo-header {
-    max-height: 12vw;
-    width:auto;
-    margin: 10px;
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    margin:4% 0;
+    align-content: center;
+}
+
+header>nav>a{
+    margin-right:5%;
+    text-align: center;
+    background-color: white;
+    border:solid #FAFAFA 5px;
+    border-radius: 10px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+header>nav>a{
+    text-decoration: none;
+    color:black;
+}
+
+header>nav>a:hover{
+    cursor: pointer;
+    transform: scale(1.07);
+}
+
+header>nav>a:active{
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(5px);
 }
 
 /*STYLING FOR THE FOOTERS*/
 
 footer {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color:var(--darkBrown);
     margin-top:5%;
     padding:10% 3%;
+    gap:8%;
 }
+
 
 .links{
     margin-left: 2%;
     color:white;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .links > p >a{
@@ -151,6 +171,12 @@ footer {
     border: #FAFAFA solid 2px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+    list-style: none;
+}
+
+.HuntRules li{
+    text-align: center;
+    justify-self: center;
 }
 
 #registrationDiv *{
@@ -171,23 +197,40 @@ footer {
 
 }
 
-#registrationDiv:hover, .HuntRules:hover{
+#registrationDiv:hover, .HuntRules:hover, #existingSessionDiv:hover{
     box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
 }
 
 #existingSessionDiv{
     display:none;
     padding:2%;
-    color:#FAFAFA;
+    text-align: center;
     align-items: center;
     border-radius: 10px;
-    background-color:rgb(122, 43, 43);;
-    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px;
+    background-color:#FAFAFA;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
 }
 
-#existingSessionDiv p {
-    color: #FAFAFA;
-    text-align: center;
+#existingSessionDiv button{
+    padding:1%;
+    background-color:var(--darkBrown);
+    cursor:pointer;
+    border:solid var(--darkBrown) 2px;
+    border-radius:10px;
+    color:white;
+
+}
+
+#existingSessionDiv button:hover{
+    transform: scale(1.05);
+    background-color: #FAFAFA;
+    border:#FAFAFA;
+    color:var(--darkBrown);
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+#existingSessionDiv button:active{
+    transform: translateY(4px);
 }
 
 #Hunts{
@@ -211,15 +254,7 @@ footer {
 }
 
 #Hunts li:active {
-    background-color: var(--darkBrown);
-    transform: scale(1.05);
-
-    *{
-        color: #FAFAFA;
-    }
-}
-#Hunts li>h2{
-    margin:0;
+    transform: translateY(4px);
 }
 
 #start{
@@ -228,8 +263,7 @@ footer {
     border-radius: 6px;
     color: rgb(59,58,58);
     box-shadow: 4px 4px 0 rgb(120,120,120);
-    float: left;
-    margin-right: 10px;
+    align-self: center;
 }
 
 #start:hover {
@@ -238,6 +272,7 @@ footer {
     border: solid grey 2px;
     color: cornsilk;
 }
+
 #start:active {
     transform: translateY(3px);
     box-shadow: 1px 1px 0 rgb(120,120,120);
@@ -246,6 +281,8 @@ footer {
 #errorMessage{
     display:none;
     color:red;
+    margin:2%;
+    align-self: center;
 }
 
 /*STYLING FOR THE APP PAGE*/
@@ -358,6 +395,7 @@ footer {
 }
 
 #answerMessage{
+    background-color: #FAFAFA;
     display:none;
     align-self: center;
     text-align: center;
@@ -427,14 +465,14 @@ footer {
     border-bottom: 1px solid rgba(122, 43, 43, 0.22);/*border-bottom for the leaderboard*/
     display: flex;/* here flex is to display the leaderboard in a row*/
     flex-wrap: wrap;
-    align-items: center
-    gap: 0.25rem 0.5rem
+    align-items: center;
+    gap: 0.25rem 0.5rem;
     cursor: pointer; 
     transition: background-color 0.8s ease, color 0.18s ease; /*ease method for smooth transition*/
 }/*the transition to make the leaderboard look more smooth*/
 
 #leaderboard li:last-child {
-    border-bottom: none;#
+    border-bottom: none;
     border-radius: 12px;
 }
 
@@ -514,16 +552,14 @@ input{
 }
 
 .appButton{
-    margin-top:10%;
-    margin-bottom:10%;
-    padding:50px;
+    margin:10% 5%;
+    padding:8%;
     background-color:var(--darkBrown);
     font-size:100%;
     cursor:pointer;
     border:solid var(--darkBrown) 2px;
     border-radius:10px;
     color:white;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 -25px 18px -14px inset,rgba(0, 0, 0, 0.3) 0 1px 2px,rgba(0, 0, 0, 0.3) 0 2px 4px,rgba(0, 0, 0, 0.3) 0 4px 8px,rgba(0, 0, 0, 0.3) 0 8px 16px,rgba(0, 0, 0, 0.3) 0 16px 32px;
 }
 
 .appButton:hover{
@@ -531,6 +567,7 @@ input{
     border:#FAFAFA;
     color:rgb(71,55,30);
     transform: scale(1.05);
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
 .appButton:active{
@@ -541,37 +578,63 @@ input{
     background: #FAFAFA;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
-    list-style: none;
     text-align: left;
     padding: 5%;
 }
+
+#teamNotesMain{
+    justify-content: center;
+    text-align: center;
+}
+
+/*QR Reader styling*/
+#cameraContainer{
+    background-color: #FAFAFA;
+    border-radius:20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+}
+
+#content{
+    color:black;
+    background: #FAFAFA;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+    text-align: center;
+    padding: 5%;
+}
+
+#preview{
+}
+
 /*MEDIA QUERIES*/
 @media screen and (min-width:0) {
     /*HEADERS*/
-    nav > span {
-        border-radius: 6px;
+    #teamLogo-header {
+        width:80px;
+        height:80px;
     }
 
-    nav > span > a {
-        font-size: 50%;
+    header >div>h1 {
+        font-size: 140%;
     }
 
-    header > h1 {
-        font-size: 25px;
+    header>nav>a{
+        font-size: 70%;
+        margin-right:5%;
+        padding:1%;
     }
 
     /*FOOTERS*/
-    footer{
-        gap:8%;
+    footer h3{
+        font-size: 70%;
     }
-
-    footer>a,h3,p{
-        font-size:70%;
+    footer>a,p{
+        font-size:50%;
     }
 
     .logoImage{
-        width:18px;
-        height:18px;
+        width:20px;
+        height:20px;
     }
 
     /*INDEX MAIN*/
@@ -613,9 +676,14 @@ input{
         width:80%;
     }
 
+    #existingSessionDiv button{
+        font-size: 100%;
+    }
+
     #registrationDiv{
         width:90%;
         padding: 2.5%;
+        margin-top:3%;
     }
 
     #registrationDiv h2{
@@ -633,6 +701,7 @@ input{
     }
 
     #start {
+        width:20%;
         font-size: 120%;
     }
 
@@ -679,6 +748,23 @@ input{
         font-size: 110%;
     }
 
+    /*Team Notes*/
+    .teamNotes{
+        width:80%;
+        font-size:90%;
+    }
+
+    #teamNotesMain h2{
+        margin:10% 5%;
+    }
+
+    /*Reader*/
+    #preview{
+        margin:10% 0;
+        height:100vw;
+        width:100vw;
+    }
+
     /*GENERAL*/
     input{
         font-size:15px;
@@ -700,37 +786,42 @@ input{
     input{
         font-size:70%;
     }
-   /* ""Team Notes""*/
-    .teamNotes{
-        font-size:120%;
-    }
 
 }
 @media screen and (min-width:450px){
     /*HEADERS*/
-    nav > span {
-        border-radius: 6px;
+    #teamLogo-header {
+        width:110px;
+        height:110px;
     }
 
-    nav > span > a {
-        font-size: 60%;
+    header >div>h1 {
+        font-size: 190%;
     }
 
-    header > h1 {
-        font-size: 25px;
+    header>nav>a{
+        font-size: 100%;
+        margin-right:5%;
+        padding:2%;
     }
 
     /*FOOTERS*/
-    footer{
-        gap:15%;
+    footer h3{
+        font-size: 150%;
     }
-    footer>a,h3,p{
-        font-size:90%;
+    footer>a,p{
+        font-size:80%;
     }
 
     .logoImage{
-        width:25px;
-        height:25px;
+        width:40px;
+        height:40px;
+    }
+
+    /*INDEX MAIN*/
+    .indexInfo {
+        padding:3%;
+        width:85%;
     }
 
     /*INDEX MAIN*/
@@ -752,6 +843,9 @@ input{
     }
 
     /*HUNTS PAGE*/
+    .HuntRules{
+        width:70%;
+    }
     .HuntRules li{
         font-size:125%;
     }
@@ -773,11 +867,11 @@ input{
     }
 
     #start {
-        font-size: 150%;
+        font-size: 170%;
     }
 
     #errorMessage{
-        font-size: 150%;
+        font-size: 165%;
     }
 
     /*APP PAGE*/
@@ -831,24 +925,32 @@ input{
     main p{
         font-size: 130%;
     }
-    /* ""Team Notes""*/
+    /*Team Notes*/
     .teamNotes{
-        font-size:120%;
+        width:70%;
+        font-size:100%;
+    }
+
+    #teamNotesMain h2{
+        margin:6% 2%;
     }
 }
 
 @media screen and (min-width:1200px){
     /*HEADERS*/
-    nav > span {
-        border-radius: 6px;
+    #teamLogo-header {
+        width:150px;
+        height:150px;
     }
 
-    nav > span > a {
-        font-size: 100%;
+    header >div>h1 {
+        font-size: 220%;
     }
 
-    header > h1 {
-        font-size: 300%;
+    header>nav>a{
+        font-size: 120%;
+        margin-right:5%;
+        padding:3%;
     }
 
     /*FOOTERS*/
@@ -860,8 +962,8 @@ input{
     }
 
     .logoImage{
-        width:30px;
-        height:30px;
+        width:60px;
+        height:60px;
     }
 
     /*INDEX MAIN*/
@@ -883,6 +985,10 @@ input{
     }
 
     /*HUNTS PAGE*/
+    .HuntRules{
+        width:40%;
+    }
+
     .HuntRules li{
         font-size:150%;
     }
@@ -908,7 +1014,7 @@ input{
     }
 
     #errorMessage{
-        font-size: 150%;
+        font-size: 190%;
     }
 
     /*APP PAGE*/
@@ -965,9 +1071,14 @@ input{
     main p{
         font-size: 150%;
     }
-    /* ""Team Notes""*/
+    /*Team Notes*/
     .teamNotes{
-        font-size:120%;
+        width:50%;
+        font-size:110%;
+    }
+
+    #teamNotesMain h2{
+        margin:3% 2%;
     }
 }
 

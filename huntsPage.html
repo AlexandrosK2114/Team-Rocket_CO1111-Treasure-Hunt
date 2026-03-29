@@ -26,18 +26,25 @@
 
     <body onload="getChallenges(); checkForActiveSession()">
 
-        <header id="headerFire">
-            <a href="index.html"><img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header"></a>
+    <header id="headerFire">
+
+        <div>
+            <img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header">
             <h1>Team Phoenix </h1>
-            <nav>
-                <span><a href="index.html">Homepage</a></span>
-                <span><a href="huntsPage.html">Available Hunts</a></span>
-                <span><a href="test.html">Testing</a></span>
-                <span><a href="teamNotes.html">Team Notes</a></span>
-            </nav>
-        </header>
+        </div>
+
+        <nav>
+            <a href="index.html">Homepage</a>
+            <a href="huntsPage.html">Available Hunts</a>
+            <a href="test.html">Testing</a>
+            <a href="teamNotes.html">Team Notes</a>
+        </nav>
+
+    </header>
 
         <main>
+
+            <div id="existingSessionDiv"></div>
 
             <h1 class="heading">Rules</h1>
 
@@ -50,8 +57,6 @@
                 <li>Some questions are location based.</li>
             </ul>
 
-            <div id="existingSessionDiv"></div>
-
             <div id="registrationDiv">
 
                 <p><label for="username">Enter username</label><input type="text" name="username" id="username"></p>
@@ -61,7 +66,7 @@
                 <ul id="Hunts">
                 </ul>
 
-                <label for="start"><input type="button" name="start" id="start" value="Start" onclick="startHunt()"></label>
+                <button id="start" onclick="startHunt()">Start</button>
 
                 <span id="errorMessage"></span>
             </div>
@@ -74,10 +79,9 @@
                 <h3>Socials:</h3>
 
                 <div id="linksLogos">
-                    <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage"/> </a>
-                    <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" /></a>
+                    <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage" alt="Logo of social media platform X"/> </a>
+                    <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" alt="Logo of social media platform Instrgram"/></a>
                 </div>
-
             </div>
 
             <div class="links">

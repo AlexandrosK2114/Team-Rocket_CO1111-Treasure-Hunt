@@ -3,8 +3,7 @@
 }
 
 .flame {
-    width: 50%;
-    height: 50%;
+
     background: var(--accent);
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     position: absolute;
@@ -28,11 +27,5 @@
     100% {
         transform: translateY(-100px) scale(0);
         opacity: 0;
-    }
-}
-
-@media screen and (min-width:0){
-
-    .flame{
     }
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,42 +6,47 @@
 </head>
 <body>
 
-<main>
+  <main>
 
-<p>Enter input (non-negative size):</p>
+    <h1>Leaderboard Presentation Testing</h1>
 
-<form action="javascript:showUserLeaderboardResult()">
-  <input type="number" id="size" min="0" step="1" />
-  <button type="submit" id="submit">Submit</button>
-</form>
+    <p>This is testing for the /leaderboard functionality of the API, which returns information required
+      to present a leaderboard with scores and player placements. The user may provide the number of entries
+      the leaderboard should have in the following input box.
+    </p>
 
-<div id="userResult"></div>
+    <form action="javascript:showUserLeaderboardResult()">
+      <p><label for="size">Enter input (non-negative integer): </label>
+      <input type="number" id="size" min="0" step="1"/>
+      <button type="submit" id="submit">Submit</button></p>
+    </form>
 
-<table id="test-results-table" >
-  <tr>
-    <th>Input</th>
-    <th>Expected leaderboard size</th>
-    <th>Computed leaderboard size</th>
-    <th>Expected numOfPlayers</th>
-    <th>Computed numOfPlayers</th>
-    <th>Expected status</th>
-    <th>Computed status</th>
-    <th>Pass/Fail</th>
-  </tr>
-</table>
+    <div id="userResult"></div>
 
-<script>
+    <table id="test-results-table" border="1">
+      <tr>
+        <th>Input</th>
+        <th>Expected leaderboard size</th>
+        <th>Computed leaderboard size</th>
+        <th>Expected numOfPlayers</th>
+        <th>Computed numOfPlayers</th>
+        <th>Expected status</th>
+        <th>Computed status</th>
+        <th>Pass/Fail</th>
+      </tr>
+    </table>
 
+  <script>
   const testResultsTable = document.getElementById('test-results-table');
 
-  testPairs = [
+  const testPairs = [
     { size: 1, leaderboardSize: 1, numOfPlayers: 1, status: "OK" },
     { size: 3, leaderboardSize: 3, numOfPlayers: 3, status: "OK" },
-    { size: -1, leaderboardSize: 0, numOfPlayers: 0, status: "ERROR" }, 
-  ]
+    { size: -1, leaderboardSize: 0, numOfPlayers: 0, status: "ERROR" },
+  ];
 
   async function showUserLeaderboardResult() {
-    const sizeField = document.getElementById('size');//sizeField is the input field for the size, to get the size from the user
+    const sizeField = document.getElementById('size');
     const block = document.getElementById('userResult');
     const raw = String(sizeField.value).trim();
 
@@ -53,7 +57,7 @@
 
     const size = Number(raw);
     if (!Number.isFinite(size) || size < 0 || !Number.isInteger(size)) {
-      block.innerHTML = '<p>Size must be a non-negative integer (0 or greater).</p>';// block tells the user that the size must be a non-negative integer
+      block.innerHTML = '<p>Size must be a non-negative integer (0 or greater).</p>';
       return;
     }
 
@@ -92,15 +96,15 @@
       }
 
       html += "<tr>" +
-      "    <td>" + pair.size + "</td>\n" +
-      "    <td>" + pair.leaderboardSize + "</td>\n" +
-      "    <td>" + leaderboardSize + "</td>\n" +
-      "    <td>" + pair.numOfPlayers + "</td>\n" +
-      "    <td>" + numOfPlayers +"</td>\n" +
-      "    <td>" + pair.status + "</td>\n" +
-      "    <td>" + status + "</td>\n" +
-      "    <td>" + (success ? "✅" : "❌") + "</td>" +
-              "</tr>";
+        "    <td>" + pair.size + "</td>\n" +
+        "    <td>" + pair.leaderboardSize + "</td>\n" +
+        "    <td>" + leaderboardSize + "</td>\n" +
+        "    <td>" + pair.numOfPlayers + "</td>\n" +
+        "    <td>" + numOfPlayers + "</td>\n" +
+        "    <td>" + pair.status + "</td>\n" +
+        "    <td>" + status + "</td>\n" +
+        "    <td>" + (success ? "✅" : "❌") + "</td>" +
+        "</tr>";
     }
 
     testResultsTable.innerHTML += html;
@@ -108,9 +112,8 @@
 
   runUnitTests();
 
-</script>
+  </script>
 
-
-</main>
+  </main>
 </body>
 </html>

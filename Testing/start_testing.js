@@ -4,7 +4,7 @@ let testPairs=[
     {t:'PLAYER',expected:'The specified playerName: Homer, is already in use (try a different one).'},
     {t:'APP',expected:'Missing or empty parameter: app'},
     {t:'UNKNOWN',expected:'Could not find a treasure hunt for the specified id: 123'},
-    {t:'MISSING_PARAMETER',expected:'\'Multiple error messages of the form \'Missing or empty parameter: ...'}
+    {t:'MISSING_PARAMETER',expected:'Missing or empty parameter: player,Missing or empty parameter: app,Missing or empty parameter: treasure-hunt-id'}
 ];
 
 function test(){
@@ -52,11 +52,10 @@ function startHunt(userInput,Input,expected) {
                 else{
                     let row = "<tr>\n" +
                         "<td>" + Input + "</td>" +
-                        "<td>" + expected + "</td></tr>"
-                        /*"<td>" + errorMessage + "</td>";
-                        "<td><img src='" + (expected === errorMessage ? 'correct.png' : 'wrong.png') + "' alt='Success or failed icon'/></td>\n";
+                        "<td>" + expected + "</td>"+
+                        "<td>" + errorMessage + "</td>"+
+                        "<td><img src='" + (expected === String(errorMessage) ? 'correct.png' : 'wrong.png') + "' alt='Success or failed icon'/></td><tr>";
 
-                    row += "</td></tr>"*/
 
                     document.getElementById("unitTest").innerHTML += row;
                 }
