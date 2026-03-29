@@ -30,24 +30,26 @@ header nav{
     align-content: center;
 }
 
-header>nav>button{
+header>nav>a{
     margin-right:5%;
+    text-align: center;
+    background-color: white;
     border:solid #FAFAFA 5px;
     border-radius: 10px;
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
-header>nav>button>a{
+header>nav>a{
     text-decoration: none;
     color:black;
 }
 
-header>nav>button:hover{
+header>nav>a:hover{
     cursor: pointer;
     transform: scale(1.07);
 }
 
-header>nav>button:active{
+header>nav>a:active{
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(5px);
 }
@@ -594,7 +596,7 @@ input{
         font-size: 140%;
     }
 
-    header>nav>button{
+    header>nav>a{
         font-size: 70%;
         margin-right:5%;
         padding:1%;
@@ -762,7 +764,7 @@ input{
         font-size: 190%;
     }
 
-    header>nav>button{
+    header>nav>a{
         font-size: 100%;
         margin-right:5%;
         padding:2%;
@@ -907,7 +909,7 @@ input{
         font-size: 220%;
     }
 
-    header>nav>button{
+    header>nav>a{
         font-size: 120%;
         margin-right:5%;
         padding:3%;
