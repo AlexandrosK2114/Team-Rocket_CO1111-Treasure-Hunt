@@ -7,32 +7,49 @@ header {
     color:white;
     background-color:var(--darkBrown);
     display: flex;
-    flex-direction:row;
+    flex-direction: column;
     align-items: center;
-    gap:5%;
 }
 
-header>a {
-    flex-grow: 0.02;
-}
+header div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top:2%;
 
-header button{
-    border:solid #FAFAFA;
-    border-radius: 10px;
-    background-color: #FAFAFA;
 }
-
-header button:hover{
-    cursor: pointer;
-    transform: scale(1.01);
-}
-
-header button:active{
-    transform: translateY(5px);
-}
-
 header > h1{
     color:white;
+}
+
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    margin:4% 0;
+    align-content: center;
+}
+
+header>nav>button{
+    margin-right:5%;
+    border:solid #FAFAFA 5px;
+    border-radius: 10px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+header>nav>button>a{
+    text-decoration: none;
+    color:black;
+}
+
+header>nav>button:hover{
+    cursor: pointer;
+    transform: scale(1.07);
+}
+
+header>nav>button:active{
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(5px);
 }
 
 /*STYLING FOR THE FOOTERS*/
@@ -562,13 +579,18 @@ input{
 @media screen and (min-width:0) {
     /*HEADERS*/
     #teamLogo-header {
-        width:90px;
-        height:90px;
-        margin: 5%;
+        width:80px;
+        height:80px;
     }
 
-    header > h1 {
-        font-size: 130%;
+    header >div>h1 {
+        font-size: 140%;
+    }
+
+    header>nav>button{
+        font-size: 70%;
+        margin-right:5%;
+        padding:1%;
     }
 
     /*FOOTERS*/
@@ -725,16 +747,19 @@ input{
 }
 @media screen and (min-width:450px){
     /*HEADERS*/
-    nav > span {
-        border-radius: 6px;
+    #teamLogo-header {
+        width:110px;
+        height:110px;
     }
 
-    nav > span > a {
-        font-size: 60%;
+    header >div>h1 {
+        font-size: 190%;
     }
 
-    header > h1 {
-        font-size: 25px;
+    header>nav>button{
+        font-size: 100%;
+        margin-right:5%;
+        padding:2%;
     }
 
     /*FOOTERS*/
@@ -861,8 +886,19 @@ input{
 
 @media screen and (min-width:1200px){
     /*HEADERS*/
-    header > h1 {
-        font-size: 300%;
+    #teamLogo-header {
+        width:150px;
+        height:150px;
+    }
+
+    header >div>h1 {
+        font-size: 220%;
+    }
+
+    header>nav>button{
+        font-size: 120%;
+        margin-right:5%;
+        padding:3%;
     }
 
     /*FOOTERS*/
