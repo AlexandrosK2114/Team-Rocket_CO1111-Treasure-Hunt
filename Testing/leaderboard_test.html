@@ -46,7 +46,7 @@
   ];
 
   async function showUserLeaderboardResult() {
-    const sizeField = document.getElementById('size');
+    const sizeField = document.getElementById('size');////sizeField is the input field for the size, to get the size from the user
     const block = document.getElementById('userResult');
     const raw = String(sizeField.value).trim();
 
@@ -57,7 +57,7 @@
 
     const size = Number(raw);
     if (!Number.isFinite(size) || size < 0 || !Number.isInteger(size)) {
-      block.innerHTML = '<p>Size must be a non-negative integer (0 or greater).</p>';
+      block.innerHTML = '<p>Size must be a non-negative integer (0 or greater).</p>';// block tells the user that the size must be a non-negative integer
       return;
     }
 
