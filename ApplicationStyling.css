@@ -595,7 +595,12 @@ input{
 }
 
 #content{
-    background-color: black;
+    color:black;
+    background: #FAFAFA;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+    text-align: center;
+    padding: 5%;
 }
 
 #preview{
