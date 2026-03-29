@@ -10,12 +10,12 @@ function checkForActiveSession(){
 
         if(huntCompleted==="true"){
             element="<p>Would you like to view your placement in your previous session?</p>"
-            element+="<p><button type='button' onclick='loadActiveSession(true)' class='appButton'>Leaderboard</button></p>"
+            element+="<p><button type='button' onclick='loadActiveSession(true)'>Leaderboard</button></p>"
             block.innerHTML+=element;
         }
         else {
             element = "<p>A Treasure Hunt is already in progress. Would you like to continue this session?</p> "
-            element += "<p><button type='button' onclick='loadActiveSession(false)' class='appButton'>Continue</button></p>"
+            element += "<p><button type='button' onclick='loadActiveSession(false)'>Continue</button></p>"
             block.innerHTML += element;
         }
         block.style.display="block";

@@ -171,6 +171,12 @@ footer {
     border: #FAFAFA solid 2px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+    list-style: none;
+}
+
+.HuntRules li{
+    text-align: center;
+    justify-self: center;
 }
 
 #registrationDiv *{
@@ -191,23 +197,40 @@ footer {
 
 }
 
-#registrationDiv:hover, .HuntRules:hover{
+#registrationDiv:hover, .HuntRules:hover, #existingSessionDiv:hover{
     box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
 }
 
 #existingSessionDiv{
     display:none;
     padding:2%;
-    color:#FAFAFA;
+    text-align: center;
     align-items: center;
     border-radius: 10px;
-    background-color:rgb(122, 43, 43);;
-    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px;
+    background-color:#FAFAFA;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
 }
 
-#existingSessionDiv p {
-    color: #FAFAFA;
-    text-align: center;
+#existingSessionDiv button{
+    padding:1%;
+    background-color:var(--darkBrown);
+    cursor:pointer;
+    border:solid var(--darkBrown) 2px;
+    border-radius:10px;
+    color:white;
+
+}
+
+#existingSessionDiv button:hover{
+    transform: scale(1.05);
+    background-color: #FAFAFA;
+    border:#FAFAFA;
+    color:var(--darkBrown);
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+#existingSessionDiv button:active{
+    transform: translateY(4px);
 }
 
 #Hunts{
@@ -231,15 +254,7 @@ footer {
 }
 
 #Hunts li:active {
-    background-color: var(--darkBrown);
-    transform: scale(1.05);
-
-    *{
-        color: #FAFAFA;
-    }
-}
-#Hunts li>h2{
-    margin:0;
+    transform: translateY(4px);
 }
 
 #start{
@@ -248,8 +263,7 @@ footer {
     border-radius: 6px;
     color: rgb(59,58,58);
     box-shadow: 4px 4px 0 rgb(120,120,120);
-    float: left;
-    margin-right: 10px;
+    align-self: center;
 }
 
 #start:hover {
@@ -258,6 +272,7 @@ footer {
     border: solid grey 2px;
     color: cornsilk;
 }
+
 #start:active {
     transform: translateY(3px);
     box-shadow: 1px 1px 0 rgb(120,120,120);
@@ -266,6 +281,8 @@ footer {
 #errorMessage{
     display:none;
     color:red;
+    margin:2%;
+    align-self: center;
 }
 
 /*STYLING FOR THE APP PAGE*/
@@ -378,6 +395,7 @@ footer {
 }
 
 #answerMessage{
+    background-color: #FAFAFA;
     display:none;
     align-self: center;
     text-align: center;
@@ -654,9 +672,14 @@ input{
         width:80%;
     }
 
+    #existingSessionDiv button{
+        font-size: 100%;
+    }
+
     #registrationDiv{
         width:90%;
         padding: 2.5%;
+        margin-top:3%;
     }
 
     #registrationDiv h2{
@@ -674,6 +697,7 @@ input{
     }
 
     #start {
+        width:20%;
         font-size: 120%;
     }
 
@@ -808,6 +832,9 @@ input{
     }
 
     /*HUNTS PAGE*/
+    .HuntRules{
+        width:70%;
+    }
     .HuntRules li{
         font-size:125%;
     }
@@ -829,11 +856,11 @@ input{
     }
 
     #start {
-        font-size: 150%;
+        font-size: 170%;
     }
 
     #errorMessage{
-        font-size: 150%;
+        font-size: 165%;
     }
 
     /*APP PAGE*/
@@ -947,6 +974,10 @@ input{
     }
 
     /*HUNTS PAGE*/
+    .HuntRules{
+        width:40%;
+    }
+
     .HuntRules li{
         font-size:150%;
     }
@@ -972,7 +1003,7 @@ input{
     }
 
     #errorMessage{
-        font-size: 150%;
+        font-size: 190%;
     }
 
     /*APP PAGE*/
