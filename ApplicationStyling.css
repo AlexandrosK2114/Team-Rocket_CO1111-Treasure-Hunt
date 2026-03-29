@@ -55,18 +55,25 @@ header>nav>button:active{
 /*STYLING FOR THE FOOTERS*/
 
 footer {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color:var(--darkBrown);
     margin-top:5%;
     padding:10% 3%;
+    gap:8%;
 }
+
 
 .links{
     margin-left: 2%;
     color:white;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .links > p >a{
@@ -594,17 +601,16 @@ input{
     }
 
     /*FOOTERS*/
-    footer{
-        gap:8%;
+    footer h3{
+        font-size: 70%;
     }
-
-    footer>a,h3,p{
-        font-size:70%;
+    footer>a,p{
+        font-size:50%;
     }
 
     .logoImage{
-        width:18px;
-        height:18px;
+        width:20px;
+        height:20px;
     }
 
     /*INDEX MAIN*/
@@ -763,16 +769,22 @@ input{
     }
 
     /*FOOTERS*/
-    footer{
-        gap:15%;
+    footer h3{
+        font-size: 150%;
     }
-    footer>a,h3,p{
-        font-size:90%;
+    footer>a,p{
+        font-size:80%;
     }
 
     .logoImage{
-        width:25px;
-        height:25px;
+        width:40px;
+        height:40px;
+    }
+
+    /*INDEX MAIN*/
+    .indexInfo {
+        padding:3%;
+        width:85%;
     }
 
     /*INDEX MAIN*/
@@ -910,8 +922,8 @@ input{
     }
 
     .logoImage{
-        width:30px;
-        height:30px;
+        width:60px;
+        height:60px;
     }
 
     /*INDEX MAIN*/

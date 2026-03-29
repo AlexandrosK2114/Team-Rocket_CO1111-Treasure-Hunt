@@ -8,15 +8,20 @@
     <script src="JSFiles/Cookies.js"></script>
 </head>
 <body onload="showLeaderboard()">
-<header>
-    <a href="index.html"><img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header"></a>
-    <h1>Team Phoenix </h1>
+<header id="headerFire">
+
+    <div>
+        <img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header">
+        <h1>Team Phoenix </h1>
+    </div>
+
     <nav>
-        <span><a href="index.html">Homepage</a></span>
-        <span><a href="huntsPage.html">Available Hunts</a></span>
-        <span><a href="huntsPage.html">HuntsPage</a></span>
-        <span><a href="teamnotes">notes</a></span>
+        <button><a href="index.html">Homepage</a></button>
+        <button><a href="huntsPage.html">Available Hunts </a></button>
+        <button><a href="test.html">Testing</a></button>
+        <button><a href="teamNotes.html">Team Notes</a></button>
     </nav>
+
 </header>
 
 <main>
@@ -25,10 +30,35 @@
     </div>
 </main>
 
+
 <script src="JSFiles/Cookies.js"></script>
 <script src="JSFiles/leaderboard.js"></script>
 <script>
     showLeaderboard(true, 10, true);
 </script>
+
+
+<footer>
+
+    <div class="links">
+        <h3>Socials:</h3>
+
+        <div id="linksLogos">
+            <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage" alt="Logo of social media platform X"/> </a>
+            <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" alt="Logo of social media platform Instrgram"/></a>
+        </div>
+    </div>
+
+    <div class="links">
+        <h3>Contact:</h3>
+        <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+    </div>
+
+    <div class="links">
+        <h3>Location:</h3>
+        <p>Larnaca, Cyprus</p>
+    </div>
+
+</footer>
 </body>
 </html>
