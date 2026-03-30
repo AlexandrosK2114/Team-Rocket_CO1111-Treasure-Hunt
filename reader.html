@@ -100,7 +100,10 @@
 
                 function switchCamera() {
                     //Cycle through the available cameras:
-                    if (cameraIndex < cameraArray.length-1) {
+                    if(cameraIndex===1) cameraIndex=0
+                    else if(cameraIndex===0) cameraIndex=1;
+
+                    /*if (cameraIndex < cameraArray.length-1) {
                         console.log(cameraIndex);
                         cameraIndex++;
                     }
@@ -109,7 +112,7 @@
                     }
 
                     //Find the next camera to use:
-                    console.log(cameraIndex);
+                    console.log(cameraIndex);*/
                     let camera = cameraArray[cameraIndex];
 
                     //Start the new selected camera:
