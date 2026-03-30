@@ -526,10 +526,9 @@ footer {
 }
 
 .testingTable{
+    width:100%;
     border-collapse: collapse;
     margin:2.5% 0;
-    font-size:1.2em;
-    min-width:400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -546,6 +545,11 @@ footer {
 
 .testButton{
     font-size: 110%;
+}
+
+#testingLogo{
+    width:200px;
+    height:200px;
 }
 /*GENERAL STYLING*/
 *{
@@ -743,7 +747,7 @@ input{
     #question{
         margin-top:12%;
         margin-bottom:30%;
-        width:80%;
+        width:90%;
     }
 
     #playerScore{
@@ -772,7 +776,7 @@ input{
     }
 
     .submitButton{
-        font-size: 110%;
+        font-size: 100%;
     }
     #inputField{
         font-size: 70%;
@@ -781,6 +785,16 @@ input{
     #congratulatoryMessage,#finishedMessage{
         margin:25% 5%;
         padding:5%;
+    }
+
+    /*Testing*/
+    .testingMain *{
+        font-size:90%;
+    }
+
+    .testingTable th,td{
+        padding:2px 1px;
+        border:solid darkgrey 1px;
     }
 
     /*Team Notes*/
@@ -798,7 +812,6 @@ input{
         margin:3% 0;
     }
 
-    /*Leaderboard*/
     /*GENERAL*/
     input{
         font-size:15px;
@@ -970,6 +983,13 @@ input{
     main p{
         font-size: 130%;
     }
+
+    /*Testing*/
+    .testingTable th,td{
+        padding:3px 1px;
+        border:solid darkgrey 1px;
+    }
+
     /*Team Notes*/
     .teamNotes{
         width:70%;
@@ -1119,6 +1139,11 @@ input{
     /*Leaderboard*/
     #leaderboard{
         margin: 7.5% auto;
+    }
+
+    /*Testing*/
+    .testingTable{
+        font-size:1.8em;
     }
 
     /*GENERAL*/
