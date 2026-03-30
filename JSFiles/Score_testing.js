@@ -45,7 +45,7 @@ function presentScore(Input,userInput,expected){
                         "<td>" + Input + "</td>" +
                         "<td>" + expected + "</td>" +
                         "<td>" + retrievedScore + "</td>" +
-                        "<td><img src='" + (expected === retrievedScore ? "✅" : "❌") + "' alt='Success or failed icon'/></td></tr>";
+                        "<td>" + (expected === retrievedScore ? "✅" : "❌") + "</td></tr>";
 
                     document.getElementById("unitTest").innerHTML += row;
                 }

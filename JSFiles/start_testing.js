@@ -54,7 +54,7 @@ function startHunt(userInput,Input,expected) {
                         "<td>" + Input + "</td>" +
                         "<td>" + expected + "</td>"+
                         "<td>" + errorMessage + "</td>"+
-                        "<td><img src='" + (expected === String(errorMessage) ? "✅" : "❌") + "' alt='Success or failed icon'/></td><tr>";
+                        "<td>" + (expected === String(errorMessage) ? "✅" : "❌") + "</td><tr>";
 
 
                     document.getElementById("unitTest").innerHTML += row;

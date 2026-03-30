@@ -77,7 +77,7 @@ async function evaluateQType(Input,userInput,expected){
                     "<td>" + Input + "</td>" +
                     "<td>" + expected + "</td>" +
                     "<td>" + retrievedType + "</td>" +
-                    "<td><img src='" + (expected === retrievedType ? "✅" : "❌") + "' alt='Success or failed icon'/></td>";
+                    "<td>" + (expected === retrievedType ? "✅" : "❌") + "</td>";
 
                 document.getElementById("unitTest").innerHTML+=row;
 

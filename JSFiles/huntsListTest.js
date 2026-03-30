@@ -52,7 +52,7 @@ function listHunts(Input,userInput,expected){
                         "<td>" + Input + "</td>" +
                         "<td>" + expected + "</td>" +
                         "<td>" + retrievedHunts + "</td>" +
-                        "<td><img src='" + (expected === retrievedHunts ? "✅" : "❌") + "' alt='Success or failed icon'/></td>\n" +
+                        "<td>"+ (expected === retrievedHunts ? "✅" : "❌") + "</td>\n" +
                         "<td><ol>";
 
                     for (let i = 0; i < retrievedHunts; i++) {
