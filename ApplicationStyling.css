@@ -436,6 +436,7 @@ footer {
     border: rgb(122, 43, 43) solid 2px;
     border-radius: 20px;
     color: rgb(255, 34, 34);
+    margin:2% auto;
 }
 
 #leaderboard h2 {
@@ -518,10 +519,6 @@ footer {
     font-size: clamp(0.85rem, 3vw, 1rem);
 }
 
-#leaderboardIcon{
-    width: 300px;
-    height:300px;
-}
 /*STYLING FOR THE TESTING PAGE*/
 .testingMain{
     padding:1%;
