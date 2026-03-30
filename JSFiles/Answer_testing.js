@@ -48,7 +48,7 @@ function validateAnswer(Input,expected,userInput){
                         "<td>" + Input + "</td>" +
                         "<td>" + expected + "</td>" +
                         "<td>" +String(answerStatus)+ "</td>" +
-                        "<td><img src='" + (expected === answerStatus ? "✅" : "❌") + "' alt='Success or failed icon'/></td>\n" +
+                        "<td>" + (expected === answerStatus ? "✅" : "❌") + "</td>\n" +
                         "</tr";
 
                     document.getElementById("unitTest").innerHTML += row;
