@@ -52,7 +52,7 @@ function loadQuestion() {
                     answerButtons += "<button onclick='openCamera()' class='optionButton'><img id='qrIcon' alt='QR code scanner icon'/></button></div>";
                     questionTexBox.innerHTML += answerButtons;
 
-                    document.getElementById("qrIcon").setAttribute("src",'/applicationMedia/cameraIcon.png')
+                    document.getElementById("qrIcon").setAttribute("src",'applicationMedia/cameraIcon.png')
 
                     //Using the retrieved question type to create the necessary answer options
                     //BOOLEAN-> true or false buttons.
