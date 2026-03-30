@@ -8,6 +8,8 @@ let testPairs=[
 
 function test(){
 
+    let row="";
+
     for(i in testPairs){
         let pair=testPairs[i];
         let input=pair.n;
@@ -52,7 +54,7 @@ function listHunts(Input,userInput,expected){
                         "<td>" + Input + "</td>" +
                         "<td>" + expected + "</td>" +
                         "<td>" + retrievedHunts + "</td>" +
-                        "<td><img src='" + (expected === retrievedHunts ? "✅" : "❌") + "' alt='Success or failed icon'/></td>\n" +
+                        "<td><img src='" + (expected === retrievedHunts ? '/applicationMedia/correct.png' : '/applicationMedia/wrong.png') + "' alt='Success or failed icon'/></td>\n" +
                         "<td><ol>";
 
                     for (let i = 0; i < retrievedHunts; i++) {
