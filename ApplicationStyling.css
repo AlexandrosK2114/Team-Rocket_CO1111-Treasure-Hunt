@@ -431,15 +431,12 @@ footer {
     gap: clamp(0.65rem, 2.5vw, 1rem);
     width: 100%;
     max-width: min(calc(100vw - 1.5rem), 36rem);
-    margin: 2% auto;
-
     padding: clamp(1rem, 3.5vw, 1.75rem);
     background-color: #FAFAFA;
-    
     border: rgb(122, 43, 43) solid 2px;
     border-radius: 20px;
     color: rgb(255, 34, 34);
-    }
+}
 
 #leaderboard h2 {
     margin: 0;
@@ -521,6 +518,10 @@ footer {
     font-size: clamp(0.85rem, 3vw, 1rem);
 }
 
+#leaderboardIcon{
+    width: 300px;
+    height:300px;
+}
 /*STYLING FOR THE TESTING PAGE*/
 .testingMain{
     padding:1%;
@@ -800,6 +801,7 @@ input{
         margin:3% 0;
     }
 
+    /*Leaderboard*/
     /*GENERAL*/
     input{
         font-size:15px;
@@ -958,6 +960,10 @@ input{
         font-size:130%;
     }
 
+    /*Leaderboard*/
+    #leaderboard {
+        margin: 15% auto;
+    }
 
     /*GENERAL*/
     main h1,h2,h3{
@@ -1111,6 +1117,11 @@ input{
         margin:2% 3%;
         padding:5%;
         font-size:100%;
+    }
+
+    /*Leaderboard*/
+    #leaderboard{
+        margin: 7.5% auto;
     }
 
     /*GENERAL*/
