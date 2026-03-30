@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heuristic Evaluation Plan</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-G800GHY9CD');
+    </script>
+
+    <link rel="stylesheet" href="../ApplicationStyling.css">
+    <link rel="stylesheet" href="../fireAnimation.css">
+    <script src="../JSFiles/fireAnimation.js"></script>
+</head>
+<body>
+    <header id="headerFire">
+        <div>
+            <img src="../applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header">
+            <h1>Team Phoenix </h1>
+        </div>
+
+        <nav>
+            <a href="../index.html">Homepage</a>
+            <a href="../huntsPage.html">Available Hunts</a>
+            <a href="../test.html">Testing</a>
+            <a href="../teamNotes.html">Team Notes</a>
+        </nav>
+    </header>
+
+    <main class="testingMain">
+        <h2>Completed Evaluation Notes (from userAcceptance)</h2>
+        <table class="testingTable">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Heuristic</th>
+                <th>Evidence from userAcceptance</th>
+                <th>Status</th>
+                <th>Actions taken</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>1</td><td>Use of screen space</td><td>Users reported squished navigation and footer overflow on mobile.</td><td>Improved</td><td>Updated responsive media queries and adjusted layout.</td></tr>
+            <tr><td>2</td><td>Consistency and standards</td><td>Feedback messages appeared as mixed alert/inline styles.</td><td>Fixed</td><td>Implemented consistent delayed message display.</td></tr>
+            <tr><td>3</td><td>Visibility and easy access to all information</td><td>Some users could not clearly see score/placement on leaderboard.</td><td>Fixed</td><td>Redesigned leaderboard to show user score and rank.</td></tr>
+            <tr><td>4</td><td>Adequacy of the component to its functionality</td><td>Camera button failed to open QR reader in reported test.</td><td>Fixed</td><td>Resolved QR reader launch issue.</td></tr>
+            <tr><td>5</td><td>Adequacy of the message to the functionality and to the user</td><td>Messages were correct but sometimes shown too briefly.</td><td>Improved</td><td>Added display delay for readability.</td></tr>
+            <tr><td>6</td><td>Error prevention and rapid recovery</td><td>Invalid username/hunt and unskippable question behavior worked as expected.</td><td>Pass</td><td>Kept validation behavior and messaging.</td></tr>
+            <tr><td>7</td><td>Ease of input</td><td>Users could answer all supported question types.</td><td>Pass</td><td>No major input changes required.</td></tr>
+            <tr><td>8</td><td>Ease of access to all functionalities</td><td>Core flow was accessible but mobile controls needed tuning.</td><td>Improved</td><td>Refined responsiveness and control sizing.</td></tr>
+            <tr><td>9</td><td>Immediate and observable feedback</td><td>Feedback could disappear as the app moved to next question.</td><td>Fixed</td><td>Improved feedback persistence and timing.</td></tr>
+            <tr><td>10</td><td>Help and documentation</td><td>No major documentation-related issues reported by testers.</td><td>Adequate</td><td>Kept concise guidance in testing/support notes.</td></tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <div class="links">
+            <h3>Socials:</h3>
+            <div id="linksLogos">
+                <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw"><img src="../applicationMedia/x-logo.png" class="logoImage" alt="Logo of social media platform X"/></a>
+                <a href="https://www.instagram.com/teamphoenix.uclan/"><img src="../applicationMedia/Instagram_icon.png" class="logoImage" alt="Logo of social media platform Instagram"/></a>
+            </div>
+        </div>
+
+        <div class="links">
+            <h3>Contact:</h3>
+            <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+        </div>
+
+        <div class="links">
+            <h3>Location:</h3>
+            <p>Larnaca, Cyprus</p>
+        </div>
+    </footer>
+</body>
+</html>
