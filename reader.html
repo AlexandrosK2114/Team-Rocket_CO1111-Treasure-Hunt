@@ -56,7 +56,7 @@
 
                     // Whether to horizontally mirror the video preview. This is helpful when trying to
                     // scan a QR code with a user-facing camera. Default true.
-                    mirror: true,
+                    mirror: false,
 
                     // Whether to include the scanned image data as part of the scan result. See the "scan" event
                     // for image format details. Default false.
@@ -100,7 +100,8 @@
 
                 function switchCamera() {
                     //Cycle through the available cameras:
-                    if (cameraIndex < cameraArray.length) {
+                    if (cameraIndex < cameraArray.length-1) {
+                        console.log(cameraIndex);
                         cameraIndex++;
                     }
                     else {
@@ -108,6 +109,7 @@
                     }
 
                     //Find the next camera to use:
+                    console.log(cameraIndex);
                     let camera = cameraArray[cameraIndex];
 
                     //Start the new selected camera:
