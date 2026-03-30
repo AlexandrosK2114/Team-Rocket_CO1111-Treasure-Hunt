@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Answer Testing</title>
+    <link rel="stylesheet" href="ApplicationStyling.css">
+    <link rel="stylesheet" href="fireAnimation.css">
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-G800GHY9CD');
-        </script>
-
-        <link rel="stylesheet" href="ApplicationStyling.css">
-        <link rel="stylesheet" href="fireAnimation.css">
-        <script src="JSFiles/fireAnimation.js"></script>
-
-    </head>
+</head>
     <body>
 
         <header id="headerFire">
@@ -37,25 +25,33 @@
 
         </header>
 
-        <main>
+        <main class="testingMain">
 
-            <h2>Unit Testing</h2>
-            <div id="unitTesting">
-                <p><a href="huntListTest.html">Testing list of treasure hunts</a></p>
-                <p><a href="questionTypeTesting.html">Question type testing</a></p>
-                <p><a href="start_testing.html">Starting Treasure hunts testing</a></p>
-                <p><a href="Answer_Testing.html">Answer Evaluation testing</a></p>
-                <p><a href="Score_Testing.html">Score Receival Testing</a></p>
-                <p><a href="leaderboard_test.html">Leaderboard presentation testing</a></p>
-            </div>
+            <h1>Answer Testing</h1>
 
-            <h2>User Acceptance Testing</h2>
+            <p>This is testing for the /answer functionality of the API, which evaluates whether the user can move to the next
+                question of the treasure hunt if they have answered correctly. They user may click one of the two buttons below
+                (true or false) to view how the API will respond.
+            </p>
 
-            <p><a href="userAcceptance.html">User Acceptance</a></p>
+            <p style="display: flex"><button class="testButton" onclick="validateAnswer(true,'',true)">True</button>
+                <button class="testButton" onclick="validateAnswer(false,'',true)">False</button></p>
 
-            <h2>Heuristics</h2>
+            <div id="response"></div>
+
+            <table id="unitTest" class="testingTable">
+                <thead>
+                    <tr>
+                        <th>Input</th>
+                        <th>Expected Output</th>
+                        <th>Retrieved Output</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <script src="JSFiles/Answer_testing.js"></script>
         </main>
-
 
         <footer>
 
@@ -79,6 +75,6 @@
             </div>
 
         </footer>
-    </body>
 
+    </body>
 </html>

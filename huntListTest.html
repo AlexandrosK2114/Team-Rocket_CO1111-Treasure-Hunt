@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Hunt List Test</title>
+        <link rel="stylesheet" href="ApplicationStyling.css">
+        <link rel="stylesheet" href="fireAnimation.css">
+        <script src="JSFiles/fireAnimation.js"></script>
+    </head>
+
+    <body>
+
+    <header id="headerFire">
+
+        <div>
+            <img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header">
+            <h1>Team Phoenix </h1>
+        </div>
+
+        <nav>
+            <a href="index.html">Homepage</a>
+            <a href="huntsPage.html">Available Hunts</a>
+            <a href="test.html">Testing</a>
+            <a href="teamNotes.html">Team Notes</a>
+        </nav>
+
+    </header>
+
+
+     <main class="testingMain">
+        <h1>List of Treasure Hunts Testing</h1>
+
+        <p>This is testing for the /list functionality of the API, which provides an object containing the available
+        treasure hunts the user can choose from. For the test, the user may provide how many treasure hunts they would
+        like to receive from the input element below.
+        </p>
+
+        <p><label for="userInput">Please provide the number of treasure hunts:</label><br></p>
+        <p><input type="number" id="userInput"><button class="testButton" type="button" onclick="listHunts(document.getElementById('userInput').value,true)">Submit</button></p>
+
+        <ol id="huntList"></ol>
+
+        <table id="unitTest" class="testingTable">
+            <thead>
+                <tr>
+                    <th>Input</th>
+                    <th>Expected Output</th>
+                    <th>Retrieved Hunts</th>
+                    <th>Status</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+        </table>
+
+        <script src="JSFiles/huntsListTest.js"></script>
+
+     </main>
+
+    <footer>
+
+        <div class="links">
+            <h3>Socials:</h3>
+
+            <div id="linksLogos">
+                <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage" alt="Logo of social media platform X"/> </a>
+                <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" alt="Logo of social media platform Instrgram"/></a>
+            </div>
+        </div>
+
+        <div class="links">
+            <h3>Contact:</h3>
+            <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+        </div>
+
+        <div class="links">
+            <h3>Location:</h3>
+            <p>Larnaca, Cyprus</p>
+        </div>
+
+    </footer>
+
+    </body>
+</html>

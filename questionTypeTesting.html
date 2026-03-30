@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="ApplicationStyling.css">
+        <link rel="stylesheet" href="fireAnimation.css">
+        <script src="JSFiles/fireAnimation.js"></script>
+    </head>
+
+    <body>
+
+        <header id="headerFire">
+
+            <div>
+                <img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header">
+                <h1>Team Phoenix </h1>
+            </div>
+
+            <nav>
+                <a href="index.html">Homepage</a>
+                <a href="huntsPage.html">Available Hunts</a>
+                <a href="test.html">Testing</a>
+                <a href="teamNotes.html">Team Notes</a>
+            </nav>
+
+        </header>
+
+        <main class="testingMain">
+
+            <h1>Question Type Testing</h1>
+
+            <p>This is testing for the /question functionality of the API and is meant to evaluate what type of
+                question is returned from it. The user may provide
+                the kind of question they would like to receive by typing one of the following: BOOLEAN, NUMERIC, INTEGER,
+                TEXT, MCQ. Any other kind of input will lead to an error.
+            </p>
+
+            <p><label for="typeTest">Please provide the type of the question you would like to receive:</label></p>
+
+            <p><input type="text" id="typeTest"><button class="testButton" type="submit" onclick="evaluateQType(document.getElementById('typeTest').value,true)">Submit</button></p>
+
+            <div id="userResult"></div>
+
+            <div id="sampleQuestion" style="border: solid black 1px"></div>
+
+            <table id="unitTest" class="testingTable">
+                <thead>
+                    <tr>
+                        <th>Input</th>
+                        <th>Expected Output</th>
+                        <th>Retrieved Question Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <script src="JSFiles/questionTypeTesting.js"></script>
+        </main>
+
+    </body>
+</html>

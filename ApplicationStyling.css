@@ -546,10 +546,9 @@ footer {
     border:solid darkgrey 1px;
 }
 
-.testingTable tbody tr{
-
+.testButton{
+    font-size: 110%;
 }
-
 /*GENERAL STYLING*/
 *{
     font-family: Arial, sans-serif;

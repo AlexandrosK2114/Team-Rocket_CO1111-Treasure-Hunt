@@ -48,8 +48,8 @@ function validateAnswer(Input,expected,userInput){
                         "<td>" + Input + "</td>" +
                         "<td>" + expected + "</td>" +
                         "<td>" +String(answerStatus)+ "</td>" +
-                        "<td><img src='" + (expected === answerStatus ? 'correct.png' : 'wrong.png') + "' alt='Success or failed icon'/></td>\n" +
-                        "<td></tr";
+                        "<td><img src='" + (expected === answerStatus ? '/applicationMedia/correct.png' : 'applicationMedia/wrong.png') + "' alt='Success or failed icon'/></td>\n" +
+                        "</tr";
 
                     document.getElementById("unitTest").innerHTML += row;
                 }
