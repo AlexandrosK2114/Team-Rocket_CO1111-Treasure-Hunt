@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Title</title>
-
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-G800GHY9CD');
-        </script>
-
+        <title>Score Testing</title>
         <link rel="stylesheet" href="ApplicationStyling.css">
         <link rel="stylesheet" href="fireAnimation.css">
-        <script src="JSFiles/fireAnimation.js"></script>
-
     </head>
+
     <body>
 
         <header id="headerFire">
@@ -38,25 +27,34 @@
 
         </header>
 
-        <main>
+        <main class="testingMain">
 
-            <h2>Unit Testing</h2>
-            <div id="unitTesting">
-                <p><a href="huntListTest.html">Testing list of treasure hunts</a></p>
-                <p><a href="questionTypeTesting.html">Question type testing</a></p>
-                <p><a href="start_testing.html">Starting Treasure hunts testing</a></p>
-                <p><a href="Answer_Testing.html">Answer Evaluation testing</a></p>
-                <p><a href="Score_Testing.html">Score Receival Testing</a></p>
-                <p><a href="leaderboard_test.html">Leaderboard presentation testing</a></p>
-            </div>
+            <h1>Score Testing</h1>
 
-            <h2>User Acceptance Testing</h2>
+            <p>This is testing for the /score functionality of the API which returns the player's current score.
+                The user may provide the score they wish to
+                receive from the API. This must be a numerical value in the range of [-1000,1000], otherwise it will
+                be capped at those limits.
+            </p>
 
-            <p><a href="userAcceptance.html">User Acceptance</a></p>
+            <p><label for="userInput">Please provide the number of the score</label><br></p>
+            <p><input type="number" id="userInput"><button class="testButton" type="button" onclick="presentScore(document.getElementById('userInput').value,true,0)">Submit</button></p>
 
-            <h2>Heuristics</h2>
+            <div id="userScore"></div>
+
+            <table id="unitTest" class="testingTable">
+                <thead>
+                    <tr>
+                        <th>Input</th>
+                        <th>Expected Output</th>
+                        <th>Retrieved Output</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <script src="JSFiles/Score_testing.js"></script>
         </main>
-
 
         <footer>
 
@@ -80,6 +78,7 @@
             </div>
 
         </footer>
+
     </body>
 
 </html>

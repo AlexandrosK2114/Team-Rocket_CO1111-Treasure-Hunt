@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Testing The Start</title>
+        <script src="JSFiles/start_testing.js"></script>
+        <link rel="stylesheet" href="ApplicationStyling.css">
+        <link rel="stylesheet" href="fireAnimation.css">
+    </head>
+
+    <body>
+
+        <header id="headerFire">
+
+            <div>
+                <img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header">
+                <h1>Team Phoenix </h1>
+            </div>
+
+            <nav>
+                <a href="index.html">Homepage</a>
+                <a href="huntsPage.html">Available Hunts</a>
+                <a href="test.html">Testing</a>
+                <a href="teamNotes.html">Team Notes</a>
+            </nav>
+
+        </header>
+
+        <main class="testingMain">
+            <h1>Starting Treasure Hunts Testing</h1>
+
+            <p>This unit test simulates the /start functionality of the API by assessing several errors
+                which may occur whilst trying to begin a treasure hunt. The user may choose and submit one
+                of the following options to observe the kind of error message the API would send back.
+            </p>
+
+            <p>Please choose one of the following:</p>
+
+            <div style="display: flex">
+                <p><input type="radio" name="inputOption" value="INACTIVE" id="option1" class="inputOption">
+                <label for="option1">INACTIVE</label></p>
+                <p><input type="radio" name="inputOption" value="EMPTY" id="option2" class="inputOption">
+                <label for="option2">EMPTY</label></p>
+                <p><input type="radio" name="inputOption" value="PLAYER" id="option3" class="inputOption">
+                <label for="option3">PLAYER</label></p>
+                <p><input type="radio" name="inputOption" value="APP" id="option4" class="inputOption">
+                <label for="option4">APP</label></p>
+                <p><input type="radio" name="inputOption" value="UNKNOWN" id="option5" class="inputOption">
+                <label for="option5">UNKNOWN</label></p>
+                <p><input type="radio" name="inputOption" value="MISSING_PARAMETER" id="option6" class="inputOption">
+                <label for="option6">MISSING_PARAMETER</label></p>
+            </div>
+
+            <p><button class="testButton" type="button" onclick="startHunt(true)">Submit</button></p>
+
+            <div id="errorMessage" style="display: none;"></div>
+
+            <table id="unitTest" class="testingTable">
+                <thead>
+                    <tr>
+                        <th>Input</th>
+                        <th>Expected Message</th>
+                        <th>Retrieved Message</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+            </table>
+
+        </main>
+
+        <footer>
+
+            <div class="links">
+                <h3>Socials:</h3>
+
+                <div id="linksLogos">
+                    <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage" alt="Logo of social media platform X"/> </a>
+                    <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" alt="Logo of social media platform Instrgram"/></a>
+                </div>
+            </div>
+
+            <div class="links">
+                <h3>Contact:</h3>
+                <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+            </div>
+
+            <div class="links">
+                <h3>Location:</h3>
+                <p>Larnaca, Cyprus</p>
+            </div>
+
+        </footer>
+
+    </body>
+</html>

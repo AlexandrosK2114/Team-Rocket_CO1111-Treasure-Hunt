@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Answer Testing</title>
+    <link rel="stylesheet" href="ApplicationStyling.css">
+    <link rel="stylesheet" href="fireAnimation.css">
+
+</head>
+    <body>
+
+        <header id="headerFire">
+
+            <div>
+                <img src="applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header">
+                <h1>Team Phoenix </h1>
+            </div>
+
+            <nav>
+                <a href="index.html">Homepage</a>
+                <a href="huntsPage.html">Available Hunts</a>
+                <a href="test.html">Testing</a>
+                <a href="teamNotes.html">Team Notes</a>
+            </nav>
+
+        </header>
+
+        <main class="testingMain">
+
+            <h1>Answer Testing</h1>
+
+            <p>This is testing for the /answer functionality of the API, which evaluates whether the user can move to the next
+                question of the treasure hunt if they have answered correctly. They user may click one of the two buttons below
+                (true or false) to view how the API will respond.
+            </p>
+
+            <p style="display: flex"><button class="testButton" onclick="validateAnswer(true,'',true)">True</button>
+                <button class="testButton" onclick="validateAnswer(false,'',true)">False</button></p>
+
+            <div id="response"></div>
+
+            <table id="unitTest" class="testingTable">
+                <thead>
+                    <tr>
+                        <th>Input</th>
+                        <th>Expected Output</th>
+                        <th>Retrieved Output</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <script src="JSFiles/Answer_testing.js"></script>
+        </main>
+
+        <footer>
+
+            <div class="links">
+                <h3>Socials:</h3>
+
+                <div id="linksLogos">
+                    <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="applicationMedia/x-logo.png" class="logoImage" alt="Logo of social media platform X"/> </a>
+                    <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="applicationMedia/Instagram_icon.png" class="logoImage" alt="Logo of social media platform Instrgram"/></a>
+                </div>
+            </div>
+
+            <div class="links">
+                <h3>Contact:</h3>
+                <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+            </div>
+
+            <div class="links">
+                <h3>Location:</h3>
+                <p>Larnaca, Cyprus</p>
+            </div>
+
+        </footer>
+
+    </body>
+</html>

@@ -37,7 +37,7 @@ function presentScore(Input,userInput,expected){
 
                 if(userInput){
                     let block=document.getElementById('userScore');
-                    block.innerHTML+="<p>Your score is: "+retrievedScore+"</p>";
+                    block.innerHTML="<p>Your score is: "+retrievedScore+"</p>";
 
                 }
                 else {
@@ -45,7 +45,7 @@ function presentScore(Input,userInput,expected){
                         "<td>" + Input + "</td>" +
                         "<td>" + expected + "</td>" +
                         "<td>" + retrievedScore + "</td>" +
-                        "<td><img src='" + (expected === retrievedScore ? 'correct.png' : 'wrong.png') + "' alt='Success or failed icon'/></td></tr>";
+                        "<td><img src='" + (expected === retrievedScore ? "✅" : "❌") + "' alt='Success or failed icon'/></td></tr>";
 
                     document.getElementById("unitTest").innerHTML += row;
                 }
