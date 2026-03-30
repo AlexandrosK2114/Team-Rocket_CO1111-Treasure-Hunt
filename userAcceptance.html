@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-G800GHY9CD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-G800GHY9CD');
+        </script>
+
+        <link rel="stylesheet" href="ApplicationStyling.css">
+        <link rel="stylesheet" href="fireAnimation.css">
+        <script src="JSFiles/fireAnimation.js"></script>
+
+    </head>
+
+    <body>
+
+        <header id="headerFire">
+
+            <div>
+                <img src="/applicationMedia/TeamLogo.PNG" alt="TeamLogo" id="teamLogo-header">
+                <h1>Team Phoenix </h1>
+            </div>
+
+            <nav>
+                <a href="index.html">Homepage</a>
+                <a href="huntsPage.html">Available Hunts</a>
+                <a href="test.html">Testing</a>
+                <a href="teamNotes.html">Team Notes</a>
+            </nav>
+
+        </header>
+
+        <main class="testingMain">
+
+            <h1>User Acceptance Testing</h1>
+
+            <p>
+                This page contains team Phoenix's effort to conduct User acceptance testing through the following
+                Test plan:
+            </p>
+
+            <p>Participants: For the purpose of this testing we chose individuals with and without a programming background. We
+                targeted more technical feedback from persons with programming backgrounds and design and user experience feedback
+                from those in other sectors.
+            </p>
+
+            <p>Testing Period: Testing was conducted during the two-week period before the project's deadline since the application
+                was mostly complete during by then.
+            </p>
+
+            <p>Collection of results: Each person who took part in the testing was sent the link to the application and had to
+                evaluate a specific aspect of it by providing feedback.
+                All feedback was recorded on a Word document and moved to this page. The different segments users had to evaluate are presented in the
+                following table.
+            </p>
+
+            <h2>Test Types</h2>
+
+            <table class="testingTable">
+                <thead>
+                    <tr>
+                        <th>Test</th>
+                        <th>Test Type</th>
+                        <th>Test Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Responsiveness</td>
+                        <td>The application is correctly formatted for mobile devices. All containers are displayed properly
+                            and font-sizes are adaptive.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Functionality</td>
+                        <td>The user can successfully add a username, choose a treasure hunt and begin a session.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Functionality</td>
+                        <td>Whilst trying to register for a treasure hunt, the user receives appropriate error messages
+                        when username or hunt are not specified, username is taken or the hunt is unavailable.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Functionality</td>
+                        <td>The user can answer questions with all possible answer types (True/False, text or numeric
+                        input and multiple choice).</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Functionality</td>
+                        <td>A question is successfully skipped when the skip button is pressed.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Functionality</td>
+                        <td>A question cannot be skipped if it is specified as unskippable. An appropriate message is also
+                        displayed to notify the user.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Functionality</td>
+                        <td>The user is presented with appropriate messages which indicate whether a question has been
+                        answered correctly or not and how much score was gained or lost.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Functionality</td>
+                        <td>Users can access the qr code reader by pressing the camera button whilst playing.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Functionality</td>
+                        <td>The user can fully complete a treasure hunt session.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Functionality</td>
+                        <td>The user can view their placement on the leaderboard.</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Functionality</td>
+                        <td>The application allows the user to continue unfinished sessions.</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Design</td>
+                        <td>The application's design is consistent throughout all pages.</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>User Experience</td>
+                        <td>The application's design engages the user and ensures accessibility.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Feedback and Actions Taken</h2>
+
+            <table class="testingTable">
+                <thead>
+                    <tr>
+                        <th>Test Case</th>
+                        <th>Test Number</th>
+                        <th>Tester</th>
+                        <th>Role</th>
+                        <th>Date/Time</th>
+                        <th>Status</th>
+                        <th>Feedback</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Grigoris</td>
+                    <td>Team member</td>
+                    <td>17/03/2026, 20:00pm</td>
+                    <td>FAIL</td>
+                    <td>
+                        <ul>
+                            <li>Used font failed to load on mobile ("Bahnschrift SemiBold"). Not compatible.</li>
+                            <li>Navigation buttons were too small and their descriptions unreadable on mobile</li>
+                            <li>Dotted division borders did not apply well on mobile.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>13</td>
+                    <td>Grigoris</td>
+                    <td>Team member</td>
+                    <td>17/03/2026, 20:00pm</td>
+                    <td>FAIL</td>
+                    <td>
+                        <ul>
+                            <li>The application's reliance on red colors was not pleasing to the eye.</li>
+                            <li>The dotted borders on the divisions were distracting</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>Kyveli</td>
+                    <td>Classmate</td>
+                    <td>18/03/2026, 14:00pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>Tester managed to start a treasure hunt session without any issues.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>Kyveli</td>
+                    <td>Classmate</td>
+                    <td>18/03/2026, 14:00pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>Tester was presented with appropriate messages when they had omitted the username,
+                            treasure hunt, had used someone else's username or chosen an inactive hunt.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>Kyveli</td>
+                    <td>Classmate</td>
+                    <td>18/03/2026, 14:00pm</td>
+                    <td>FAIL</td>
+                    <td>
+                        <ul>
+                            <li>In some pages whitespace could be seen under the footer on mobile due to incorrectly formatted
+                            containers.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>Kyveli</td>
+                    <td>Classmate</td>
+                    <td>18/03/2026, 14:00pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>Tester managed to continue the session after exiting the treasure hunt.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>Kyveli</td>
+                    <td>Classmate</td>
+                    <td>18/03/2026, 14:00pm</td>
+                    <td>FAIL</td>
+                    <td>
+                        <ul>
+                            <li>Whilst playing, messages for answering questions were inconsistent, some appearing
+                            as alerts and others as text inside containers. Also, there was no time to view
+                            some of the messages as the treasure hunt moved on to the next question instantly.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>Kyveli</td>
+                    <td>Classmate</td>
+                    <td>18/03/2026, 14:00pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>The tester was able to fully complete a treasure hunt session.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>Kyveli</td>
+                    <td>Classmate</td>
+                    <td>18/03/2026, 14:00pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>The tester could provide an answer with all possible question types.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>Vladislav</td>
+                    <td>Classmate</td>
+                    <td>18/03/2026, 14:30pm</td>
+                    <td>FAIL</td>
+                    <td>
+                        <ul>
+                            <li>Tester was not able to open the qr reader after clicking the camera button</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>13</td>
+                    <td>Vladislav</td>
+                    <td>Classmate</td>
+                    <td>18/03/2026, 14:30pm</td>
+                    <td>FAIL</td>
+                    <td>
+                        <ul>
+                            <li>The application had too many red colors which made readability difficult.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h2>Response to feedback</h2>
+            <div class="teamNotes">
+                <p>-Application design shift from reds to light browns and light greys.</p>
+                <p>-Division styling was changed drastically towards simpler presentation.</p>
+                <p>-Function which displays messages with time delay was implemented to correctly
+                display all messages whilst users are playing.</p>
+                <p>-Responsiveness was improved across all pages with media queries.</p>
+                <p>-Text font was changed to Arial Sans-Serif, compatible with all browsers.</p>
+                <p>-Fixed the issue which prevented the QR reader from opening</p>
+            </div>
+
+            <table class="testingTable">
+                <thead>
+                    <tr>
+                        <th>Test Case</th>
+                        <th>Test Number</th>
+                        <th>Tester</th>
+                        <th>Role</th>
+                        <th>Date/Time</th>
+                        <th>Status</th>
+                        <th>Feedback</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>12</td>
+                    <td>7</td>
+                    <td>Roman</td>
+                    <td>Classmate</td>
+                    <td>23/03/2026, 14:30pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>Tester was presented with appropriate and consistent messages when answering
+                            questions which relate to the answer status and how many points were lost or gained.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>12</td>
+                    <td>Roman</td>
+                    <td>Classmate</td>
+                    <td>23/03/2026, 14:30pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>Application design was consistent throughout all pages.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>4</td>
+                    <td>Panagiotis</td>
+                    <td>Classmate</td>
+                    <td>26/03/2026, 13:00pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>The tester could provide an answer with all possible question types.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>9</td>
+                    <td>Panagiotis</td>
+                    <td>classmate</td>
+                    <td>26/03/2026, 13:00pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>The tester was able to fully complete a treasure hunt session.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>5</td>
+                    <td>Panagiotis</td>
+                    <td>Classmate</td>
+                    <td>26/03/2026, 13:00pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>The tester successfully skipped a question after pressing the skip button.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>Panagiotis</td>
+                    <td>Classmate</td>
+                    <td>26/03/2026, 13:00pm</td>
+                    <td>PASS</td>
+                    <td>
+                        <ul>
+                            <li>The tester was not able to skip an unskippable question and was presented with an
+                            appropriate message.</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>18</td>
+                    <td>10</td>
+                    <td>Timofii</td>
+                    <td>Team member</td>
+                    <td>27/03/2026, 18:30pm</td>
+                    <td>FAIL</td>
+                    <td>
+                        <ul>
+                            <li>Tester could not see themselves on the leaderboard or their score.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>1</td>
+                    <td>Gioulla</td>
+                    <td>Family</td>
+                    <td>28/03/2026, 19:00pm</td>
+                    <td>FAIL</td>
+                    <td>
+                        <ul>
+                            <li>Navigation buttons were squished and not very readable on mobile devices</li>
+                            <li>Footer content was not within window bounds on mobile devices</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h2>Response to feedback</h2>
+            <div class="teamNotes">
+                <p>-Changed how the leaderboard is presented to include the user, their score and placement</p>
+                <p>-Header was redesigned. Header and footer responsiveness was improved</p>
+            </div>
+
+        </main>
+
+        <footer>
+
+            <div class="links">
+                <h3>Socials:</h3>
+
+                <div id="linksLogos">
+                    <a href="https://twitter.com/T_phoenix0?ref_src=twsrc%5Etfw" ><img src="/applicationMedia/x-logo.png" class="logoImage" alt="Logo of social media platform X"/> </a>
+                    <a href="https://www.instagram.com/teamphoenix.uclan/"> <img src="/applicationMedia/Instagram_icon.png" class="logoImage" alt="Logo of social media platform Instrgram"/></a>
+                </div>
+            </div>
+
+            <div class="links">
+                <h3>Contact:</h3>
+                <p><a href="mailto:teamphoenix.uclan@gmail.com">teamphoenix.uclan@gmail.com</a></p>
+            </div>
+
+            <div class="links">
+                <h3>Location:</h3>
+                <p>Larnaca, Cyprus</p>
+            </div>
+
+        </footer>
+    </body>
+
+</html>

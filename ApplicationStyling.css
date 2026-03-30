@@ -522,6 +522,33 @@ footer {
 }
 
 /*STYLING FOR THE TESTING PAGE*/
+.testingMain{
+    padding:1%;
+    align-items: flex-start;
+}
+
+.testingTable{
+    border-collapse: collapse;
+    margin:2.5% 0;
+    font-size:1.2em;
+    min-width:400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.testingTable thead tr{
+    background-color: darkgrey;
+    color: #ffffff;
+    text-align: left;
+}
+
+.testingTable th,td{
+    padding:12px 15px;
+    border:solid darkgrey 1px;
+}
+
+.testingTable tbody tr{
+
+}
 
 /*GENERAL STYLING*/
 *{
